@@ -1,0 +1,38 @@
+/* 竖屏时的样式 */
+@media screen and (orientation: portrait) {
+    .index_box{
+        padding-top: 0.58rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .itemk_index{
+        width: 3.74rem;
+        height: 1.6rem;
+        float: left;
+        margin-bottom: 0.5rem;
+    }
+    .itemk_index img{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+/* 横屏时的样式 */
+@media screen and (orientation: landscape) {
+    .index_box{
+        padding-top: 0.58rem;
+        display: flex;
+        justify-content: center;
+    }
+    .itemk_index{
+        width: 3.74rem;
+        height: 1.6rem;
+        margin: 0 0.515rem;
+    }
+    .itemk_index img{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
