@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.ParamAllBatchMapper">
+
+    <select id="pageList" resultType="com.tea.server.entity.vo.ParamAllBatchVo">
+        SELECT pb.*, p1.`name` as heatName, p2.`name` as sugarName
+        FROM param_all_batch pb
+        LEFT JOIN param p1
+        ON p1.id = pb.heat_param_id
+        LEFT JOIN param p2
+        ON p2.id = pb.sugar_param_id
+        WHERE pb.`status` = 1
+        <if test="keyword !=null and keyword!=''">
+            and pb.name like CONCAT('%',#{keyword},'%') or p1.name like CONCAT('%',#{keyword},'%') or p2.name like CONCAT('%',#{keyword},'%')
+        </if>
+        ORDER BY pb.id desc
+    </select>
+
+
+</mapper>

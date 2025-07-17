@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.OrdersMapper">
+
+    <select id="callOrders" resultType="com.tea.server.entity.vo.OrdersCall">
+
+    </select>
+    <select id="pageAllOrders" resultType="com.tea.server.entity.Orders">
+        SELECT o.*, sh.name as shopName
+        FROM `orders` o
+        LEFT JOIN shop sh
+        ON o.shop_id=sh.id
+        where o.`status`=1
+          and o.pay_status=2
+        <if test="orderQuery.shopId !=null and orderQuery.shopId != ''">
+            and o.shop_id=#{orderQuery.shopId}
+        </if>
+        <if test="orderQuery.orderNum !=null and orderQuery.orderNum != ''">
+            and o.order_num#{orderQuery.orderNum}
+        </if>
+        <if test="orderQuery.platformType !=null and orderQuery.platformType != ''">
+            and o.platform_type=#{orderQuery.platformType}
+        </if>
+        <if test="orderQuery.begin!=null and orderQuery.begin != ''">
+            and o.create_time >=#{orderQuery.begin,jdbcType=TIMESTAMP}
+        </if>
+        <if test="orderQuery.end!=null and orderQuery.end != ''">
+            and o.create_time &lt;= #{orderQuery.end,jdbcType=TIMESTAMP}
+        </if>
+        order by
+        o.id
+        desc
+    </select>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.GoodsAllBatchMapper">
+
+    <select id="getGoodsAllBatchingList" resultType="com.tea.server.entity.vo.GoodsAllBatchList">
+        select gb.*, gs.`name`                            as goodsName,
+        pa.`name`                            as paramName,
+        pa2.`name`                            as sugarName,
+        pa3.`name`                            as temperatureName
+--                ,GROUP_CONCAT(ba.`name`)              as batchName,
+--         GROUP_CONCAT(gb.use_number) as numberUnit
+        from goods_all_batch gb
+        LEFT JOIN goods gs
+        ON gb.goods_id = gs.id
+        LEFT JOIN param pa
+        ON gb.size_id = pa.id
+        LEFT JOIN param pa2
+        ON gb.sugar_id = pa2.id
+        LEFT JOIN param pa3
+        ON gb.temperature_id = pa3.id
+        LEFT JOIN batching ba
+        on ba.id = gb.batch_id
+        WHERE gb.`status` = 1
+        <if test="keyword !=null and keyword!=''">
+            and gs.name like CONCAT('%',#{keyword},'%')
+        </if>
+        GROUP BY gb.goods_id, gb.size_id, gb.sugar_id, gb.temperature_id
+        ORDER BY gb.create_time desc
+    </select>
+</mapper>

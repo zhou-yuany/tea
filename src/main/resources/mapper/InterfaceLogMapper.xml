@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.InterfaceLogMapper">
+
+    <select id="pageInterfaceLogList" resultType="com.tea.server.entity.InterfaceLog">
+        SELECT il.*, sh.name as shopName
+        FROM `interface_log` il
+        LEFT JOIN shop sh
+        ON il.shop_id=sh.id
+        where il.`status`=1
+        <if test="interfaceLogQuery.shopId !=null and interfaceLogQuery.shopId != ''">
+            and sh.id =#{interfaceLogQuery.shopId}
+        </if>
+        <if test="interfaceLogQuery.begin!=null and interfaceLogQuery.begin != ''">
+            and il.create_time >=#{interfaceLogQuery.begin,jdbcType=TIMESTAMP}
+        </if>
+        <if test="interfaceLogQuery.end!=null and interfaceLogQuery.end != ''">
+            and il.create_time &lt;= #{interfaceLogQuery.end,jdbcType=TIMESTAMP}
+        </if>
+        order by
+        il.id
+        desc
+    </select>
+    <select id="pageShopInterfaceLogList" resultType="com.tea.server.entity.InterfaceLog">
+        SELECT il.*, sh.name as shopName
+        FROM `interface_log` il
+        LEFT JOIN shop sh
+        ON il.shop_id=sh.id
+        where il.`status`=1
+        and il.shop_id=#{shopId}
+        <if test="interfaceLogQuery.begin!=null and interfaceLogQuery.begin != ''">
+            and il.create_time >=#{interfaceLogQuery.begin,jdbcType=TIMESTAMP}
+        </if>
+        <if test="interfaceLogQuery.end!=null and interfaceLogQuery.end != ''">
+            and il.create_time &lt;= #{interfaceLogQuery.end,jdbcType=TIMESTAMP}
+        </if>
+        order by
+        il.id
+        desc
+    </select>
+</mapper>

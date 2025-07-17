@@ -1,0 +1,55 @@
+2025-07-17 11:17:21.791  INFO 16612 --- [main] com.tea.server.TeaManagementApplication  : Starting TeaManagementApplication using Java 1.8.0_301 on DESKTOP-4OK478J with PID 16612 (D:\ 工作项目\工作项目\茶饮\tea-management\target\classes started by A in D:\ 工作项目\工作项目\茶饮\tea-management)
+2025-07-17 11:17:21.795  INFO 16612 --- [main] com.tea.server.TeaManagementApplication  : No active profile set, falling back to default profiles: default
+2025-07-17 11:17:22.842  INFO 16612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9222 (http)
+2025-07-17 11:17:22.849  INFO 16612 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-17 11:17:22.849  INFO 16612 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2025-07-17 11:17:22.928  INFO 16612 --- [main] o.a.c.c.C.[.[.[/tea-management]          : Initializing Spring embedded WebApplicationContext
+2025-07-17 11:17:22.928  INFO 16612 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1099 ms
+2025-07-17 11:17:23.126 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Registered plugin: 'com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor@78e22d35'
+2025-07-17 11:17:23.284 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\AddressMapper.xml]'
+2025-07-17 11:17:23.306 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\AdminsMapper.xml]'
+2025-07-17 11:17:23.331 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\AgentsMapper.xml]'
+2025-07-17 11:17:23.350 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\BatchNumberMapper.xml]'
+2025-07-17 11:17:23.367 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\BatchOrderUseMapper.xml]'
+2025-07-17 11:17:23.380 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\BatchShopPriceMapper.xml]'
+2025-07-17 11:17:23.405 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\BatchUseMapper.xml]'
+2025-07-17 11:17:23.423 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\BatchingMapper.xml]'
+2025-07-17 11:17:23.441 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\BrandMapper.xml]'
+2025-07-17 11:17:23.453 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\CateToParamCateMapper.xml]'
+2025-07-17 11:17:23.465 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\CategorizeAllMapper.xml]'
+2025-07-17 11:17:23.479 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\CategorizeMapper.xml]'
+2025-07-17 11:17:23.492 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\CouponMapper.xml]'
+2025-07-17 11:17:23.504 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\EquipmentAllMapper.xml]'
+2025-07-17 11:17:23.515 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\EquipmentMapper.xml]'
+2025-07-17 11:17:23.536 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\GoodsAllBatchMapper.xml]'
+2025-07-17 11:17:23.550 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\GoodsMapper.xml]'
+2025-07-17 11:17:23.569 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\GoodsToBatchMapper.xml]'
+2025-07-17 11:17:23.589 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\HobbyUserMapper.xml]'
+2025-07-17 11:17:23.607 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\InterfaceLogMapper.xml]'
+2025-07-17 11:17:23.620 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\InventoryRecordMapper.xml]'
+2025-07-17 11:17:23.640 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\OrderParamMapper.xml]'
+2025-07-17 11:17:23.664 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\OrdersFlowMapper.xml]'
+2025-07-17 11:17:23.684 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\OrdersMapper.xml]'
+2025-07-17 11:17:23.695 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\ParamAllBatchMapper.xml]'
+2025-07-17 11:17:23.707 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\ParamBatchMapper.xml]'
+2025-07-17 11:17:23.717 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\ParamCateMapper.xml]'
+2025-07-17 11:17:23.739 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\ParamMapper.xml]'
+2025-07-17 11:17:23.755 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\RechargeRecordMapper.xml]'
+2025-07-17 11:17:23.775 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\ShopMapper.xml]'
+2025-07-17 11:17:23.800 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\ShopToCateMapper.xml]'
+2025-07-17 11:17:23.824 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\ShopToGoodsMapper.xml]'
+2025-07-17 11:17:23.837 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\ShopToParamMapper.xml]'
+2025-07-17 11:17:23.849 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\TakeawayMapper.xml]'
+2025-07-17 11:17:23.858 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\TemplateColorMapper.xml]'
+2025-07-17 11:17:23.870 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\TemplateMapper.xml]'
+2025-07-17 11:17:23.885 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\TemplatePictureMapper.xml]'
+2025-07-17 11:17:23.903 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\UsersMapper.xml]'
+2025-07-17 11:17:23.919 DEBUG 16612 --- [main] c.b.m.e.s.MybatisSqlSessionFactoryBean   : Parsed mapper file: 'file [D:\ 工作项目\工作项目\茶饮\tea-management\target\classes\mapper\WithdrawalRecordMapper.xml]'
+2025-07-17 11:17:24.641  INFO 16612 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-07-17 11:17:24.699  INFO 16612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9222 (http) with context path '/tea-management'
+2025-07-17 11:17:24.711  INFO 16612 --- [main] com.tea.server.TeaManagementApplication  : Started TeaManagementApplication in 3.2 seconds (JVM running for 3.669)
+2025-07-17 11:17:24.770  INFO 16612 --- [RMI TCP Connection(1)-192.168.56.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-17 11:17:24.861  INFO 16612 --- [RMI TCP Connection(3)-192.168.56.1] o.a.c.c.C.[.[.[/tea-management]          : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-17 11:17:24.861  INFO 16612 --- [RMI TCP Connection(3)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-17 11:17:24.863  INFO 16612 --- [RMI TCP Connection(3)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-07-17 11:17:25.114  INFO 16612 --- [RMI TCP Connection(1)-192.168.56.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.

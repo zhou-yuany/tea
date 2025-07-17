@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.BatchOrderUseMapper">
+
+    <select id="shopBatchUseList" resultType="com.tea.server.entity.BatchOrderUse">
+        select bou.*, ba.name as batchName from batch_order_use bou
+                        LEFT JOIN shop sh
+                                  ON bou.shop_id = sh.id
+                        LEFT JOIN batching ba
+                                  ON ba.id = bou.batch_id
+        WHERE bou.status = 1
+        and sh.admin_id=#{adminId}
+        <if test="batchUseQuery.orderNum !=null and batchUseQuery.orderNum != ''">
+            and bou.order_num =#{batchUseQuery.orderNum}
+        </if>
+        <if test="batchUseQuery.name !=null and batchUseQuery.name != ''">
+            and ba.name =#{batchUseQuery.name}
+        </if>
+        <if test="batchUseQuery.begin!=null and batchUseQuery.begin != ''">
+            and bou.create_time >=#{batchUseQuery.begin,jdbcType=TIMESTAMP}
+        </if>
+        <if test="batchUseQuery.end!=null and batchUseQuery.end != ''">
+            and bou.create_time &lt;= #{batchUseQuery.end,jdbcType=TIMESTAMP}
+        </if>
+        order by
+        bou.id
+        desc
+    </select>
+    <select id="batchUseList" resultType="com.tea.server.entity.BatchOrderUse">
+        select bou.*, ba.name as batchName from batch_order_use bou
+        LEFT JOIN shop sh
+        ON bou.shop_id = sh.id
+        LEFT JOIN batching ba
+        ON ba.id = bou.batch_id
+        WHERE bou.status = 1
+        <if test="batchUseQuery.orderNum !=null and batchUseQuery.orderNum != ''">
+            and bou.order_num =#{batchUseQuery.orderNum}
+        </if>
+        <if test="batchUseQuery.shopId !=null and batchUseQuery.shopId != ''">
+            and bou.shop_id =#{batchUseQuery.shopId}
+        </if>
+        <if test="batchUseQuery.name !=null and batchUseQuery.name != ''">
+            and ba.name =#{batchUseQuery.name}
+        </if>
+        <if test="batchUseQuery.begin!=null and batchUseQuery.begin != ''">
+            and bou.create_time >=#{batchUseQuery.begin,jdbcType=TIMESTAMP}
+        </if>
+        <if test="batchUseQuery.end!=null and batchUseQuery.end != ''">
+            and bou.create_time &lt;= #{batchUseQuery.end,jdbcType=TIMESTAMP}
+        </if>
+        order by
+        bou.id
+        desc
+    </select>
+    <select id="pageBatchUseList" resultType="com.tea.server.entity.BatchOrderUse">
+        select bou.*, ba.name as batchName, sh.name as shopName from batch_order_use bou
+        LEFT JOIN shop sh
+        ON bou.shop_id = sh.id
+        LEFT JOIN batching ba
+        ON ba.id = bou.batch_id
+        WHERE bou.status = 1
+        <if test="batchUseQuery.orderNum !=null and batchUseQuery.orderNum != ''">
+            and bou.order_num =#{batchUseQuery.orderNum}
+        </if>
+        <if test="batchUseQuery.shopId !=null and batchUseQuery.shopId != ''">
+            and bou.shop_id =#{batchUseQuery.shopId}
+        </if>
+        <if test="batchUseQuery.name !=null and batchUseQuery.name != ''">
+            and ba.name =#{batchUseQuery.name}
+        </if>
+        <if test="batchUseQuery.begin!=null and batchUseQuery.begin != ''">
+            and bou.create_time >=#{batchUseQuery.begin,jdbcType=TIMESTAMP}
+        </if>
+        <if test="batchUseQuery.end!=null and batchUseQuery.end != ''">
+            and bou.create_time &lt;= #{batchUseQuery.end,jdbcType=TIMESTAMP}
+        </if>
+        order by
+        bou.id
+        desc
+    </select>
+</mapper>

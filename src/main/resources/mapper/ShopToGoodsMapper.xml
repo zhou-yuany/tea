@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.ShopToGoodsMapper">
+    <select id="goodsAll" resultType="com.tea.server.entity.ShopToGoods">
+        SELECT sg.*, gd.`name` as name, gd.price as price FROM shop_to_goods sg
+                                                                   LEFT JOIN goods gd
+                                                                             ON sg.goods_id = gd.id
+        WHERE gd.is_grounding = 1
+          AND sg.status = 1
+          AND sg.shop_id=#{shopId}
+    </select>
+
+</mapper>

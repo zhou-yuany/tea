@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.GoodsToBatchMapper">
+
+    <select id="pageCostCards" resultType="com.tea.server.entity.vo.CostCardVo">
+        select gb.*, gs.name as goodsName, pr.`name` as paramName, ca.real_name as realName, ba.unit
+        from goods_to_batch as gb
+                 LEFT JOIN `goods` as gs
+                           on gb.goods_id = gs.id
+                 LEFT JOIN param pr
+                           ON gb.size_id = pr.id
+                 LEFT JOIN categorize ca
+                           ON gs.cate_id = ca.id
+                 LEFT JOIN batching ba
+                           ON gb.batch_id = ba.id
+        WHERE gb.shop_id = #{shopId}
+          AND gs.`status` = 1
+          AND gb.`status` = 1
+--           AND ba.`name` = '水'
+        GROUP BY gb.goods_id, gb.size_id
+        ORDER BY gb.id desc
+    </select>
+    <!--    <select id="getGoodsBatchingList1" resultType="com.tea.server.entity.vo.GoodsBatchList">-->
+    <!--        select gb.id, gb.param_id, gb.goods_id, gs.`name`                            as goodsName,-->
+    <!--               pa.`name`                            as paramName,-->
+    <!--               GROUP_CONCAT(ba.`name`)              as batchName,-->
+    <!--               GROUP_CONCAT(gb.use_number, ba.unit) as numberUnit-->
+    <!--        from goods_to_batch gb-->
+    <!--                 LEFT JOIN goods gs-->
+    <!--                           ON gb.goods_id = gs.id-->
+    <!--                 LEFT JOIN param pa-->
+    <!--                           ON gb.param_id = pa.id-->
+    <!--                 LEFT JOIN batching ba-->
+    <!--                           on ba.id = gb.batch_id-->
+    <!--        WHERE gb.`status` = 1 AND gb.shop_id = #{shopId}-->
+    <!--        <if test="keyword !=null and keyword!=''">-->
+    <!--            and gs.name like CONCAT('%',#{keyword},'%') or ba.name like CONCAT('%',#{keyword},'%') or pa.name like CONCAT('%',#{keyword},'%')-->
+    <!--        </if>-->
+    <!--        GROUP BY gb.goods_id, gb.param_id-->
+    <!--        ORDER BY gb.id desc-->
+    <!--    </select>-->
+    <select id="getGoodsBatchingList1" resultType="com.tea.server.entity.vo.GoodsBatchList">
+        select gb.*, gs.`name` as goodsName,
+        pa.`name` as paramName,
+        pa2.`name`                            as sugarName,
+        pa3.`name`                            as temperatureName
+--                ,GROUP_CONCAT(ba.`name`) as batchName,
+--         GROUP_CONCAT(gb.use_number) as numberUnit
+        from goods_to_batch gb
+        LEFT JOIN goods gs
+        ON gb.goods_id = gs.id
+        LEFT JOIN param pa
+        ON gb.size_id = pa.id
+        LEFT JOIN param pa2
+        ON gb.sugar_id = pa2.id
+        LEFT JOIN param pa3
+        ON gb.temperature_id = pa3.id
+        LEFT JOIN batching ba
+        on ba.id = gb.batch_id
+        WHERE gb.`status` = 1 AND gb.shop_id = #{shopId}
+        <if test="keyword !=null and keyword!=''">
+            and gs.name like CONCAT('%',#{keyword},'%') or ba.name like CONCAT('%',#{keyword},'%') or pa.name like CONCAT('%',#{keyword},'%')
+        </if>
+        GROUP BY gb.goods_id, gb.size_id, gb.sugar_id, gb.temperature_id
+        ORDER BY gb.id desc
+    </select>
+    <select id="getGoodsBatchings" resultType="com.tea.server.entity.vo.GoodsBatchList">
+        select gb.id, gb.goods_id, gs.`name` as goodsName,GROUP_CONCAT(ba.`name`) as batchName,
+        GROUP_CONCAT(gb.use_number) as numberUnit
+        from goods_to_batch gb
+        LEFT JOIN goods gs
+        ON gb.goods_id = gs.id
+        LEFT JOIN batching ba
+        on ba.id = gb.batch_id
+        WHERE gb.`status` = 1 AND gb.shop_id = #{shopId}
+        <if test="keyword !=null and keyword!=''">
+            and gs.name like CONCAT('%',#{keyword},'%') or ba.name like CONCAT('%',#{keyword},'%')
+        </if>
+        GROUP BY gb.goods_id
+        ORDER BY gb.id desc
+    </select>
+    <select id="getGoodsAllBatchingList" resultType="com.tea.server.entity.vo.GoodsToBatchList">
+        select gb.*, gs.`name`                            as goodsName,
+        pa.`name`                            as paramName,
+        pa2.`name`                            as sugarName,
+        pa3.`name`                            as temperatureName
+--         GROUP_CONCAT(ba.`name`)              as batchName,
+--         GROUP_CONCAT(gb.use_number) as numberUnit
+        from goods_to_batch gb
+        LEFT JOIN shop_to_goods gs
+        ON gb.goods_id = gs.id
+        LEFT JOIN param pa
+        ON gb.size_id = pa.id
+        LEFT JOIN param pa2
+        ON gb.sugar_id = pa2.id
+        LEFT JOIN param pa3
+        ON gb.temperature_id = pa3.id
+        LEFT JOIN batching ba
+        on ba.id = gb.batch_id
+        WHERE gb.`status` = 1 AND gb.shop_id = #{shopId}
+        <if test="goodsBatchQuery.keyword !=null and goodsBatchQuery.keyword!=''">
+            and gs.name like CONCAT('%',#{goodsBatchQuery.keyword},'%') or ba.name like CONCAT('%',#{goodsBatchQuery.keyword},'%') or pa.name like CONCAT('%',#{goodsBatchQuery.keyword},'%')
+        </if>
+        <if test="goodsBatchQuery.sizeId !=null and goodsBatchQuery.sizeId!=''">
+            and gb.size_id=#{goodsBatchQuery.sizeId}
+        </if>
+        GROUP BY gb.goods_id, gb.size_id, gb.sugar_id, gb.temperature_id
+        ORDER BY gb.id desc
+    </select>
+
+    <select id="getGoodsBatchingList" resultType="com.tea.server.entity.vo.GoodsBatchList">
+        select gb.*, gs.`name`                            as goodsName,
+        pa.`name`                            as paramName,
+        pa2.`name`                            as sugarName,
+        pa3.`name`                            as temperatureName
+--         GROUP_CONCAT(ba.`name`)              as batchName,
+--         GROUP_CONCAT(gb.use_number) as numberUnit
+        from goods_to_batch gb
+        LEFT JOIN shop_to_goods gs
+        ON gb.goods_id = gs.id
+        LEFT JOIN param pa
+        ON gb.size_id = pa.id
+        LEFT JOIN param pa2
+        ON gb.sugar_id = pa2.id
+        LEFT JOIN param pa3
+        ON gb.temperature_id = pa3.id
+        LEFT JOIN batching ba
+        on ba.id = gb.batch_id
+        WHERE gb.`status` = 1 AND gb.shop_id = #{shopId}
+        <if test="keyword !=null and keyword!=''">
+            and gs.name like CONCAT('%',#{keyword},'%') or ba.name like CONCAT('%',#{keyword},'%') or pa.name like CONCAT('%',#{keyword},'%')
+        </if>
+        GROUP BY gb.goods_id, gb.size_id, gb.sugar_id, gb.temperature_id
+        ORDER BY gb.id desc
+    </select>
+</mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.BatchUseMapper">
+
+    <select id="pageList" resultType="com.tea.server.entity.BatchUse">
+        SELECT sb.*, b.`name` as batchName
+        from batch_use sb
+                 LEFT JOIN batching b ON sb.batch_id = b.id
+        WHERE sb.shop_id = #{shopId}
+          and sb.`status` = 1
+        ORDER BY sb.id
+                DESC
+    </select>
+
+    <select id="pageInventories" resultType="com.tea.server.entity.vo.BatchingVo">
+        select ba.`name`, bu.total_count as totalCount, ba.brand as brandName, ba.unit as unit
+        from batch_use bu
+                 LEFT JOIN batching ba
+                           on bu.batch_id = ba.id
+                 LEFT JOIN shop sh
+                           ON bu.shop_id = sh.id
+        WHERE bu.shop_id = #{shopId}
+          and bu.`status` = 1
+        order by bu.create_time
+                desc
+    </select>
+    <select id="getListByName" resultType="com.tea.server.entity.BatchUse">
+        select ba.`name` as batchName, bu.*
+        from batch_use bu
+        LEFT JOIN batching ba
+        on bu.batch_id = ba.id
+        WHERE bu.shop_id = #{id}
+        and bu.`status` = 1
+        <if test="keyword !=null and keyword!=''">
+            and ba.`name` like CONCAT('%',#{keyword},'%')
+        </if>
+        order by bu.create_time
+        desc
+    </select>
+</mapper>

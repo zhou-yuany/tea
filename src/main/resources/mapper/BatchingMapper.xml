@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.BatchingMapper">
+
+    <select id="getBatchList" resultType="com.tea.server.entity.Batching">
+        select *
+        from batching
+        WHERE `status` = 1
+        <if test="keyword !=null and keyword!=''">
+            and `name` like CONCAT('%',#{keyword},'%') or brand like CONCAT('%',#{keyword},'%')
+        </if>
+        ORDER BY id desc
+    </select>
+</mapper>

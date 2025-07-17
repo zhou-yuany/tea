@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.CouponMapper">
+
+    <select id="pageCoupons" resultType="com.tea.server.entity.Coupon">
+        SELECT cu.*, shop.`name` as shopName from coupon cu
+        LEFT JOIN shop
+        ON cu.shop_id=shop.id
+        WHERE cu.`status`=1
+<!--        <if test="couponQuery.name !=null and couponQuery.name!=''">-->
+<!--            and cu.name like CONCAT('%',#{couponQuery.name},'%')-->
+<!--        </if>-->
+        <if test="couponQuery.type !=null and couponQuery.type!=''">
+            and cu.type = #{couponQuery.type}
+        </if>
+        <if test="couponQuery.begin!=null and couponQuery.begin!=''">
+            and cu.start_time >=#{couponQuery.begin}
+        </if>
+        <if test="couponQuery.end!=null and couponQuery.end!=''">
+            and cu.end_time &lt;= #{couponQuery.end}
+        </if>
+        order by
+        cu.id
+        desc
+    </select>
+</mapper>

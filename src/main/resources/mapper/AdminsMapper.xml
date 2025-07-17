@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.AdminsMapper">
+
+<!--    <select id="getList" resultType="com.tea.server.entity.Admins">-->
+<!--        select a.*, GROUP_CONCAT(b.`name`,CASE b.type-->
+<!--                                              WHEN 0 THEN '（茶饮小程序）'-->
+<!--                                              WHEN 1 THEN '（饿了么）'-->
+<!--                                              ELSE '（美团）' end) as shopName-->
+<!--        from admins a-->
+<!--                 inner join shop b on FIND_IN_SET(b.id, a.shop_id)-->
+<!--        where a.status = 1-->
+<!--        <if test="adminQuery.phone !=null and adminQuery.phone!=''">-->
+<!--            and `a.phone` like CONCAT('%',#{adminQuery.phone},'%')-->
+<!--        </if>-->
+<!--        group by a.id-->
+<!--        ORDER BY a.id desc-->
+<!--    </select>-->
+
+    <select id="getList" resultType="com.tea.server.entity.Admins">
+        select a.*, b.`name` as shopName
+        from admins a
+        inner join shop b on a.id=b.admin_id
+        where a.status = 1
+        <if test="adminQuery.phone !=null and adminQuery.phone!=''">
+            and a.`phone` like CONCAT('%',#{adminQuery.phone},'%')
+        </if>
+        group by a.id
+        ORDER BY a.id desc
+    </select>
+
+</mapper>

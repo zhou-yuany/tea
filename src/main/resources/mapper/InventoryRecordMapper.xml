@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.server.mapper.InventoryRecordMapper">
+    <select id="pageInventoryRecords" resultType="com.tea.server.entity.InventoryRecord">
+        select ir.*
+        from inventory_record ir
+        LEFT JOIN shop sh
+        ON ir.shop_id = sh.id
+        WHERE sh.id = #{shopId}
+        AND ir.status = 1
+        <if test="type != 0">
+            AND ir.type = #{type}
+        </if>
+        order by ir.id
+        desc
+
+    </select>
+
+</mapper>
