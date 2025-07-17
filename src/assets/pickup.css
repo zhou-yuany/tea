@@ -1,0 +1,71 @@
+.pickup_box{
+    padding-top: 0.33rem;
+}
+.ffan{
+    width: 0.85rem;
+    height: 0.5rem;
+    border-radius: 0.08rem;
+    font-size: 0.2rem;
+    text-align: center;
+    line-height: 0.5rem;
+    margin-left: auto;
+    margin-right: 0.35rem;
+}
+.pickupk{
+    width: 6.56rem;
+    height: 0.8rem;
+    border-radius: 0.16rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000000;
+    margin: auto;
+    margin-top: -0.16rem;
+    margin-bottom: 0.37rem;
+}
+.pickupk input{
+    width: 4.92rem;
+    height: 0.76rem;
+    border-radius: 0.16rem;
+    font-size: 0.32rem;
+    padding-left: 0.31rem;
+    line-height: 0.76rem;
+    text-align: left;
+}
+.pickupk button{
+    width: 1.64rem;
+    height: 0.8rem;
+    border-radius: 0.16rem;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.32rem;
+    padding: 0;
+}
+.numk{
+    width: 5.67rem;
+    margin: auto;
+}
+.numk li{
+    width: 1.25rem;
+    height: 0.9rem;
+    background: #D8D8D8;
+    font-size: 0.32rem;
+    text-align: center;
+    line-height: 0.9rem;
+    margin: 0 0.32rem 0.26rem;
+    float: left;
+}
+.numk li.zero{
+    width: 3.14rem;
+    height: 0.9rem;
+}
+.numk li.clearkk{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.numk li.clearkk img{
+    width: 0.36rem;
+    height: 0.36rem;
+    display: block;
+}

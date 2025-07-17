@@ -1,0 +1,1402 @@
+/* 竖屏时的样式 */
+@media screen and (orientation: portrait) {
+    /* 选项卡 */
+    .tabs{
+        width: 100%;
+        height: 1rem;
+        margin: auto;
+        display: flex;
+    }
+    .tab{
+        width: 1.62rem;
+        height: 1rem;
+        color: #3D3D3D;
+        background-color: #f8f8f8;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .tab.active{
+        color: #0256FF;
+        background-color: #FFFFFF;
+    }
+    .tab img{
+        width: 0.5rem;
+        height: 0.5rem;
+        display: block;
+    }
+    .tab p{
+        font-size: 0.26rem;
+        line-height: 0.36rem;
+    }
+    /* 内容 */
+    .con{
+        width: 100%;
+        margin: auto;
+    }
+    /* 商品 */
+    .con_boxas{
+        display: flex;
+        padding-top: 0.36rem;
+        overflow: hidden;
+    }
+    .good_tab{
+        width: 1.77rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0.12rem;
+        overflow-y: scroll;
+    }
+    .good_tab li{
+        width: 1.29rem;
+        border: 1px solid #D8D8D8;
+        font-size: 0.2rem;
+        text-align: center;
+        line-height: 0.28rem;
+        margin-bottom: 0.32rem;
+        border-radius: 0.08rem;
+        padding: 0.11rem 0;
+    }
+    .good_tab li.actiona{
+        background-color: #0256FF;
+        color: #FFFFFF;
+        border-color: #0256FF;
+    }
+    .content{
+        width: 82%;
+        display: none;
+        overflow-y: scroll;
+    }
+    .content.actiona{
+        display: block;
+    }
+    .itemk{
+        width: 2rem;
+        height: 1.63rem;
+        border-radius: 0.08rem;
+        border: 1px solid #BFBFBF;
+        text-align: center;
+        /* line-height: 1.63rem; */
+        font-size: 0.28rem;
+        margin-right: 0.24rem;
+        margin-bottom: 0.24rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        padding: 0 0.1rem;
+    }
+    .currenta{
+        border: 1px solid #0256FF;
+        background-color: #E5EEFF;
+    }
+    /* 商品详情 */
+    .backbtns{
+        width: 100%;
+        padding-left: 0.24rem;
+        padding-top: 0.09rem;
+        padding-bottom: 0.16rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .backbtns p{
+        font-size: 0.28rem;
+        margin-right: 0.5rem;
+    }
+    .backbtns button{
+        width: 0.85rem;
+        height: 0.5rem;
+        border: 1px solid #D8D8D8;
+        border-radius: 0.08rem;
+        font-size: 0.2rem;
+        margin-right: 0.21rem;
+    }
+    .xqks{
+        width: 94%;
+        margin: auto;
+        overflow-y: scroll;
+    }
+    .xqk_bt{
+    font-size: 0.24rem;
+    line-height: 0.34rem; 
+    margin-bottom: 0.22rem;
+    display: flex;
+    }
+    .lista{
+        width: 100%;
+        margin-bottom: 0.22rem;
+    }
+    .lista li{
+        width: 1.4rem;
+        height: 0.7rem;
+        border-radius: 0.08rem;
+        border: 1px solid #BFBFBF;
+        float: left;
+        margin-right: 0.24rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .lista li p{
+        font-size: 0.24rem;
+        margin-left: 0.1rem;
+    }
+    .lista li p:last-child{
+        font-size: 0.22rem;
+    }
+    .lista li.xz{
+        border: 1px solid #0256FF;
+        background-color: #E5EEFF;
+    }
+    .listb{
+        width: 100%;
+        margin-bottom: 0.22rem;
+    }
+    .listb li{
+        width: 1.4rem;
+        height: 0.7rem;
+        border-radius: 0.08rem;
+        border: 1px solid #BFBFBF;
+        float: left;
+        margin-right: 0.24rem;
+        font-size: 0.24rem;
+        padding-left: 0.12rem;
+        line-height: 0.7rem;
+    }
+    .listb li.xz{
+        border: 1px solid #0256FF;
+        background-color: #E5EEFF;
+    }
+    .annv{
+        width: 100%;
+        text-align: center;
+        margin-top: 0.54rem;
+    }
+    .annv button{
+        width: 1.3rem;
+        height: 0.5rem;
+        margin: auto;
+        border-radius: 0.08rem;
+        font-size: 0.2rem;
+    }
+    .hangd{
+        padding-left: 0.36rem;
+        padding-top: 0.4rem;
+    }
+    .hangd p{
+        font-size: 0.28rem;
+        line-height: 0.39rem;
+        margin-bottom: 0.11rem;
+    }
+    .hangd p:last-child{
+        font-size: 0.2rem;
+        line-height: 0.28rem;
+        margin-bottom: 0;
+    }
+    .pick{
+        width: 3rem;
+        height: 3rem;
+        margin: auto;
+    }
+    .pick img{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .tips{
+        width: 100%;
+        text-align: center;
+        font-size: 0.28rem;
+        line-height: 0.39rem;
+        margin-top: 0.45rem;
+    }
+    .hangg{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.84rem;
+    }
+    .hangg button{
+        width: 0.85rem;
+        height: 0.5rem;
+        border-radius: 0.08rem;
+        margin-right: 0.21rem;
+        font-size: 0.2rem;
+    }
+    .aginbtn{
+        width: 100%;
+        text-align: center;
+        margin-top: 0.77rem;
+    }
+    .aginbtn button{
+        width: 1.82rem;
+        height: 0.7rem;
+        border-radius: 0.08rem;
+        font-size: 0.28rem;
+    }
+    /* 订单 */
+    .con_boxa{
+        display: flex;
+        padding-top: 0.36rem;
+        overflow: hidden;
+    }
+    .good_tab li.actionb{
+        background-color: #0256FF;
+        color: #FFFFFF;
+        border-color: #0256FF;
+    }
+    .contentb{
+        width: 86%;
+        display: none;
+        overflow-y: scroll;
+    }
+    .contentb.actionb{
+        display: block;
+    }
+    .itemks{
+        width: 98%;
+        height: 1.2rem;
+        border-radius: 0.08rem;
+        border: 1px solid #BFBFBF;
+        margin-bottom: 0.24rem;
+        display: flex;
+        align-items: center;
+    }
+    .bq{
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        font-size: 0.28rem;
+        text-align: center;
+        line-height: 0.45rem;
+        margin-left: 0.21rem;
+        margin-right: 0.18rem;
+    }
+    .order_right{
+        width: 90%;
+        height: 100%;
+        padding-right: 0.19rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .hanga{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .number{
+        font-size: 0.28rem;
+        line-height: 0.39rem;
+    }
+    .hanga_r{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .hanga_r p{
+        font-size: 0.2rem;
+        line-height: 0.28rem;
+    }
+    .hangb{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.2rem;
+        line-height: 0.28rem;
+    }
+    .currentb{
+        border: 1px solid #0256FF;
+        background: rgba(224, 234, 255, 0.4);
+    }
+    /* 订单详情 */
+    .backbtn{
+        width: 100%;
+        padding-left: 0.24rem;
+        padding-top: 0.09rem;
+        padding-bottom: 0.16rem;
+    }
+    .backbtn button{
+        width: 0.85rem;
+        height: 0.5rem;
+        border: 1px solid #D8D8D8;
+        border-radius: 0.08rem;
+        font-size: 0.2rem;
+    }
+    .xqk{
+        width: 94%;
+        margin: auto;
+        border-radius: 0.08rem;
+        border: 1px solid #D8D8D8;
+        overflow-y: scroll;
+        position: relative;
+    }
+    .xq_title{
+        height: 0.61rem;
+        font-size: 0.26rem;
+        font-weight: 600;
+        line-height: 0.61rem;
+        padding-left: 0.175rem;
+    }
+    .table_top{
+        width: 100%;
+        height: 0.3rem;
+        margin: auto;
+        background: rgba(184, 218, 245, 0.2314);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.2rem;
+    }
+    .diva{
+        padding-left: 0.09rem;
+        width: 53%;
+    }
+    .divb{
+        width: 28%;
+    }
+    .divc{
+        width: 19%;
+    }
+    .xqlist{
+        overflow-y: scroll;
+    }
+    .xqlist li{
+        width: 100%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.16rem 0;
+    }
+    .zuo{
+        width: 53%;
+        padding-left: 0.12rem;
+    }
+    .xqname{
+        font-size: 0.22rem;
+        line-height: 0.31rem;
+        margin-bottom: 0.09rem;
+    }
+    .xqzf{
+        font-size: 0.18rem;
+        line-height: 0.25rem;
+        padding-left: 0.165rem;
+    }
+    .you{
+        width: 28%;
+        font-size: 0.22rem;
+    }
+    .zuiyou{
+        width: 19%;
+    }
+    .zuiyou button{
+        width: 1.3rem;
+        height: 0.57rem;
+        border-radius: 0.08rem;
+        font-size: 0.24rem;
+    }
+    /* 灰层制作中 */
+    .mask{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+    /* 流水 */
+    .searchk{
+        width: 100%;
+        height: 1.36rem;
+        margin: auto;
+        box-shadow: 0 0.11rem 0.09rem 0 rgba(25, 74, 142, 0.1076);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .searchk_l{
+        width: 88%;
+        height: 0.72rem;
+        border-radius: 0.4rem;
+        display: flex;
+        align-items: center;
+    }
+    .searchk_l img{
+        width: 0.19rem;
+        height: 0.19rem;
+        display: block;
+        margin: 0 0.3rem;
+    }
+    .searchk_l input{
+        width: 86%;
+        height: 100%;
+        font-size: 0.26rem;
+    }
+    .listico{
+        width: 0.4rem;
+        height: 0.4rem;
+        display: block;
+        margin-left: 0.2rem;
+    }
+    .turnover{
+        position: relative;
+    }
+    .income{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.26rem;
+        line-height: 0.8rem;
+        padding-left: 0.35rem;
+        padding-right: .35rem;
+    }
+    .tablek{
+        overflow-y: scroll;
+    }
+    /* 筛选 */
+    .screen{
+        width: 100%;
+        height: 3.05rem;
+        margin: auto;
+        position: relative;
+    }
+    .screen_bt{
+        font-size: 0.28rem;
+        line-height: 0.45rem;
+        padding-left: 0.4rem;
+        padding-top: 0.08rem;
+        padding-bottom: 0.15rem;
+    }
+    .datek{
+        display: flex;
+        align-items: center;
+        padding-left: 0.4rem;
+    }
+    .datek input{
+        width: 2.8rem;
+        height: 0.64rem;
+        border: 1px solid #D8D8D8;
+    }
+    .datek div{
+        margin: 0 0.24rem;
+    }
+    .demo-form-inline{
+        padding-left: 0.4rem;
+    }
+    .btnzu{
+        width: 100%;
+        height: 1rem;
+        margin: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+    }
+    .btnzu button{
+        width: 50%;
+        height: 100%;
+        font-size: 0.32rem;
+    }
+    .whiteks{
+        width: 6.32rem;
+        height: 5.4rem;
+        border-radius: 0.16rem;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -3.29rem;
+        margin-left: -3.16rem;
+        z-index: 100;
+    }
+    /* 原材料 */
+    .searchbtn{
+        width: 0.8rem;
+        height: 0.45rem;
+        border-radius: 0.3rem;
+        font-size: 0.22rem;
+        text-align: center;
+        line-height: 0.45rem;
+        margin-left: 0.07rem;
+    }
+    .zhanwei{
+        width: 100%;
+        height: 0.49rem;
+        margin: auto;
+    }
+    .editbtn{
+        padding: 0 0.15rem;
+    }
+    .addbtn{
+        width: 92%;
+        margin: auto;
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 0.2rem;
+        margin-top: -0.25rem;
+    }
+    .addbtn button{
+        width: 0.85rem;
+        height: 0.5rem;
+        border-radius: 0.08rem;
+        background-color: #4ECB70;
+        font-size: 0.2rem;
+        text-align: center;
+        line-height: 0.5rem;
+    }
+    /* 原材料新建/修改表单 */
+    .hangf{
+        width: 5.36rem;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.2rem;
+    }
+    .mings{
+        width: 1rem;
+        font-size: 0.28rem;
+        margin-left: 0.45rem;
+        margin-right: 0.24rem;
+    }
+    /* 配方 */
+    .hangc{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 0.35rem;
+    }
+    .ming{
+        font-size: 0.28rem;
+        margin-left: 0.45rem;
+        margin-right: 0.24rem;
+    }
+    .whitek{
+        width: 6.32rem;
+        /* height: 6.58rem; */
+        border-radius: 0.16rem;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -3.29rem;
+        margin-left: -3.16rem;
+        z-index: 100;
+        padding-bottom: 0.3rem;
+    }
+    .tc_title{
+        width: 100%;
+        height: 0.76rem;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.2rem;
+    }
+    .tc_title p{
+        font-size: 0.26rem;
+        padding-left: 0.2rem;
+    }
+    .tc_title img{
+        width: 0.28rem;
+        height: 0.28rem;
+        display: block;
+        margin-right: 0.2rem;
+    }
+    .pfname{
+        padding-left: 1.05rem;
+        font-size: 0.24rem;
+        margin-bottom: 0.47rem;
+    }
+    .pfbei{
+        padding-left: 1.05rem;
+        font-size: 0.24rem;
+        margin-bottom: 0.75rem;
+    }
+    .closebtn{
+        width: 100%;
+        height: 0.44rem;
+        margin: auto;
+        text-align: center;
+        margin-top: 0.48rem;
+    }
+    .closebtn button{
+        width: 1rem;
+        height: 0.44rem;
+        border-radius: 0.04rem;
+        border: 1px solid #666666;
+        font-size: 0.2rem;
+    }
+    .pfnames {
+        padding-left: 1.05rem;
+        font-size: 0.24rem;
+        margin-bottom: 0.1rem;
+    }
+    .pfnamess{
+        padding-left: 1.05rem;
+        font-size: 0.2rem;
+    }
+    .pfbeis{
+        padding-left: 1.05rem;
+        font-size: 0.2rem;
+        margin-bottom: 0.35rem;
+    }
+    .jiequ{
+        width: 100%;
+        height: 3rem;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    /* 物料消耗 */
+    .screens{
+        width: 100%;
+        height: 4.05rem;
+        margin: auto;
+        position: relative;
+    }
+    .screen_bts{
+        font-size: 0.28rem;
+        line-height: 0.45rem;
+        padding-left: 0.4rem;
+        padding-top: 0.18rem;
+        padding-bottom: 0.15rem;
+    }
+    .inputk{
+        padding-left: 0.4rem;
+    }
+}
+/* 横屏时的样式 */
+@media screen and (orientation: landscape) {
+    .xq_box{
+        display: flex;
+    }
+    /* 选项卡 */
+    .tabs{
+        width: 1rem;
+    }
+    .tab{
+        width: 1rem;
+        height: 1rem;
+        color: #3D3D3D;
+        background-color: #f8f8f8;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .tab.active{
+        color: #0256FF;
+        background-color: #FFFFFF;
+    }
+    .tab img{
+        width: 0.5rem;
+        height: 0.5rem;
+        display: block;
+    }
+    .tab p{
+        font-size: 0.2rem;
+        line-height: 0.36rem;
+    }
+    /* 内容 */
+    .con{
+        width: 90%;
+    }
+    /* 商品 */
+    .con_boxas{
+        overflow: hidden;
+        position: relative;
+    }
+    .good_tab{
+        display: flex;
+        align-items: center;
+        padding: 0.20rem 0;
+        overflow-x: scroll;
+        margin-left: 0.53rem;
+    }
+    .good_tab li{
+        border: 1px solid #D8D8D8;
+        font-size: 0.2rem;
+        text-align: center;
+        line-height: 0.28rem;
+        border-radius: 0.08rem;
+        padding: 0.11rem 0.22rem;
+        margin-right: 0.6rem;
+    }
+    .good_tab li.actiona{
+        background-color: #0256FF;
+        color: #FFFFFF;
+        border-color: #0256FF;
+    }
+    .content{
+        width: 92%;
+        display: none;
+        overflow-y: scroll;
+        margin-left: 0.53rem;
+    }
+    .content.actiona{
+        display: block;
+    }
+    .itemk{
+        width: 1.68rem;
+        height: 1.13rem;
+        border-radius: 0.08rem;
+        border: 1px solid #BFBFBF;
+        text-align: center;
+        /* line-height: 1.63rem; */
+        font-size: 0.22rem;
+        margin-right: 0.24rem;
+        margin-bottom: 0.24rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        padding: 0 0.1rem;
+    }
+    .itemk:nth-child(4n){
+        margin-right: 0;
+    }
+    .currenta{
+        border: 1px solid #0256FF;
+        background-color: #E5EEFF;
+    }
+    .leftico{
+        width: 0.34rem;
+        height: 0.63rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+    }
+    .rightico{
+        width: 0.34rem;
+        height: 0.63rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+    }
+    /* 商品详情 */
+    .backbtns{
+        width: 100%;
+        padding-left: 0.24rem;
+        padding-top: 0.09rem;
+        padding-bottom: 0.16rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .backbtns p{
+        font-size: 0.22rem;
+        margin-right: 0.5rem;
+    }
+    .backbtns button{
+        width: 0.85rem;
+        height: 0.5rem;
+        border: 1px solid #D8D8D8;
+        border-radius: 0.08rem;
+        font-size: 0.2rem;
+        margin-right: 0.21rem;
+    }
+    .xqks{
+        width: 94%;
+        margin: auto;
+        overflow-y: scroll;
+    }
+    .xqk_bt{
+        width: 1.4rem;
+        font-size: 0.2rem;
+        line-height: 0.34rem; 
+        /* margin-bottom: 0.12rem; */
+        display: flex;
+    }
+    .lista{
+        width: 82%;
+        /* margin-bottom: 0.22rem; */
+    }
+    .lista li{
+        width: 1.3rem;
+        height: 0.6rem;
+        border-radius: 0.08rem;
+        border: 1px solid #BFBFBF;
+        float: left;
+        margin-right: 0.24rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 0.2rem;
+    }
+    .lista li p{
+        font-size: 0.2rem;
+        margin-left: 0.1rem;
+    }
+    .lista li p:last-child{
+        font-size: 0.22rem;
+    }
+    .lista li.xz{
+        border: 1px solid #0256FF;
+        background-color: #E5EEFF;
+    }
+    .listb{
+        width: 82%;
+        /* margin-bottom: 0.22rem; */
+    }
+    .listb li{
+        width: 1.3rem;
+        height: 0.6rem;
+        border-radius: 0.08rem;
+        border: 1px solid #BFBFBF;
+        float: left;
+        margin-right: 0.24rem;
+        font-size: 0.20rem;
+        padding-left: 0.12rem;
+        line-height: 0.6rem;
+        margin-bottom: 0.2rem;
+    }
+    .listb li.xz{
+        border: 1px solid #0256FF;
+        background-color: #E5EEFF;
+    }
+    .annv{
+        width: 100%;
+        text-align: center;
+        /* margin-top: 0.54rem; */
+    }
+    .annv button{
+        width: 1.3rem;
+        height: 0.5rem;
+        margin: auto;
+        border-radius: 0.08rem;
+        font-size: 0.2rem;
+    }
+    .hangd{
+        padding-left: 0.36rem;
+        padding-top: 0.4rem;
+    }
+    .hangd p{
+        font-size: 0.28rem;
+        line-height: 0.39rem;
+        margin-bottom: 0.11rem;
+    }
+    .hangd p:last-child{
+        font-size: 0.2rem;
+        line-height: 0.28rem;
+        margin-bottom: 0;
+    }
+    .pick{
+        width: 3rem;
+        height: 3rem;
+        margin: auto;
+    }
+    .pick img{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .tips{
+        width: 100%;
+        text-align: center;
+        font-size: 0.28rem;
+        line-height: 0.39rem;
+        margin-top: 0.45rem;
+    }
+    .hangg{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.84rem;
+    }
+    .hangg button{
+        width: 0.85rem;
+        height: 0.5rem;
+        border-radius: 0.08rem;
+        margin-right: 0.21rem;
+        font-size: 0.2rem;
+    }
+    .aginbtn{
+        width: 100%;
+        text-align: center;
+        margin-top: 0.77rem;
+    }
+    .aginbtn button{
+        width: 1.82rem;
+        height: 0.7rem;
+        border-radius: 0.08rem;
+        font-size: 0.28rem;
+    }
+    /* 订单 */
+    .con_boxa{
+        display: flex;
+        padding-top: 0.36rem;
+        overflow: hidden;
+    }
+    .good_tab li.actionb{
+        background-color: #0256FF;
+        color: #FFFFFF;
+        border-color: #0256FF;
+    }
+    .contentb{
+        width: 86%;
+        display: none;
+        overflow-y: scroll;
+    }
+    .contentb.actionb{
+        display: block;
+    }
+    .itemks{
+        width: 98%;
+        height: 1.2rem;
+        border-radius: 0.08rem;
+        border: 1px solid #BFBFBF;
+        margin-bottom: 0.24rem;
+        display: flex;
+        align-items: center;
+    }
+    .bq{
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        font-size: 0.28rem;
+        text-align: center;
+        line-height: 0.45rem;
+        margin-left: 0.21rem;
+        margin-right: 0.18rem;
+    }
+    .order_right{
+        width: 90%;
+        height: 100%;
+        padding-right: 0.19rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .hanga{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .number{
+        font-size: 0.28rem;
+        line-height: 0.39rem;
+    }
+    .hanga_r{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .hanga_r p{
+        font-size: 0.2rem;
+        line-height: 0.28rem;
+    }
+    .hangb{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.2rem;
+        line-height: 0.28rem;
+    }
+    .currentb{
+        border: 1px solid #0256FF;
+        background: rgba(224, 234, 255, 0.4);
+    }
+    /* 订单详情 */
+    .backbtn{
+        width: 100%;
+        padding-left: 0.24rem;
+        padding-top: 0.09rem;
+        padding-bottom: 0.16rem;
+    }
+    .backbtn button{
+        width: 0.85rem;
+        height: 0.5rem;
+        border: 1px solid #D8D8D8;
+        border-radius: 0.08rem;
+        font-size: 0.2rem;
+    }
+    .xqk{
+        width: 94%;
+        margin: auto;
+        border-radius: 0.08rem;
+        border: 1px solid #D8D8D8;
+        overflow-y: scroll;
+        position: relative;
+    }
+    .xq_title{
+        height: 0.61rem;
+        font-size: 0.26rem;
+        font-weight: 600;
+        line-height: 0.61rem;
+        padding-left: 0.175rem;
+    }
+    .table_top{
+        width: 100%;
+        height: 0.3rem;
+        margin: auto;
+        background: rgba(184, 218, 245, 0.2314);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.2rem;
+    }
+    .diva{
+        padding-left: 0.09rem;
+        width: 53%;
+    }
+    .divb{
+        width: 28%;
+    }
+    .divc{
+        width: 19%;
+    }
+    .xqlist{
+        overflow-y: scroll;
+    }
+    .xqlist li{
+        width: 100%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.16rem 0;
+    }
+    .zuo{
+        width: 53%;
+        padding-left: 0.12rem;
+    }
+    .xqname{
+        font-size: 0.22rem;
+        line-height: 0.31rem;
+        margin-bottom: 0.09rem;
+    }
+    .xqzf{
+        font-size: 0.18rem;
+        line-height: 0.25rem;
+        padding-left: 0.165rem;
+    }
+    .you{
+        width: 28%;
+        font-size: 0.22rem;
+    }
+    .zuiyou{
+        width: 19%;
+    }
+    .zuiyou button{
+        width: 1.3rem;
+        height: 0.57rem;
+        border-radius: 0.08rem;
+        font-size: 0.24rem;
+    }
+    /* 灰层制作中 */
+    .mask{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+    /* 流水 */
+    .searchk{
+        width: 100%;
+        height: 0.8rem;
+        box-shadow: 0 0.11rem 0.09rem 0 rgba(25, 74, 142, 0.1076);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .searchk_l{
+        width: 4rem;
+        height: 0.42rem;
+        border-radius: 0.4rem;
+        display: flex;
+        align-items: center;
+    }
+    .searchk_l img{
+        width: 0.19rem;
+        height: 0.19rem;
+        display: block;
+        margin: 0 0.17rem;
+    }
+    .searchk_l input{
+        width: 82%;
+        height: 100%;
+        font-size: 0.2rem;
+    }
+    .listico{
+        width: 0.4rem;
+        height: 0.4rem;
+        display: block;
+        margin-left: 0.2rem;
+    }
+    .turnover{
+        position: relative;
+    }
+    .income{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.26rem;
+        line-height: 0.8rem;
+        padding-left: 0.35rem;
+        padding-right: .35rem;
+    }
+    .tablek{
+        overflow-y: scroll;
+    }
+    /* 筛选 */
+    .screen{
+        width: 100%;
+        height: 3.05rem;
+        margin: auto;
+        position: relative;
+    }
+    .screen_bt{
+        font-size: 0.28rem;
+        line-height: 0.45rem;
+        padding-left: 0.3rem;
+        padding-top: 0.08rem;
+        padding-bottom: 0.15rem;
+    }
+    .datek{
+        display: flex;
+        align-items: center;
+        padding-left: 0.3rem;
+    }
+    .datek input{
+        width: 2.8rem;
+        height: 0.64rem;
+        border: 1px solid #D8D8D8;
+    }
+    .datek div{
+        margin: 0 0.24rem;
+    }
+    .demo-form-inline{
+        padding-left: 0.3rem;
+    }
+    .btnzu{
+        width: 100%;
+        height: 1rem;
+        margin: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+    }
+    .btnzu button{
+        width: 50%;
+        height: 100%;
+        font-size: 0.32rem;
+    }
+    .whiteks{
+        width: 6.32rem;
+        height: 5.4rem;
+        border-radius: 0.16rem;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -3.29rem;
+        margin-left: -3.16rem;
+        z-index: 100;
+    }
+    /* 原材料 */
+    .searchbtn{
+        width: 0.8rem;
+        height: 0.45rem;
+        border-radius: 0.3rem;
+        font-size: 0.22rem;
+        text-align: center;
+        line-height: 0.45rem;
+        margin-left: 0.07rem;
+    }
+    .zhanwei{
+        width: 100%;
+        height: 0.49rem;
+        margin: auto;
+    }
+    .editbtn{
+        padding: 0 0.15rem;
+    }
+    .addbtn{
+        width: 92%;
+        margin: auto;
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 0.2rem;
+        margin-top: -0.25rem;
+    }
+    .addbtn button{
+        width: 0.80rem;
+        height: 0.45rem;
+        border-radius: 0.08rem;
+        background-color: #4ECB70;
+        font-size: 0.2rem;
+        text-align: center;
+        line-height: 0.45rem;
+    }
+    /* 原材料新建/修改表单 */
+    .hangf{
+        width: 5.36rem;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.2rem;
+    }
+    .mings{
+        width: 1rem;
+        font-size: 0.28rem;
+        margin-left: 0.45rem;
+        margin-right: 0.24rem;
+    }
+    /* 配方 */
+    .hangc{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 0.35rem;
+    }
+    .ming{
+        font-size: 0.28rem;
+        margin-left: 0.45rem;
+        margin-right: 0.24rem;
+    }
+    .whitek{
+        width: 6.32rem;
+        /* height: 6.58rem; */
+        border-radius: 0.16rem;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -3.29rem;
+        margin-left: -3.16rem;
+        z-index: 100;
+        padding-bottom: 0.3rem;
+    }
+    .tc_title{
+        width: 100%;
+        height: 0.76rem;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.2rem;
+    }
+    .tc_title p{
+        font-size: 0.26rem;
+        padding-left: 0.2rem;
+    }
+    .tc_title img{
+        width: 0.28rem;
+        height: 0.28rem;
+        display: block;
+        margin-right: 0.2rem;
+    }
+    .pfname{
+        padding-left: 1.05rem;
+        font-size: 0.24rem;
+        margin-bottom: 0.47rem;
+    }
+    .pfbei{
+        padding-left: 1.05rem;
+        font-size: 0.24rem;
+        margin-bottom: 0.75rem;
+    }
+    .closebtn{
+        width: 100%;
+        height: 0.44rem;
+        margin: auto;
+        text-align: center;
+        margin-top: 0.48rem;
+    }
+    .closebtn button{
+        width: 1rem;
+        height: 0.44rem;
+        border-radius: 0.04rem;
+        border: 1px solid #666666;
+        font-size: 0.2rem;
+    }
+    .pfnames {
+        padding-left: 1.05rem;
+        font-size: 0.24rem;
+        margin-bottom: 0.1rem;
+    }
+    .pfnamess{
+        padding-left: 1.05rem;
+        font-size: 0.2rem;
+    }
+    .pfbeis{
+        padding-left: 1.05rem;
+        font-size: 0.2rem;
+        margin-bottom: 0.35rem;
+    }
+    .jiequ{
+        width: 100%;
+        height: 3rem;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    /* 物料消耗 */
+    .screens{
+        width: 6.75rem;
+        height: 4.05rem;
+        margin-left: auto;
+        position: relative;
+    }
+    .screen_bts{
+        font-size: 0.28rem;
+        line-height: 0.45rem;
+        padding-left: 0.3rem;
+        padding-top: 0.18rem;
+        padding-bottom: 0.15rem;
+    }
+    .inputk{
+        padding-left: 0.3rem;
+    }
+    /* 商品横屏 */
+    .scroll-container {
+        display: flex;
+        flex-flow:  column wrap;
+        height: 2.74rem;
+        /* height: 4.11rem; */
+        list-style-type: none;
+        overflow-x: scroll;
+        padding: 0 0.53rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+    .list-item {
+        width: 1.68rem;
+        height: 1.13rem;
+        border-radius: 0.08rem;
+        border: 1px solid #BFBFBF;
+        text-align: center;
+        font-size: 0.22rem;
+        margin-right: 0.24rem; /* 列表项之间的间隔 */
+        margin-bottom: 0.24rem;
+        padding: 0 0.1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+    }
+}
