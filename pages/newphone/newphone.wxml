@@ -1,0 +1,24 @@
+<!--pages/newphone/newphone.wxml-->
+<view class="box">
+  <view class="white_bg telk">
+    <view class="hang border">
+      <text>手机号</text>
+      <input placeholder='请输入新手机号' bindinput='getPhoneValue' value='{{phone}}' />
+      <button class='codeBtn orange_border orange white_bg' bindtap='getVerificationCode' disabled='{{disabled}}'>发送验证码</button>
+    </view>
+    <view class="hang">
+      <text>验证码</text>
+      <input placeholder-class="placeholder_color" placeholder='请输验证码' bindinput='getCodeValue' value='{{code}}' style='width:75%;' />
+    </view>
+  </view>
+  <button class='changeBtn gradual_bg white' bindtap='save'>验证</button>
+</view>
+<!-- 提示窗 -->
+<view class="grayc" wx:if="{{hidden}}">
+  <view class="pingjiak">
+    <image src="{{urlPrefix}}/static/success.png"></image>
+    <view class="white success">验证成功</view>
+    <view class="pingyu">已经成功更换手机号码</view>
+    <button type="button" class="gradual_bg white" bindtap="goSure">确定</button>
+  </view>
+</view>

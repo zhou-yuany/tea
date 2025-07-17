@@ -1,0 +1,22 @@
+1、login  授权页
+2、home  首页
+3、evaluatepage   评价承运人
+4、orderlist  订单
+5、account  账目
+6、my  我的
+7、index  加载组件页面
+8、vehicle  托运车辆
+9、crv  上门提车
+10、wait  询价中  已报价
+11、order_info  立即下单
+12、order_xq  订单详情 (待提车/运输中/已完成)
+13、car_information  车辆信息 (待提车/运输中/已完成)
+14、querypoint 查询位置
+15、old_phone  换绑手机号
+16、newphone 新手机号
+17、carmodel  品牌
+18、carseries  车系
+19、cartype  车型
+20、contract  签署合同
+21、report  举报
+22、tips  登录提示

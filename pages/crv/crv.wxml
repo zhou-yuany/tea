@@ -1,0 +1,17 @@
+<!--pages/crv/crv.wxml-->
+<view class="box">
+  <view class="white_bg whether">
+    <text>是否需要上门提车</text>
+    <switch checked="{{isChecked}}" bindchange="changeSwitch"></switch>
+  </view>
+  <view class="addressk white_bg" wx:if="{{isChecked}}">
+    <!-- <picker mode="region" bindchange="bindRegionChange" value="{{detailed}}" custom-item="{{customItem}}" name="detailed"> -->
+      <view class="picker gray {{clas}}" >{{start}}</view>
+    <!-- </picker> -->
+    <input type="text" bindtap="goLocation" value="{{detail}}" placeholder="请输入详细地址" placeholder-class="placeholder_color" disabled="disabled"/>
+  </view>
+  <view class="map white_bg" wx:if="{{isChecked}}" bindtap="goLocation" >
+    <map id="mapId" latitude="{{lat}}" markers="{{markers}}" longitude="{{lon}}"></map>
+  </view>
+  <button type="button" class="gradual_bg white sure" bindtap="goLatestPage">确定</button>
+</view>

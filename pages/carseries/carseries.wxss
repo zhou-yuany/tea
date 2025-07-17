@@ -1,0 +1,51 @@
+/* pages/carseries/carseries.wxss */
+.searchk{
+  width: 100%;
+  height: 161rpx;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchfor{
+  width: 640rpx;
+  height: 69rpx;
+  border-radius: 35rpx;
+  background-color: #F8F8F8;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.searchfor image{
+  width: 25rpx;
+  height: 25rpx;
+  margin-left: 24rpx;
+}
+.searchfor input{
+  width: 79%;
+  padding-left: 15rpx;
+  font-size: 30rpx;
+}
+.closed{
+  width: 38rpx!important;
+  height: 38rpx!important;
+  margin-right: 15rpx!important;
+}
+.brand{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-size: 30rpx;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+}
+.item{
+  line-height: 88rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+.item text{
+  font-size: 28rpx;
+}

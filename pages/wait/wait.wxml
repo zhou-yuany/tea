@@ -1,0 +1,148 @@
+<!--pages/wait/wait.wxml-->
+<view class="box">
+  <!-- 订单 -->
+  <view class="white_bg groupa">
+    <view class="hang">
+      <text>订单状态</text>
+      <!-- 询价单 -->
+      <!-- <text class="gray">询价单</text> -->
+      <!-- 已报价 -->
+      <text class="gray">{{orderStatus[order.orderState]}}</text>
+    </view>
+    <view class="hang">
+      <text>订单编号</text>
+      <text class="gray">{{order.orderId}}</text>
+    </view>
+  </view>
+  <view wx:for-items="{{order.orderCars}}" wx:key="index">
+    <view class="white_bg groupa">
+      <!-- 上门提车 -->
+      <view class="title border">{{index+1}}·详细信息</view>
+      <view class="content border">
+        <view class="hanga">
+          <text>发车时间</text>
+          <text class="gray">{{order.startTime}}</text>
+        </view>
+        <view class="hanga">
+          <text>始发地</text>
+          <text class="gray">{{order.startProv}}{{order.startCity}}{{order.statrtArea}}</text>
+        </view>
+        <view class="hanga">
+          <text>目的地</text>
+          <text class="gray">{{order.destProv}}{{order.destCity}}{{order.destArea}}</text>
+        </view>
+        <view class="hanga">
+          <text>数量</text>
+          <text class="gray">{{item.count}}</text>
+        </view>
+        <view class="hangb">
+          <text style="line-height: 80rpx;">车辆信息</text>
+          <view class="cartype gray">
+            <text>{{models[item.brand]}}{{series[item.size]}}</text>
+            <text>{{details[item.detail]}}</text>
+            <!-- <text>（中大型车）</text> -->
+          </view>
+        </view>
+      </view>
+      <view class="pricek" style="padding-bottom: 0;">
+        <text>上门提车价格</text>
+        <!-- 询价单 -->
+        <text class="gray price" wx:if="{{djPrice == -1 && order.needJc == 1}}" >等待报价</text>
+        <!-- 已报价 -->
+        <text class="red price" wx:if="{{order.needJc == 2}}" >￥0</text>
+        <text class="red price" wx:if="{{djPrice != -1 && order.needJc == 1}}" >￥{{djPrice * item.count}}</text>
+      </view>
+      <!-- 干线运价 -->
+      <view class="pricek" style="padding-top: 0;">
+        <text>运输价格</text>
+        <!-- 询价单 -->
+        <text class="gray price" wx:if="{{linePrice == -1}}" >等待报价</text>
+        <!-- 已报价 -->
+        <text class="red price" wx:if="{{linePrice != -1}}" >￥{{linePrice * item.count}}</text>
+      </view>
+    </view>
+    
+    <!-- <view class="white_bg groupa">
+      <view class="title border">{{index+1}}·干线运价</view>
+      <view class="content border">
+        <view class="hanga">
+          <text>发车时间</text>
+          <text class="gray">{{order.startTime}}</text>
+        </view>
+        <view class="hanga">
+          <text>始发地</text>
+          <text class="gray">{{order.startProv}}{{order.startCity}}{{order.statrtArea}}</text>
+        </view>
+        <view class="hanga">
+          <text>目的地</text>
+          <text class="gray">{{order.destProv}}{{order.destCity}}{{order.destArea}}</text>
+        </view>
+        <view class="hanga">
+          <text>数量</text>
+          <text class="gray">{{item.count}}</text>
+        </view>
+        <view class="hangb">
+          <text style="line-height: 80rpx;">车辆信息</text>
+          <view class="cartype gray">
+            <text>{{models[item.brand]}}{{series[item.size]}}</text>
+            <text>{{details[item.detail]}}</text> -->
+            <!-- <text>（中大型车）</text> -->
+          <!-- </view>
+        </view>
+      </view>
+      <view class="pricek">
+        <text>运输价格</text> -->
+        <!-- 询价单 -->
+        <!-- <text class="gray price" wx:if="{{linePrice == -1}}" >等待报价</text> -->
+        <!-- 已报价 -->
+        <!-- <text class="red price" wx:if="{{linePrice != -1}}" >￥{{linePrice * item.count}}</text>
+      </view>
+    </view> -->
+    
+  </view>
+  <!-- 备注 -->
+  <view class="white_bg groupa" wx:if="{{order.remarks}}">
+      <view class="title border" style="position: relative;">备注<image src="../../static/edit.png" class="bianji" wx:if="{{orderStatus[order.orderState] == '已报价'}}" catchtap="editRemarks"></image></view>
+      <view class="content">
+        <view class="hangc">
+          <textarea disabled="{{remarksFlag}}" bindinput="bindRemarks" class="gray" value="{{remarks}}"></textarea>
+        </view>
+      </view>
+    </view>
+  <view wx:if="{{userType == 1}}">
+    <!-- 客户端显示 -->
+    <view style="width: 100%;height: 141rpx;margin: auto;"></view>
+    <!-- 客户端底部 -->
+    <view class="white_bg footer">
+      <!-- 已报价 -->
+      <button type="button" class="gradual_bg white btn" bindtap="goInfo" wx:if="{{order.orderState == 20}}">立即下单</button>
+      <view class="allpricek">
+        <text>总报价</text>
+        <!-- 询价单 -->
+        <text class="gray allprice" wx:if="{{order.orderState < 20}}">等待报价</text>
+        <!-- 已报价 -->
+        <text class="red allprice" wx:if="{{order.orderState >= 20}}">￥{{order.totalPrice}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{userType == 2 && order.orderState < 20}}" style="height: 120rpx;width: 100%;margin: auto;"></view>
+  <view wx:if="{{userType == 2}}">
+    <!-- 合伙人底部 -->
+    <view class="white_bg footer">
+      <view class="allpricek">
+        <text>总报价</text>
+        <text class="gray allprice" wx:if="{{order.orderState < 20}}">等待报价</text>
+        <!-- 已报价 -->
+        <text class="red allprice" wx:if="{{order.orderState >= 20}}">￥{{order.totalPrice}}</text>
+      </view>
+    </view>
+    <!-- 已报价 -->
+    <view style="width: 100%;height: 138rpx;margin: auto;" wx:if="{{order.orderState == 20}}"></view>
+    <!-- 已报价 -->
+    <view class="bottoms white_bg" wx:if="{{order.orderState == 20}}">
+      <button type="button" class="white_bg orange orange_border btn" style="margin-left: 0;" bindtap="goReport">低价举报</button>
+      <button type="button" class="gradual_bg white btn" bindtap="goInfo" style="margin-left: 10rpx;">立即下单</button>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,46 @@
+<!--pages/car_information/car_information.wxml-->
+<view class="box">
+  <view class="groupa white_bg">
+    <view class="headtop border">
+      <image src="{{urlPrefix}}/static/icon.png"></image>
+      <text>基本信息</text>
+    </view>
+    <view class="footbottom">
+      <view class="hang">
+        <text>{{a1}}</text>
+        <text>{{a2}}</text>
+      </view>
+      <view class="gray">
+        <text>{{a4}}</text>
+        <text>{{a3}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 订单状态：运输中 -->
+  <view class="groupa white_bg" wx:for-items="{{carErrors}}" wx:for-index="errorIndex">
+    <view class="hanga" wx:if="{{item.carImages.length > 0}}">
+      <view class="leftp">
+        <image src="{{urlPrefix}}/static/danger.png"></image>
+        <text>异常报备·{{imageTypeName[item.userType]}}</text>
+      </view>
+      <text class="gray">{{item.name}}  {{item.phone}} </text>
+    </view>
+    <view class="piczu" wx:if="{{item.carImages.length > 0}}">
+      <image wx:for-items="{{item.carImages}}" wx:for-item="image" src="{{urlPrefix}}/wechat/download?path={{image}}" 
+        data-image="{{image}}" data-index="{{errorIndex}}" bindtap="previewImage"></image>
+    </view>
+  </view>
+  <!-- 订单状态：运输中 -->
+  <!-- <view class="groupa white_bg">
+    <view class="hanga">
+      <view class="leftp">
+        <image src="{{urlPrefix}}/static/danger.png"></image>
+        <text>异常报备·承运</text>
+      </view>
+      <text class="gray">王*  151****3322 </text>
+    </view>
+    <view class="piczu">
+      <image wx:for="{{piclist}}" src="{{item}}" data-index="{{index}}" bindtap="previewImages"></image>
+    </view>
+  </view> -->
+</view>

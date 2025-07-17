@@ -1,0 +1,111 @@
+/* pages/evaluatepage/evaluatepage.wxss */
+page{
+  background-color: #ffffff;
+}
+.box{
+  padding-top: 4rpx;
+}
+.content_cls {
+  margin: auto;
+  padding-left: 41rpx;
+  padding-right: 40rpx;
+}
+.title{
+  font-size: 30rpx;
+  line-height: 72rpx;
+}
+.cross_column {
+  width: 100%;
+  height: 94rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.imagecls {
+  width: 34rpx;
+  height: 34rpx;
+  margin: 0 10rpx;
+}
+textarea{
+  width: 644rpx;
+  height: 410rpx;
+  margin: auto;
+  background-color: #f4f4f4;
+  border: 1rpx solid #ECECEC;
+  padding-left: 26rpx;
+  border-radius: 18rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  padding-top: 30rpx;
+  margin-top: 40rpx;
+  margin-bottom: 78rpx;
+}
+.but_style {
+  width: 650rpx;
+  height: 84rpx;
+  border-radius: 40rpx;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 84rpx;
+}
+/* 评价弹窗 */
+.pingjiak{
+  width: 552rpx;
+  height: 622rpx;
+  margin: auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 250rpx;
+}
+.pingjiak image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.success{
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 77rpx;
+  left: 0;
+  right: 0;
+  font-size: 43rpx;
+  text-align: center;
+}
+.pingyu{
+  width: 100%;
+  margin: auto;
+  font-size: 30rpx;
+  text-align: center;
+  position: absolute;
+  bottom: 236rpx;
+  left: 0;
+  right: 0;
+}
+.pingjiak button{
+  width: 419rpx;
+  height: 73rpx;
+  border-radius: 37rpx;
+  font-size: 28rpx;
+  line-height: 73rpx;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  bottom: 37rpx;
+  left: 0;
+  right: 0;
+}
+
+.stras{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.stras image{
+  width: 34rpx;
+  height: 34rpx;
+  margin-left: 19rpx;
+}

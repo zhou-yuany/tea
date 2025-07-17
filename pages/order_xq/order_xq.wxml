@@ -1,0 +1,143 @@
+<!--pages/order_xq/order_xq.wxml-->
+<view class="box">
+  <!-- 提车人信息（订单状态：待提车） -->
+  <view class="white_bg groupa" wx:for-items="{{order.djs}}" wx:key="index">
+    <view class="hangc">
+      <text>提车人·{{index+1}}</text>
+      <text class="gray">{{item.name}}</text>
+    </view>
+    <view class="hangc">
+      <text>联系电话</text>
+      <text class="gray">{{item.phone}}</text>
+    </view>
+  </view>
+  <!-- 订单 -->
+  <view class="white_bg groupa">
+    <view class="content border">
+      <view class="hanga">
+        <text>订单状态</text>
+        <text class="gray" wx:if="{{order.orderState == 30}}">已下单</text>
+        <text class="gray" wx:if="{{order.orderState >= 40 && order.orderState < 80}}">运输中</text>
+        <text class="gray" wx:if="{{order.orderState == 80}}">已到达</text>
+        <text class="gray" wx:if="{{order.orderState == 90}}">已完成</text><!-- 订单状态：已完成 -->
+      </view>
+      <view class="hanga">
+        <text>订单编号</text>
+        <text class="gray">{{order.orderId}}</text>
+      </view>
+      <view class="hanga">
+        <text>发车时间</text>
+        <text class="gray">{{order.startTime}}</text>
+      </view>
+      <view class="hanga">
+        <text>始发地</text>
+        <text class="gray">{{order.startProv}}{{order.startCity}}{{order.statrtArea}}</text>
+      </view>
+      <view class="hanga">
+        <text>目的地</text>
+        <text class="gray">{{order.destProv}}{{order.destCity}}{{order.destArea}}</text>
+      </view>
+      <view class="hanga">
+        <text>数量</text>
+        <text class="gray">{{order.countsCar}}</text>
+      </view>
+      <view class="hangb">
+        <view class="line"><text>上门提车价格</text><text class="red">￥{{order.djPrice}}</text></view>
+        <view class="line"><text>运输价格</text><text class="red">￥{{order.linePrice}}</text></view>
+      </view>
+    </view>
+    <view class="pricek">
+      <text class="orange" style="font-size: 26rpx;margin-right: 18rpx;" wx:if="{{userType == 2 && order.orderState > 30}}">*预计收益￥{{order.addPrice * order.countsCar || 0}}</text><!-- 合伙人显示预计收益 -->
+      <text wx:if="{{order.orderState < 90}}">待支付</text>
+      <text wx:if="{{order.orderState == 90}}">已支付</text><!-- 订单状态：已完成 --><!-- 合伙人订单状态为运输中和已完成 -->
+      <text class="red price">￥{{order.totalPrice}}</text>
+    </view>
+  </view>
+  <!-- 收货人信息 -->
+  <view class="white_bg groupa">
+    <view class="hangc">
+      <text>收货人</text>
+      <text class="gray">{{order.receiverName}}</text>
+    </view>
+    <view class="hangc">
+      <text>联系电话</text>
+      <text class="gray">{{order.receiverPhone}}</text>
+    </view>
+    <view class="hangc">
+      <text>备注</text>
+      <text class="gray">{{order.remarks}}</text>
+    </view>
+    <!-- <view class="hangc">
+      <text>身份证号码</text>
+      <text class="gray">{{order.receiverCard || '空'}}</text>
+    </view> -->
+  </view>
+  <!-- 车辆信息 -->
+  <view class="white_bg groupa">
+    <view class="firstgroup border" bindtap="goCarxq" data-id="{{item.id}}" data-index="{{index+1}}" wx:for-items="{{order.orderCarAll}}" wx:key="index">
+      <view class="hangd">
+        <image src="{{urlPrefix}}/static/icon.png"></image>
+        <text>车辆信息·{{index+1}}</text>
+      </view>
+      <view class="xinxi">
+        <view class="flex gray">
+          <text>{{models[item.brand]}}{{series[item.size]}}</text>
+          <text>{{details[item.detail]}}</text>
+          <text>{{item.carNumber}}   {{colors[item.color]}}</text>
+        </view>
+        <text class="gray">上传验车照片  ></text>
+      </view>
+    </view>
+
+    <!-- <view class="firstgroup" bindtap="goCarxq">
+      <view class="hangd">
+        <image src="{{urlPrefix}}/static/icon.png"></image>
+        <text>车辆信息·2</text>
+      </view>
+      <view class="xinxi">
+        <view class="flex gray">
+          <text>捷豹XFL202款XKL2.0</text>
+          <text>P200两驱风华版（中大型车）</text>
+          <text>110510   白色</text>
+        </view>
+        <text class="gray">></text>
+      </view>
+    </view> -->
+  </view>
+  <!-- 客户端显示查看合同 -->
+  <view class="white_bg xq" bindtap="goLook" wx:if="{{userType != 2}}">
+    <view class="xq_left">
+      <image src="{{urlPrefix}}/static/contract.png"></image>
+      <text>查看合同详情</text>
+    </view>
+    <text class="gray arrow">></text>
+  </view>
+  <!-- 查询位置（订单状态：运输中） -->
+  <view class="white_bg searchk" bindtap="goQuery" wx:if="{{order.orderState > 45 && order.orderState < 90}}">
+    <button type="button" class="gradual_bg white">
+      <image src="{{urlPrefix}}/static/location.png"></image>
+      <text>查询位置</text>
+    </button>
+  </view>
+  <!-- 评价（订单状态：已完成  客户端显示） -->
+  <!-- 待评价 -->
+  <view class="white_bg searchk" bindtap="goPingjia" wx:if="{{order.orderState == 90 && !order.evaluation}}">
+    <button type="button" class="gradual_bg white">
+      <text>评价承运人</text>
+    </button>
+  </view>
+  <!-- 已评价 -->
+  <view class="white_bg appraise" wx:if="{{order.orderState == 90 && order.evaluation}}">
+    <view class="border appraise_top">
+      <view class="leftpart">
+        <image src="{{urlPrefix}}/static/stars.png"></image>
+        <text>评价</text>
+      </view>
+      <view class="stras">
+        <image wx:for-items="{{order.evaluation.grade}}" src="{{urlPrefix}}/static/stars_x.png"></image>
+        <image wx:for-items="{{5 - order.evaluation.grade}}" src="{{urlPrefix}}/static/stars.png"></image>
+      </view>
+    </view>
+    <view class="comment">{{order.evaluation.remark}}</view>
+  </view>
+</view>

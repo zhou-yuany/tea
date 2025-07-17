@@ -1,0 +1,28 @@
+<!--pages/evaluatepage/evaluatepage.wxml-->
+<view class="box">
+  <view class="content_cls white_bg">
+    <view class="title">请对本次订单进行评价：</view>
+    <form bindsubmit="goPingjia">
+      <view class="cross_column">
+        <label>评价：</label>
+        <view class="stras">
+          <image wx:for-items="{{stars}}" wx:key="index" data-type="stars_x" data-index="{{index+1}}" src="{{urlPrefix}}/static/stars_x.png" bindtap="img_bind"></image>
+          <image wx:for-items="{{5 - stars}}" wx:key="index" data-type="stars" data-index="{{index+1}}" src="{{urlPrefix}}/static/stars.png" bindtap="img_bind"></image>
+        </view>
+      </view>
+      <textarea name="remark" placeholder="请输入您对本次承运人评价" placeholder-class="placeholder_color"></textarea>
+      <view class="cross_column">
+        <button class="gradual_bg white but_style" form-type="submit">评价承运人</button>
+      </view>
+    </form>
+  </view>
+</view>
+<!-- 评价成功弹窗 -->
+<view class="grayc" wx:if="{{hidden}}">
+  <view class="pingjiak">
+    <image src="{{urlPrefix}}/static/pingjia.png"></image>
+    <view class="white success">评价成功</view>
+    <view class="pingyu">您的评价已提交成功</view>
+    <button type="button" class="gradual_bg white" bindtap="goSure">确定</button>
+  </view>
+</view>

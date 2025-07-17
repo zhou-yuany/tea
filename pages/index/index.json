@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "component_account": "/pages/component/account/account",
+    "component_home": "/pages/component/home/home",
+    "component_my": "/pages/component/my/my",
+    "component_order": "/pages/component/order/order"
+  },
+  "disableScroll": true
+}

@@ -1,0 +1,46 @@
+<!--pages/report/report.wxml-->
+<view class="box">
+  <view class="formk white_bg">
+    <form>
+      <view class="groupa">
+        <view class="hang border">
+          <view class="identify orange_bg white">始</view>
+          <view class="picker gray">{{start}}</view>
+        </view>
+        <view class="hang">
+          <view class="identify blue_bg white">终</view>
+          <view class="picker gray">{{dest}}</view>
+        </view>
+        <!--<image src="/static/change.png" class="change"></image>-->
+      </view>
+      <view class="linea">
+        <view>车辆数量</view>
+        <view class="gray">{{countsCar}}辆</view>
+      </view>
+      <view class="linea">
+        <view>运输价格</view>
+        <view class="gray">￥{{totalPrice}}</view>
+      </view>
+      <view class="linea" style="margin-bottom: 24rpx;">
+        <view>上传图片</view>
+      </view>
+      <view class="contant-pic">
+        <view class="pics-list" wx:for="{{pics}}" wx:key="{{index}}" >
+          <image src="{{item}}" class="uploadImg"></image>
+          <image src="{{urlPrefix}}/static/delete.png" class="uploadImg-error" data-index="{{index}}" bindtap='deleteImg'></image>
+        </view>
+        <image src="{{urlPrefix}}/static/uploadImage.png" class="uploadImg {{isShow?'true':'hideTrue'}}" bindtap='uploadImage'></image>
+      </view>
+      <button type="button" class="inquiry white_bg orange_border orange" bindtap="goReport">低价举报</button>
+    </form>
+  </view>
+</view>
+<!-- 弹窗 -->
+<view class="grayc" wx:if="{{hidden}}">
+  <view class="pingjiak">
+    <image src="{{urlPrefix}}/static/success1.png"></image>
+    <view class="white success">提交成功</view>
+    <view class="pingyu">感谢您对平台的支持</view>
+    <button type="button" class="gradual_bg white" bindtap="goSure">确定</button>
+  </view>
+</view>

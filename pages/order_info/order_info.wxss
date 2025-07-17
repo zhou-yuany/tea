@@ -1,0 +1,203 @@
+/* pages/order_info/order_info.wxss */
+.box{
+  padding-top: 23rpx;
+}
+.groupa{
+  width: 650rpx;
+  height: auto;
+  margin: auto;
+  box-shadow: 0rpx 7rpx 7rpx 1rpx rgba(0, 0, 0, 0.04);
+  border-radius: 10rpx;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+.hanga{
+  width: 100%;
+  height: 80rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+}
+.hangb{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.line{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  line-height: 80rpx;
+}
+.line text{
+  font-size: 30rpx;
+}
+.line text:last-child{
+  font-size: 36rpx;
+  margin-left: 20rpx;
+}
+.pricek{
+  height: 88rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pricek text{
+  font-size: 30rpx;
+}
+.price{
+  font-size: 36rpx!important;
+  margin-left: 20rpx;
+}
+/* 收货人信息 */
+.hangc{
+  width: 100%;
+  height: 87rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+}
+.hangc input{
+  width: 332rpx;
+  text-align: right;
+}
+/* 车辆信息 */
+.firstgroup{
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.hangd{
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.hangd image{
+  width: 32rpx;
+  height: 26rpx;
+  display: block;
+  margin-right: 7rpx;
+}
+.hangd text{
+  font-size: 34rpx;
+}
+.xinxi{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+}
+.flex{
+  width: 290rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.flex text{
+  line-height: 66rpx;
+}
+.xinxi input{
+  width: 350rpx;
+  text-align: right;
+  font-size: 30rpx;
+}
+.carnumber{
+  width: 100%;
+  height: 80rpx;
+  margin: auto;
+  line-height: 80rpx;
+  text-align: left;
+  font-size: 30rpx;
+}
+.sure{
+  width: 650rpx;
+  height: 84rpx;
+  border-radius: 40rpx;
+  margin-top: 50rpx;
+  /* margin-bottom: 38rpx; */
+  margin-bottom: 70rpx;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 84rpx;
+}
+/* 合伙人 */
+.addpricek{
+  padding-bottom: 9rpx;
+}
+.addpricek view{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.addpricek view text{
+  font-size: 32rpx;
+}
+switch{
+  zoom: .8;
+}
+.addpricek input{
+  height: 75rpx;
+  font-size: 31rpx;
+  text-align: right;
+  width: 100%;
+}
+/* 弹窗 */
+.pingjiak{
+  width: 552rpx;
+  height: 622rpx;
+  margin: auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 250rpx;
+}
+.pingjiak image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.success{
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 77rpx;
+  left: 0;
+  right: 0;
+  font-size: 43rpx;
+  text-align: center;
+}
+.pingyu{
+  width: 100%;
+  margin: auto;
+  font-size: 30rpx;
+  text-align: center;
+  position: absolute;
+  bottom: 236rpx;
+  left: 0;
+  right: 0;
+}
+.pingjiak button{
+  width: 419rpx;
+  height: 73rpx;
+  border-radius: 37rpx;
+  font-size: 28rpx;
+  line-height: 73rpx;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  bottom: 37rpx;
+  left: 0;
+  right: 0;
+}

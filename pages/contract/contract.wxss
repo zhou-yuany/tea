@@ -1,0 +1,136 @@
+/* pages/contract/contract.wxss */
+.box{
+  padding-top: 23rpx;
+}
+.contractk{
+  padding: 25rpx 24rpx;
+  height: auto;
+  margin: auto;
+}
+.title{
+  width: 100%;
+  padding-bottom: 24rpx;
+  font-size: 30rpx;
+}
+.content{
+  /* width: 526rpx; */
+  width: 630rpx;
+  /* height: 477rpx; */
+  height: 890rpx;
+  margin: auto;
+  margin-bottom: 27rpx;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.pic{
+  width: 630rpx;
+  height: auto;
+}
+.pic text{
+  font-size: 26rpx;
+  line-height: 43rpx;
+}
+.write{
+  width: 230rpx;
+  height: 78rpx;
+  border-radius: 39rpx;
+  margin: auto;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 78rpx;
+}
+.btnk{
+  width: 100%;
+  height: 151rpx;
+  margin: auto;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnk button{
+  width: 650rpx;
+  height: 84rpx;
+  border-radius: 40rpx;
+  margin: 0;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 84rpx;
+}
+.table{
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.table_head{
+  width: 100%;
+  height: 70rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.table_hang{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.table_hang view{
+  font-size: 22rpx;
+}
+.table_head view{
+  font-size: 24rpx;
+  font-weight: 600;
+}
+/* 弹窗 */
+.pingjiak{
+  width: 552rpx;
+  height: 622rpx;
+  margin: auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 250rpx;
+}
+.pingjiak image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.success{
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 77rpx;
+  left: 0;
+  right: 0;
+  font-size: 43rpx;
+  text-align: center;
+}
+.pingyu{
+  width: 100%;
+  margin: auto;
+  font-size: 30rpx;
+  text-align: center;
+  position: absolute;
+  bottom: 236rpx;
+  left: 0;
+  right: 0;
+}
+.pingjiak button{
+  width: 419rpx;
+  height: 73rpx;
+  border-radius: 37rpx;
+  font-size: 28rpx;
+  line-height: 73rpx;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  bottom: 37rpx;
+  left: 0;
+  right: 0;
+}

@@ -1,0 +1,9 @@
+<!--pages/tips/tips.wxml-->
+<view class="box">
+  <image src="{{urlPrefix}}/static/kong2.png" class="kong"></image>
+  <text class="dark_gray" style="font-size: 32rpx;line-height: 54rpx;">登录失败</text>
+  <button type="" class="orange_bg white" bindtap='freeTell'>联系客服</button>
+  <text class="dark_gray">*首次进入小程序登录失败，请联系客服</text>
+  <button type="" class="orange_border white_bg orange" bindtap="goPhone">换绑手机号</button>
+  <text class="dark_gray">*已有账号登录失败，可换绑手机号再次登录</text>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/write/write.wxml-->
+<view class="box">
+  <view class="signName white_bg">
+    <canvas class="canvas" id="canvas" canvas-id="canvas" disable-scroll="true" bindtouchstart="canvasStart"
+    bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd"
+    binderror="canvasIdErrorCallback"></canvas>
+  </view>
+  <view class="CList flex white_bg">
+    <button type="" class="orange_border white_bg orange saveBtn" bindtap="uploadImg">上传签名</button>
+    <button type="" class="gradual_bg white clearBtn" bindtap="cleardraw">清除签名</button>
+  </view>
+</view>

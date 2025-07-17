@@ -1,0 +1,58 @@
+<view class="box">
+  <view class="gather red" wx:if="{{orderAlreadyPayment.length !== 0}}"><image src="{{urlPrefix}}/static/helps.png" bindtap="goRules"></image><text>合计金额￥{{sumPrice}}</text></view>
+  <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" refresher-enabled="{{true}}"
+          bindrefresherrefresh="refreshOrder" bindscrolltolower="bindDownLoad" refresher-triggered="{{triggered}}" refresher-default-style="none">
+    <block wx:for="{{orderAlreadyPayment}}" wx:key="id">
+      <view class="white_bg group">
+        <view class="head border">
+          <view>
+            <image src="{{urlPrefix}}/static/order3.png"></image>
+            <text>{{item.orderId}}</text>
+          </view>
+          <text class="gray state">{{item.startTime}} 已完成</text>
+        </view>
+        <view class="middle">
+          <view class="addressk">
+            <view class="left">
+              <view class="startend">
+                <view class="orange_bg white">始</view><text>{{item.startProv}}{{item.startCity}}{{item.statrtArea}}</text>
+              </view>
+              <view class="startend">
+                <view class="blue_bg white">终</view><text>{{item.destProv}}{{item.destCity}}{{item.destArea}}</text>
+              </view>
+            </view>
+            <view class="right">
+              <!-- 企业合伙人显示加价收益和分销收益，个人合伙人只显示分销收益 -->
+              <text class="orange" wx:if="{{item.commissions != 1 && user.partnerType == 1}}">加价收益￥{{item.addPrice * item.countsCar || 0}}</text>
+              <text class="blue" wx:if="{{item.commissions == 1}}">分销收益￥{{item.commissionsTotal || 0}}</text>
+            </view>
+            <!-- 是否提现：字段在订单表，字段名： withdraw   已提现：1-->
+            <view class="white orange_bg yitixian" wx:if="{{item.withdraw == 1 || item.payPartner == 1}}">已提现</view>
+          </view>
+          <view class="gray number">
+            <text>{{item.countsCar}}辆</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="searchNo" wx:if="{{orderAlreadyPayment.length == 0}}">
+      <image src="{{urlPrefix}}/static/kong1.png"></image>
+      <text class="dark_gray">暂无账目</text> 
+    </view>
+  </scroll-view>
+</view>
+<!-- 分销规则 -->
+<view class="grayc fixed" wx:if="{{showrules}}">
+  <view class="rulesk white_bg">
+    <view class="guanbi gray" bindtap="goCloseds">关闭</view>
+    <view class="rule_title light_orange">分销规则</view>
+    <view class="rule_subtitle light_orange">分销对象：</view>
+    <text>已成为合伙人用户</text>
+    <view class="rule_subtitle light_orange">分销福利：</view>
+    <text>具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份</text>
+    <view class="rule_subtitle light_orange">分销福利：</view>
+    <text>具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，</text>
+    <image src="{{urlPrefix}}/static/enjoys.png"></image>
+    <text>具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份</text>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/cartype/cartype.wxml-->
+<view class="box">
+  <!-- 搜索 -->
+  <view class="searchk white_bg">
+    <view class="searchfor">
+      <image src="{{urlPrefix}}/static/search.png"></image>
+      <input type="text" placeholder="请输入车型" value="{{search}}" placeholder-class="placeholder_color" bindblur="search" />
+      <image src="{{urlPrefix}}/static/close1.png" class="closed" bindtap="clearSearch"></image>
+    </view>
+  </view>
+  <view class="white_bg brand">选择车型</view>
+    <view class="item white_bg" bindtap="goBack" data-brand="{{modelId}}" data-size="{{seriesId}}" data-detail="{{-1}}">
+      无—其他
+    </view>
+  <block wx:for="{{typeList}}">
+    <view class="item white_bg" bindtap="goBack" data-brand="{{item.modelId}}" data-size="{{item.seriesId}}" data-detail="{{item.id}}">
+      {{item.name}}
+    </view>
+  </block>
+</view>

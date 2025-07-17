@@ -1,0 +1,7 @@
+<!--pages/querypoint/querypoint.wxml-->
+<view class="box">
+  <view class="white_bg driverk">承运人：{{name}}  {{phone}}</view>
+  <view class="map" style="height:{{scrollHeight}}px;">
+    <map latitude="{{lat}}" markers="{{markers}}" longitude="{{lon}}"></map>
+  </view>
+</view>

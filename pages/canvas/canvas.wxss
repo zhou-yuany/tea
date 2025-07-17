@@ -1,0 +1,60 @@
+/* pages/canvas/canvas.wxss */
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas-wrap {
+  flex: 1;
+}
+
+.canvas-btn-wrap {
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.canvas-btn {
+  display: inline-block;
+}
+
+#myCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+.write{
+  width: 230rpx;
+  height: 78rpx;
+  border-radius: 39rpx;
+  margin: auto;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 78rpx;
+}
+.btnk{
+  width: 100%;
+  height: 151rpx;
+  margin: auto;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnk button{
+  width: 650rpx;
+  height: 84rpx;
+  border-radius: 40rpx;
+  margin: 0;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 84rpx;
+}

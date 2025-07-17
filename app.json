@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/wait/wait",
+    "pages/vehicle/vehicle",
+    "pages/carmodel/carmodel",
+    "pages/carseries/carseries",
+    "pages/cartype/cartype",
+    "pages/crv/crv",
+    "pages/order_info/order_info",
+    "pages/canvas/canvas",
+    "pages/contract/contract",
+    "pages/order_xq/order_xq",
+    "pages/car_information/car_information",
+    "pages/querypoint/querypoint",
+    "pages/evaluatepage/evaluatepage",
+    "pages/old_phone/old_phone",
+    "pages/newphone/newphone",
+    "pages/report/report",
+    "pages/tips/tips",
+    "pages/write/write",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "运个车小程序",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#fff"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.5",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ]
+}

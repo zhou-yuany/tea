@@ -1,0 +1,28 @@
+/* pages/tips/tips.wxss */
+.box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 157rpx;
+}
+.kong{
+  width: 232rpx;
+  height: 225rpx;
+  display: block;
+  margin-bottom: 68rpx;
+}
+.box text{
+  font-size: 24rpx;
+  margin-bottom: 82rpx;
+}
+.box button{
+  width: 650rpx;
+  height: 84rpx;
+  border-radius: 40rpx;
+  font-size: 34rpx;
+  line-height: 84rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}

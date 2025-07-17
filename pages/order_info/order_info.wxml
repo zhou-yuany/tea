@@ -1,0 +1,97 @@
+<!--pages/order_info/order_info.wxml-->
+<view class="box">
+  <!-- 订单 -->
+  <view class="white_bg groupa">
+    <view class="content border">
+      <view class="hanga">
+        <text>订单状态</text>
+        <text class="gray">{{orderStatus[order.orderState]}}</text>
+      </view>
+      <view class="hanga">
+        <text>订单编号</text>
+        <text class="gray">{{order.orderId}}</text>
+      </view>
+      <view class="hanga">
+        <text>发车时间</text>
+        <text class="gray">{{order.startTime}}</text>
+      </view>
+      <view class="hanga">
+        <text>始发地</text>
+        <text class="gray">{{order.startProv}}{{order.startCity}}{{order.statrtArea}}</text>
+      </view>
+      <view class="hanga">
+        <text>目的地</text>
+        <text class="gray">{{order.destProv}}{{order.destCity}}{{order.destArea}}</text>
+      </view>
+      <view class="hanga">
+        <text>数量</text>
+        <text class="gray">{{order.countsCar}}</text>
+      </view>
+      <view class="hangb">
+        <view class="line"><text>上门提车价格</text><text class="red">￥{{order.djPrice}}</text></view>
+        <view class="line"><text>运输价格</text><text class="red">￥{{order.linePrice}}</text></view>
+      </view>
+      <!-- 合伙人(企业)显示加价 -->
+      <view class="addpricek" wx:if="{{userType == 2}}">
+        <view>
+          <text>是否加价</text>
+          <switch checked="{{isChecked}}" bindchange="changeSwitch"></switch>
+        </view>
+        <input wx:if="{{isChecked}}"  value="{{addPrice}}" bindchange="bindAddPrice" type="number" placeholder="请输入单辆车加价" placeholder-class="placeholder_color" />
+      </view>
+    </view>
+    <view class="pricek">
+      <text>总报价</text>
+      <text class="red price">￥{{order.totalPrice}}</text>
+    </view>
+  </view>
+  <!-- 收货人信息 -->
+  <view class="white_bg groupa">
+    <view class="hangc">
+      <text>收货人</text>
+      <input type="text" value="{{receiverName}}" bindchange="bindReceiverName" placeholder="姓名（非必填）" placeholder-class="placeholder_color" maxlength="5" />
+    </view>
+    <view class="hangc">
+      <text>联系电话</text>
+      <input type="number" value="{{receiverPhone}}" bindchange="bindReceiverPhone" placeholder="联系电话（非必填）" placeholder-class="placeholder_color" maxlength="11" />
+    </view>
+    <view class="hangc">
+      <text>备注</text>
+      <input type="text" value="{{remarks}}" bindchange="bindRemarks" placeholder="请输入（非必填）" placeholder-class="placeholder_color" maxlength="30" />
+    </view>
+
+    <!-- <view class="hangc">
+      <text>身份证号码</text>
+      <input type="idcard" bindchange="bindReceiverCard" placeholder="请输入身份证号码" placeholder-class="placeholder_color" maxlength="18" />
+    </view> -->
+  </view>
+  <!-- 车辆信息 -->
+  <view class="white_bg groupa">
+    <view class="firstgroup border" wx:for-items="{{order.orderCarAll}}" wx:key="index">
+      <view class="hangd">
+        <image src="{{urlPrefix}}/static/icon.png"></image>
+        <text>车辆信息·{{index+1}}</text>
+      </view>
+      <view class="xinxi" style="align-items: flex-end;">
+        <view class="flex">
+            <text>{{models[item.brand]}}{{series[item.size]}}</text>
+            <!-- <text>{{details[item.detail]}}</text> -->
+            <text style="margin-top: 18rpx;">车架号：</text>
+            <!-- <text>（中大型车）</text> -->
+        </view>
+        <input type="text" value="{{cars[index].carNumber}}" bindchange="bindCarNumber" data-index="{{index}}" placeholder="车架号后六位(非必填)" placeholder-class="placeholder_color" maxlength="6"/>
+      </view>
+      <view class="carnumber">1辆</view>
+    </view>
+  </view>
+  <button type="button" class="gradual_bg white sure" bindtap="goOrder">确定下单</button>
+</view>
+<!-- 合伙人显示提示窗 -->
+<view class="grayc" wx:if="{{hidden}}">
+  <view class="pingjiak">
+    <image src="{{urlPrefix}}/static/success1.png"></image>
+    <view class="white success">下单成功</view>
+    <view class="pingyu">等待提车</view>
+    <button type="button" class="gradual_bg white" bindtap="goSure">确定</button>
+  </view>
+</view>

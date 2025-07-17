@@ -1,0 +1,66 @@
+
+<!-- 授权登录 -->
+<view class="box-login" wx:if="{{login}}">
+  <view class="empowerk">
+    <image src="{{urlPrefix}}/static/empower1.png" mode="aspectFill"></image>
+    <view class="tips">运个车小程序申请授权</view>
+    <view class="tipwords">尊敬的合伙人企业在授权前请您先确认您的手机号在运个车管理平台中已绑定。</view>
+    <!-- <button class="btn white" hidden="{{!loginStep}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button> -->
+    <view class="btn">
+      <button class="white" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权手机号</button>
+      <button type="button" bind:tap="cancelLogin" class="white_bg">取消</button>
+    </view>
+  </view>
+</view>
+
+<!--index.wxml-->
+<view style='margin-bottom:130rpx;'>
+  <!-- 组件显示，根据自己需求添加 -->
+  <view hidden="{{currentTab == 0? false: true}}">
+    <component_home admin="{{admin}}" logo="{{logo}}" />
+  </view>
+  <view hidden="{{currentTab == 1? false: true}}">
+    <component_order id="orderComponent" />
+  </view>
+  <view hidden="{{currentTab == 2? false: true}}">
+    <component_my id="myComponent" />
+  </view>
+  <view hidden="{{currentTab == 3? false: true}}">
+    <component_account id="accountComponent" />
+  </view>
+</view>
+
+<!-- 自定义 tabbar -->
+<view class="nav-tabs">
+  <view class="tab-list {{currentTab == 0 ? 'active' : 'default' }}" wx:key="prototype" bindtap="swichNav">
+    <text class="tab-text" data-current="{{0}}" src="{{currentTab == 0 ? urlPrefix + '/static/tabBar/home_on.png':urlPrefix + '/static/tabBar/home.png' }}">首页</text>
+    <image class="iconPath"  data-current="{{0}}" src="{{currentTab == 0 ? urlPrefix + '/static/tabBar/home_on.png':urlPrefix + '/static/tabBar/home.png'}}"></image>
+  </view>
+  <view class="tab-list {{currentTab == 1 ? 'active' : 'default' }}" wx:key="prototype" bindtap="swichNav">
+    <text class="tab-text"  data-current="{{1}}" src="{{currentTab == 1 ? urlPrefix + '/static/tabBar/order_on.png':urlPrefix + '/static/tabBar/order.png' }}">订单</text>
+    <image class="iconPath"  data-current="{{1}}" src="{{currentTab == 1 ? urlPrefix + '/static/tabBar/order_on.png':urlPrefix + '/static/tabBar/order.png'}}"></image>
+  </view>
+  <view class="tab-list {{currentTab == 2 ? 'active' : 'default' }}" wx:key="prototype" bindtap="swichNav">
+    <text class="tab-text"  data-current="{{2}}" src="{{currentTab == 2 ? urlPrefix + '/static/tabBar/my_on.png':urlPrefix + '/static/tabBar/my.png' }}">我的</text>
+    <image class="iconPath"  data-current="{{2}}" src="{{currentTab == 2 ? urlPrefix + '/static/tabBar/my_on.png':urlPrefix + '/static/tabBar/my.png'}}"></image>
+  </view>
+  <view class="tab-list {{currentTab == 3 ? 'active' : 'default' }}" wx:key="prototype" bindtap="swichNav" wx:if="{{admin == 2}}">
+    <text class="tab-text"  data-current="{{3}}" src="{{currentTab == 3 ? urlPrefix + '/static/tabBar/account_on':urlPrefix + '/static/tabBar/account.png' }}">账目</text>
+    <image class="iconPath"  data-current="{{3}}" src="{{currentTab == 3 ? urlPrefix + '/static/tabBar/account_on.png':urlPrefix + '/static/tabBar/account.png'}}"></image>
+  </view>
+</view>
+
+<!-- 广告 -->
+<view class="grayc fixed" wx:if="{{showAd}}">
+  <view class="adk">
+    <image src="{{urlPrefix}}/static/ad.png" mode="aspectFill"></image>
+    <view class="ad_content">
+      <!-- {{activity.startProv}} {{activity.destProv}}-->
+      <view class="xianlu"><text>{{activity.startCity}}</text>-<text>{{activity.destCity}}</text></view>
+      <view class="ad_price light_orange"><text>￥</text>{{activity.activityPrice}}</view>
+      <view class="biaoshi light_orange_bg white">活动价</view>
+      <view class="ad_time white">活动时间：{{activity.startTime}} — {{activity.endTime}}</view>
+    </view>
+  </view>
+  <image src="{{urlPrefix}}/static/close.png" class="closed" bindtap="goClosed"></image>
+</view>

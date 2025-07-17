@@ -1,0 +1,159 @@
+/* pages/wait/wait.wxss */
+.box{
+  padding-top: 23rpx;
+}
+.groupa{
+  width: 650rpx;
+  height: auto;
+  margin: auto;
+  box-shadow: 0rpx 7rpx 7rpx 1rpx rgba(0, 0, 0, 0.04);
+  border-radius: 10rpx;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+.hang{
+  width: 100%;
+  height: 85rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+}
+.title{
+  width: 100%;
+  height: 83rpx;
+  margin: auto;
+  font-size: 34rpx;
+  text-align: left;
+  line-height: 83rpx;
+}
+.content{
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.hanga{
+  width: 100%;
+  height: 80rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+}
+.hangb{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 32rpx;
+}
+.hangc{
+  padding: 25rpx 0;
+}
+.hangc textarea{
+  width: 100%;
+  height: 200rpx;
+  text-align: justify;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.bianji{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -20rpx;
+  z-index: 1;
+}
+.cartype{
+  width: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.cartype text{
+  line-height: 80rpx;
+}
+.pricek{
+  /* height: 128rpx; */
+  line-height: 68rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.pricek text{
+  font-size: 30rpx;
+}
+.price{
+  font-size: 36rpx!important;
+  margin-left: 20rpx;
+}
+.footer{
+  width: 100%;
+  height: 120rpx;
+  margin: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-top: 1rpx solid #f4f4f4;
+}
+.btn{
+  width: 350rpx;
+  height: 75rpx;
+  border-radius: 38rpx;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 75rpx;
+  margin: 0;
+  margin-left: 19rpx;
+}
+.allpricek{
+  width: 382rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.allpricek text{
+  font-size: 33rpx;
+  margin-left: 72rpx;
+}
+.allprice{
+  font-size: 40rpx!important;
+  margin-left: 20rpx!important;
+}
+/* 合伙人 */
+.footers{
+  width: 672rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 38rpx;
+}
+.bottoms{
+  width: 100%;
+  height: 118rpx;
+  margin: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}

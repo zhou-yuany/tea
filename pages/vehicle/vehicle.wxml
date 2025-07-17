@@ -1,0 +1,42 @@
+<!--pages/vehicle/vehicle.wxml-->
+<view class="box">
+  <view class="weui-cell white_bg" wx:for-items="{{cars}}" wx:key="index">
+    <view class="weuicell_hd border">
+      <view class="leftpart" data-index="{{index}}">
+        <image src="{{urlPrefix}}/static/icon.png"></image>
+        <text>运输车辆{{index + 1}}</text>
+      </view>
+      <image bindtap="delOption" src="{{urlPrefix}}/static/close1.png" class="option-icon" data-index="{{index}}"></image>
+    </view>
+    <view class="hang">
+      <view>车辆性质</view>
+      <picker bindchange="bindTypeChange" data-index="{{index}}" value="{{cars[index].type}}" range="{{types}}">
+        <view class="picker gray">{{types[cars[index].type]}} ></view>
+      </picker>
+    </view>
+    <view class="hang" bindtap="goModel" data-index="{{index}}">
+      <view>品牌型号</view>
+      <view class="gray" style="width: 70%;text-align: right;display: flex;justify-content: flex-end;align-items: center;" wx:if="{{models[cars[index].brand]}}">{{models[cars[index].brand]}}{{series[cars[index].size]}}{{details[cars[index].detail]}} <text style="margin-left: 10rpx;">></text></view>
+      <view class="gray" style="width: 70%;text-align: right;display: flex;justify-content: flex-end;align-items: center;" wx:if="{{!models[cars[index].brand]}}">{{type}}<text style="margin-left: 10rpx;">></text></view>
+    </view>
+    <view class="hang">
+      <view>车辆颜色</view>
+      <picker bindchange="bindColorChange" data-index="{{index}}" value="{{cars[index].color}}" range="{{colors}}">
+        <view class="picker gray">{{colors[cars[index].color]}} ></view>
+      </picker>
+    </view>
+    <view class="hang">
+      <view>数量</view>
+      <view class="stepper"> 
+        <text class="sign {{cars[index].count <= 1 ? 'disabled' : 'normal'}}" bindtap="delCount" data-index="{{index}}">-</text>
+        <input class="number" type="number" bindchange="bindManual" value="{{cars[index].count}}"  disabled="disabled"/>
+        <text class="sign {{cars[index].count >= 10 ? 'disabled' : 'normal'}}" bindtap="addCount" data-index="{{index}}">+</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="btnzu">
+    <button type="button" class="white_bg orange orange_border" bindtap="addOption" wx:if="{{showAddBtn}}">继续添加</button>
+    <button type="button" class="gradual_bg white" bindtap="goLatestPage" wx:if="{{cars.length > 0}}">添加完成</button>
+  </view>
+</view>

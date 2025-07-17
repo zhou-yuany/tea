@@ -1,0 +1,83 @@
+/* pages/car_information/car_information.wxss */
+.box{
+  padding-top: 23rpx;
+}
+.groupa{
+  width: 650rpx;
+  height: auto;
+  margin: auto;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 7rpx 7rpx 1rpx rgba(0, 0, 0, 0.04);
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+.headtop{
+  width: 100%;
+  height: 84rpx;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.headtop image{
+  width: 32rpx;
+  height: 26rpx;
+  display: block;
+  margin-right: 7rpx;
+}
+.headtop text{
+  font-size: 34rpx;
+}
+.footbottom{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 25rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footbottom view{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.hang{
+  align-items: flex-start!important;
+}
+.hanga{
+  width: 100%;
+  height: 91rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.leftp{
+  width: 420rpx;
+}
+.leftp text{
+  font-size: 32rpx!important;
+}
+.leftp image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 7rpx;
+}
+.hanga text{
+  font-size: 28rpx;
+  text-align: right;
+}
+.piczu{
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.piczu image{
+  width: 141rpx;
+  height: 141rpx;
+  margin-right: 33rpx;
+  margin-bottom: 28rpx;
+}

@@ -1,0 +1,71 @@
+<view class="box">
+  <!-- 分享按钮 -->
+  <button class="enjoy white_bg light_orange" bindtap="goEnjoy"><image src="/static/enjoys.png"></image><text>分享有礼</text></button>
+  <!-- 头像 -->
+  <!-- <view class="head"><image src="{{user.avatar}}"></image></view> -->
+  <view class="head"><image src="/static/header.png"></image></view>
+  <!-- 客户端显示 -->
+  <view class="white_bg informationk" wx:if="{{user.type == 1}}" style="padding-bottom: 10rpx;">
+    <!-- <view class="hang">
+      <text>用户名</text>
+      <text class="gray">{{user.nickname}}</text>
+    </view>
+    <view class="hang">
+      <text>性别</text>
+      <text class="gray">{{['未知', '男性', '女性'][user.gender]}}</text>
+    </view> -->
+    <view class="hang">
+      <text>绑定手机</text>
+      <text class="gray">{{user.phone}}</text>
+    </view>
+    <!-- <view class="hang">
+      <text>绑定微信</text>
+      <text class="gray">已绑定 ></text>
+    </view> -->
+  </view>
+  <!-- 客户端显示换绑手机号和退出登录 -->
+  <!-- 合伙人端显示换绑手机号 -->
+  <view class="btnzu">
+    <button type="button" class="orange_border white_bg orange" bindtap="goPhone">换绑手机号</button>
+    <button type="button" class="purple_bg white" bindtap="logout" wx:if="{{user.type == 1}}">退出登录</button>
+  </view>
+</view>
+
+<!-- 分享 -->
+<view class="grayc fixed" wx:if="{{shows && activity== false}}">
+  <view class="enjoyk">
+    <image src="{{urlPrefix}}/static/enjoyk.png" mode="aspectFill"></image>
+    <view class="codek"><image src="{{shareUrl}}" bindlongpress="saveImage"></image></view>
+  </view>
+  <image src="{{urlPrefix}}/static/close.png" class="closed" bindtap="goClosed"></image>
+</view>
+<!-- 活动分享 -->
+<view class="grayc fixed" wx:if="{{shows && activity== true}}">
+  <view class="enjoyk">
+    <image src="{{urlPrefix}}/static/enjoyks.png" mode="aspectFill"></image>
+    <image src="{{urlPrefix}}/static/help.png" class="helpico" bindtap="goRules"></image>
+    <view class="activek">
+      <!-- {{activityInfo.startProv}}{{activityInfo.destProv}} -->
+      <view class="xianlu yellow_bg white"><text>{{activityInfo.startCity}}</text>-<text>{{activityInfo.destCity}}</text></view>
+      <view class="active_price red">特价￥<text>{{activityInfo.activityPrice}}</text></view>
+      <view class="active_time">活动时间 {{activityInfo.startTime}} — {{activityInfo.endTime}}</view>
+    </view>
+    <view class="codeks"><image src="{{shareUrl}}" bindlongpress="saveImage"></image></view>
+  </view>
+  <image src="{{urlPrefix}}/static/close.png" class="closed" bindtap="goClosed"></image>
+</view>
+<!-- 分销规则 -->
+<view class="grayc fixed" wx:if="{{showrules}}">
+  <view class="rulesk white_bg">
+    <view class="guanbi gray" bindtap="goCloseds">关闭</view>
+    <view class="rule_title light_orange">分销规则</view>
+    <view class="rule_subtitle light_orange">分销对象：</view>
+    <text>已成为合伙人用户</text>
+    <view class="rule_subtitle light_orange">分销福利：</view>
+    <text>具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份</text>
+    <view class="rule_subtitle light_orange">分销福利：</view>
+    <text>具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，</text>
+    <image src="{{urlPrefix}}/static/enjoys.png"></image>
+    <text>具体规则如下：助力人数≥15人，免费领取价值299元大闸蟹礼品卡，限量3000份助力人数≥6人，免费领取滴滴出行礼包券，限量5000份</text>
+  </view>
+</view>

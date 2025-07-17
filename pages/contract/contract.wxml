@@ -1,0 +1,57 @@
+<!--pages/contract/contract.wxml-->
+<!-- 查看合同时"签名按钮"和"确定按钮"隐藏 -->
+<view class="box">
+  <view class="white_bg contractk">
+    <view class="title">运输合同·1</view>
+    <view class="content">
+      <view class="pic">
+        <text>本承运单为大连中海远物流有限公司所有，承运单一式三份，承运方（乙方）一份，委托方（甲方）一份，运输司机方一份，运输司机到达目的地后：a、收车人或甲方在承运单确认签收后本运输单合同终止，b 、收车人或甲方手写收车条后，本运输单合同终止，c、收车人或甲方拒绝签字同时拒绝写收车条，但正常支付运输费用，本运输单合同终止；合同终
+，止后产生的任何纠纷，承运方（乙方）概不负责。甲乙双方基于良好的信任，处于双方长远发展战略上的考虑，本着互利共赢的原则，共同携手，通过汽车物流规划，为结成深度的合作伙伴关系。现经双方友好协商，达成以下共识</text>
+      </view>
+      <view class="table">
+        <view class="table_head">
+          <view style="width: 15%;">品牌</view>
+          <view style="width: 20%;">车系</view>
+          <view style="width: 24%;">车型</view>
+          <view style="width: 8%;">颜色</view>
+          <view style="width: 15%;">车架号</view>
+          <view style="width: 18%;">车价</view>
+        </view>
+
+        <view class="table_hang" wx:for-items="{{cars}}">
+          <view style="width: 15%;">{{models[item.brand]}}</view>
+          <view style="width: 20%;">{{series[item.size]}}</view>
+          <view style="width: 24%;">{{details[item.detail]}}</view>
+          <view style="width: 8%;">{{colors[item.color]}}</view>
+          <view style="width: 15%;">{{item.carNumber || ''}}</view>
+          <view style="width: 18%;">{{item.price || ''}}</view>
+        </view>
+      </view>
+      <rich-text nodes="{{contract}}"></rich-text>
+      <view class="pic">
+        <text>本承运单为大连中海远物流有限公司所有，承运单一式三份，承运方（乙方）一份，委托方（甲方）一份，运输司机方一份，运输司机到达目的地后：a、收车人或甲方在承运单确认签收后本运输单合同终止，b 、收车人或甲方手写收车条后，本运输单合同终止，c、收车人或甲方拒绝签字同时拒绝写收车条，但正常支付运输费用，本运输单合同终止；</text>
+      </view>
+    </view>
+    <button type="button" class="orange_bg white write" wx:if="{{!contractSign}}" bindtap="contractSign">手写签名</button>
+  </view>
+  <view class="white_bg contractk" wx:if="{{contractSign}}">
+    <image src="data:image/png;base64,{{contractSign}}" />
+  </view>
+  <!-- <view class="white_bg contractk">
+    <view class="title">运输合同·2</view>
+    <view class="content">
+    
+    </view>
+    <button type="button" class="orange_bg white write">手写签名</button>
+  </view> 
+  <view class="btnk white_bg"><button type="button" class="gradual_bg white" bindtap="goSuccess">确定</button></view>-->
+</view>
+<!-- 弹窗 -->
+<view class="grayc" wx:if="{{hidden}}">
+  <view class="pingjiak">
+    <image src="{{urlPrefix}}/static/success1.png"></image>
+    <view class="white success">下单成功</view>
+    <view class="pingyu">等待提车</view>
+    <button type="button" class="gradual_bg white" bindtap="goSure">确定</button>
+  </view>
+</view>

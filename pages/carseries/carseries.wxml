@@ -1,0 +1,22 @@
+<!--pages/carseries/carseries.wxml-->
+<view class="box">
+  <!-- 搜索 -->
+  <view class="searchk white_bg">
+    <view class="searchfor">
+      <image src="{{urlPrefix}}/static/search.png"></image>
+      <input type="text" value="{{search}}" placeholder="请选择车系" placeholder-class="placeholder_color" bindblur="search" />
+      <image src="{{urlPrefix}}/static/close1.png" class="closed" bindtap="clearSearch"></image>
+    </view>
+  </view>
+  <view class="white_bg brand">选择车系</view>
+    <view class="item white_bg" bindtap="goType" data-id="{{-1}}">
+      <text style="font-size: 32rpx;">无—其他</text>
+      <text>车系</text>
+    </view>
+  <block wx:for="{{seriesList}}">
+    <view class="item white_bg" bindtap="goType" data-id="{{item.id}}">
+      <text style="font-size: 32rpx;">{{item.name}}</text>
+      <text>车系</text>
+    </view>
+  </block>
+</view>

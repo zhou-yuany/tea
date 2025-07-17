@@ -1,0 +1,44 @@
+<!--pages/carmodel/carmodel.wxml-->
+<view class="box">
+  <!-- 搜索 -->
+  <view class="searchk white_bg">
+    <view class="searchfor">
+      <image src="{{urlPrefix}}/static/search.png"></image>
+      <input type="text" value="{{search}}" placeholder="请输入品牌" placeholder-class="placeholder_color" bindblur="search"/>
+      <image src="{{urlPrefix}}/static/close1.png" class="closed" bindtap="clearSearch"></image>
+    </view>
+  </view>
+  <view class="white_bg brand">选择品牌</view>
+  <!-- 列表 -->
+  <block wx:for="{{list}}">
+    <view class='letter' id="letter{{index}}">{{item.letter}}</view>
+    <view class='item' wx:for="{{item.item}}" wx:for-item="idx" data-index="{{index}}" bindtap="goCarseries" data-id="{{idx.id}}"><image wx:if="{{idx.id}}" src="{{idx.logo}}"></image>{{idx.name}}</view>
+  </block>
+  <view class="searchNo" wx:if="{{list.length == 0}}">
+    <image src="{{urlPrefix}}/static/kong.png"></image>
+    <text class="dark_gray">暂无该品牌，请返回手动输入</text> 
+  </view>
+  <view class='letters'>
+    <text wx:for="{{list}}" bindtap='chooseLetter' data-letter="{{index}}">{{item.letter}}</text>
+  </view>
+</view>
+<!-- 弹出输入品牌文本框 -->
+<block wx:if="{{modelFlag}}">
+  <view class='toast-box'>
+    <view class='toastbg' bindtap="cancelBrand"></view>
+    <view class='showToast'>
+      <view class='toast-main'>
+        <view class="toast-main-title">品牌</view>
+        <view class='toast-input'>
+          <input fixed='true' bindinput="bindBrand" placeholder="请输入品牌" value="{{brandName}}"></input>
+      </view>
+    </view>
+      <view class='toast-button'>
+        <view  class='button1' catchtap='cancelBrand'>
+          取消
+        </view> 
+        <view class='button2 blue' catchtap="confirmBrand">确定</view>
+      </view>
+    </view>
+  </view>
+</block>

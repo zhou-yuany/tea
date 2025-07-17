@@ -1,0 +1,209 @@
+<view class="box">
+  <view class="swiper-tab white_bg">
+    <view class="swiper-tab-list {{orderType=='ALL' ? 'on' : ''}}" data-current="ALL" bindtap="swichNav">全部<view class="line {{orderType=='ALL' ? 'orange_bg' : ''}}"></view></view>
+    <view class="swiper-tab-list {{orderType=='WAIT_OFFER' ? 'on' : ''}}" data-current="WAIT_OFFER" bindtap="swichNav">询价中<view class="line {{orderType=='WAIT_OFFER' ? 'orange_bg' : ''}}"></view></view>
+    <view class="swiper-tab-list {{orderType=='TRANSFER_ING' ? 'on' : ''}}" data-current="TRANSFER_ING" bindtap="swichNav">运输中<view class="line {{orderType=='TRANSFER_ING' ? 'orange_bg' : ''}}"></view></view>
+    <view class="swiper-tab-list {{orderType=='ALREADY_PAYMENT' ? 'on' : ''}}" data-current="ALREADY_PAYMENT" bindtap="swichNav">已完成<view class="line {{orderType=='ALREADY_PAYMENT' ? 'orange_bg' : ''}}"></view></view>
+  </view>
+
+  <scroll-view class="tab-scoller" scroll-y="true" style="height:{{scrollHeight}}px" >
+    <swiper current="{{swiperCurrent[orderType]}}" class="swiper-box" duration="300" bindchange="bindChange">
+      <swiper-item>
+        <scroll-view scroll-y style="height:{{scrollHeight}}px;" refresher-enabled="{{true}}"
+          bindrefresherrefresh="refreshOrder" bindscrolltolower="bindDownLoad" refresher-triggered="{{triggered}}" refresher-default-style="none">
+          <block wx:for="{{orderAll}}" wx:key="id" wx:for-index="index">
+            <view class="white_bg group" bindtap="goXq" data-id="{{item.id}}" data-index="{{index}}">
+              <view class="head border">
+                <view>
+                  <image src="{{urlPrefix}}/static/order0.png" wx:if="{{item.orderState <= 20}}"></image>
+                  <image src="{{urlPrefix}}/static/order1.png" wx:if="{{item.orderState >= 30 && item.orderState <= 80}}"></image>
+                  <image src="{{urlPrefix}}/static/order2.png" wx:if="{{item.orderState == 90}}"></image>
+                  <text>{{item.orderId}}</text>
+                </view>
+                <text class="green state" wx:if="{{item.orderState == 10}}">询价中</text>
+                <text class="green state" wx:if="{{item.orderState == 20}}">已报价</text>
+                <text class="blue state" wx:if="{{item.orderState == 30}}">已下单</text>
+                <text class="blue state" wx:if="{{item.orderState == 40}}">待提车</text>
+                <text class="blue state" wx:if="{{item.orderState == 45}}">已提车</text>
+                <text class="blue state" wx:if="{{item.orderState > 45 && item.orderState < 80}}">运输中</text>
+                <text class="blue state" wx:if="{{item.orderState == 80}}">已到达</text>
+                <text class="purple state" wx:if="{{item.orderState == 90}}">已完成</text>
+              </view>
+              <view class="middle border">
+                <view class="addressk">
+                  <view class="left">
+                    <view class="startend">
+                      <view class="orange_bg white">始</view><text>{{item.startProv}}{{item.startCity}}{{item.statrtArea}}</text>
+                    </view>
+                    <view class="startend">
+                      <view class="blue_bg white">终</view><text>{{item.destProv}}{{item.destCity}}{{item.destArea}}</text>
+                    </view>
+                  </view>
+                  <view class="right">
+                    <text class="dark_gray" wx:if="{{item.orderState == 10}}">等待报价</text>
+                    <text class="red" wx:if="{{item.orderState > 10}}">￥{{item.totalPrice}}</text>
+                    <text class="red" style="font-size: 28rpx;" wx:if="{{item.orderState >= 40 && item.orderState <= 80}}">待支付</text>
+                  </view>
+                </view>
+                <view class="gray number">
+                  <text>{{item.countsCar}}辆</text>
+                  <text wx:if="{{item.orderState == 40}}" wx:for-items="{{item.djs}}" wx:for-item="dj" wx:key="index">提车人 {{dj.name}} {{dj.phone}}</text>
+                </view>
+              </view>
+              <view class="foot">
+                <text class="gray">{{item.startTime}}</text>
+                <text class="orange" style="font-size: 26rpx;" wx:if="{{userType == 2 && item.orderState > 30}}">*预计收益￥{{item.addPrice * item.countsCar || 0}}</text><!-- 合伙人显示预计收益 -->
+                <button type="button" class="orange orange_border white_bg" wx:if="{{item.orderState == 20}}" catchtap="cancelOrders" data-id="{{item.id}}" style="margin-right: 20rpx;margin-left: auto;">取消订单</button>
+                <button type="button" class="white orange_bg" wx:if="{{item.orderState == 20}}" catchtap="goPay" data-id="{{item.id}}">立即下单</button>
+                <button type="button" class="orange orange_border white_bg" wx:if="{{item.orderState >= 50 && item.orderState < 90}}" data-index="{{index}}" catchtap="goQuery">查看位置</button>
+                <button type="button" class="orange orange_border white_bg" wx:if="{{item.orderState == 90 && !item.evaluation}}" data-id="{{item.id}}" catchtap="goPingjia">评价承运人</button><!-- 客户端显示评价按钮 -->
+              </view>
+            </view>
+          </block>
+          <view class="searchNo" wx:if="{{orderAll.length == 0}}">
+            <image src="{{urlPrefix}}/static/kong.png"></image>
+            <text class="dark_gray">暂无订单</text> 
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style="height:{{scrollHeight}}px;" refresher-enabled="{{true}}"
+          bindrefresherrefresh="refreshOrder" bindscrolltolower="bindDownLoad" refresher-triggered="{{triggered}}" refresher-default-style="none">
+          <block wx:for="{{orderWaitOffer}}" wx:key="id" wx:for-index="index">
+            <view class="white_bg group" bindtap="goXq" data-id="{{item.id}}" data-index="{{index}}">
+              <view class="head border">
+                <view>
+                  <image src="{{urlPrefix}}/static/order0.png"></image>
+                  <text>{{item.orderId}}</text>
+                </view>
+                <text class="green state" wx:if="{{item.orderState == 10}}">询价中</text>
+                <text class="green state" wx:if="{{item.orderState == 20}}">已报价</text>
+              </view>
+              <view class="middle border">
+                <view class="addressk">
+                  <view class="left">
+                    <view class="startend">
+                      <view class="orange_bg white">始</view><text>{{item.startProv}}{{item.startCity}}{{item.statrtArea}}</text>
+                    </view>
+                    <view class="startend">
+                      <view class="blue_bg white">终</view><text>{{item.destProv}}{{item.destCity}}{{item.destArea}}</text>
+                    </view>
+                  </view>
+                  <view class="right">
+                    <text class="dark_gray" wx:if="{{item.orderState == 10}}">等待报价</text>
+                    <text class="red" wx:if="{{item.orderState > 10}}">￥{{item.totalPrice}}</text>
+                  </view>
+                </view>
+                <view class="gray number">
+                  <text>{{item.countsCar}}辆</text>
+                </view>
+              </view>
+              <view class="foot">
+                <text class="gray">{{item.startTime}}</text>
+                <button type="button" class="orange orange_border white_bg" wx:if="{{item.orderState == 20}}" catchtap="cancelOrders" data-id="{{item.id}}" style="margin-right: 20rpx;margin-left: auto;">取消订单</button>
+                <button type="button" class="white orange_bg" wx:if="{{item.orderState == 20}}" catchtap="goPay" data-id="{{item.id}}">立即下单</button>
+              </view>
+            </view>
+          </block>
+          <view class="searchNo" wx:if="{{orderWaitOffer.length == 0}}">
+            <image src="{{urlPrefix}}/static/kong.png"></image>
+            <text class="dark_gray">暂无订单</text> 
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style="height:{{scrollHeight}}px;" refresher-enabled="{{true}}"
+          bindrefresherrefresh="refreshOrder" bindscrolltolower="bindDownLoad" refresher-triggered="{{triggered}}" refresher-default-style="none">
+          <block wx:for="{{orderTransferIng}}" wx:key="id" wx:for-index="index">
+            <view class="white_bg group" bindtap="goXq" data-id="{{item.id}}" data-index="{{index}}">
+              <view class="head border">
+                <view>
+                  <image src="{{urlPrefix}}/static/order1.png"></image>
+                  <text>{{item.orderId}}</text>
+                </view>
+                <text class="blue state" wx:if="{{item.orderState == 30}}">已下单</text>
+                <text class="blue state" wx:if="{{item.orderState == 40}}">待提车</text>
+                <text class="blue state" wx:if="{{item.orderState == 45}}">已提车</text>
+                <text class="blue state" wx:if="{{item.orderState > 45 && item.orderState < 80}}">运输中</text>
+                <text class="blue state" wx:if="{{item.orderState == 80}}">已到达</text>
+              </view>
+              <view class="middle border">
+                <view class="addressk">
+                  <view class="left">
+                    <view class="startend">
+                      <view class="orange_bg white">始</view><text>{{item.startProv}}{{item.startCity}}{{item.statrtArea}}</text>
+                    </view>
+                    <view class="startend">
+                      <view class="blue_bg white">终</view><text>{{item.destProv}}{{item.destCity}}{{item.destArea}}</text>
+                    </view>
+                  </view>
+                  <view class="right">
+                    <text class="red">￥{{item.totalPrice}}</text>
+                    <text class="red" style="font-size: 28rpx;">待支付</text>
+                  </view>
+                </view>
+                <view class="gray number">
+                  <text>{{item.countsCar}}辆</text>
+                  <text wx:if="{{item.orderState == 40}}" wx:for-items="{{item.djs}}" wx:for-item="dj" wx:key="index">提车人 {{dj.name}} {{dj.phone}}</text>
+                </view>
+              </view>
+              <view class="foot">
+                <text class="gray">{{item.startTime}}</text>
+                <text class="orange" style="font-size: 26rpx;" wx:if="{{userType == 2 && item.orderState > 30}}">*预计收益￥{{item.addPrice * item.countsCar || 0}}</text><!-- 合伙人显示预计收益 -->
+                <button type="button" class="orange orange_border white_bg" wx:if="{{item.orderState >= 50 && item.orderState < 90}}" data-index="{{index}}" catchtap="goQuery">查看位置</button>
+              </view>
+            </view>
+          </block>
+          <view class="searchNo" wx:if="{{orderTransferIng.length == 0}}">
+            <image src="{{urlPrefix}}/static/kong.png"></image>
+            <text class="dark_gray">暂无订单</text> 
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style="height:{{scrollHeight}}px;" refresher-enabled="{{true}}"
+          bindrefresherrefresh="refreshOrder" bindscrolltolower="bindDownLoad" refresher-triggered="{{triggered}}" refresher-default-style="none">
+          <block wx:for="{{orderAlreadyPayment}}" wx:key="id" wx:for-index="index">
+            <view class="white_bg group" bindtap="goXq" data-id="{{item.id}}" data-index="{{index}}">
+              <view class="head border">
+                <view>
+                  <image src="{{urlPrefix}}/static/order2.png"></image>
+                  <text>{{item.orderId}}</text>
+                </view>
+                <text class="purple state">已完成</text>
+              </view>
+              <view class="middle border">
+                <view class="addressk">
+                  <view class="left">
+                    <view class="startend">
+                      <view class="orange_bg white">始</view><text>{{item.startProv}}{{item.startCity}}{{item.statrtArea}}</text>
+                    </view>
+                    <view class="startend">
+                      <view class="blue_bg white">终</view><text>{{item.destProv}}{{item.destCity}}{{item.destArea}}</text>
+                    </view>
+                  </view>
+                  <view class="right">
+                    <text class="red">￥{{item.totalPrice}}</text>
+                  </view>
+                </view>
+                <view class="gray number">
+                  <text>{{item.countsCar}}辆</text>
+                  <text wx:if="{{item.orderState == 40}}" wx:for-items="{{item.djs}}" wx:for-item="dj" wx:key="index">提车人 {{dj.name}} {{dj.phone}}</text>
+                </view>
+              </view>
+              <view class="foot">
+                <text class="gray">{{item.startTime}}</text>
+                <text class="orange" style="font-size: 26rpx;" wx:if="{{userType == 2 && item.orderState > 30}}">*预计收益￥{{item.addPrice * item.countsCar || 0}}</text><!-- 合伙人显示预计收益 -->
+                <button type="button" class="orange orange_border white_bg" wx:if="{{item.orderState == 90 && !item.evaluation}}" data-id="{{item.id}}" catchtap="goPingjia">评价承运人</button><!-- 客户端显示评价按钮 -->
+              </view>
+            </view>
+          </block>
+          <view class="searchNo" wx:if="{{orderAlreadyPayment.length == 0}}">
+            <image src="{{urlPrefix}}/static/kong.png"></image>
+            <text class="dark_gray">暂无订单</text> 
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </scroll-view>
+</view>
