@@ -1,0 +1,39 @@
+<!--pages/turnover/turnover.wxml-->
+<view class="box" style="{{theme}}">
+    <!-- 筛选 -->
+    <view class='select_box white_bg' wx:if="{{flag == 'agent'}}">
+      <view class="shopname">商户名：</view>
+      <view class='select' catchtap='selectTap'>
+        <text class='select_text'>{{selectData[index1].name}}</text>
+        <image class='select_img' src='/static/show_offs.png'></image>   
+      </view>
+      <view class='option_box white_bg' style='height:{{show?(selectData.length>3?300:selectData.length*79):0}}rpx;'>
+        <text class="option {{index?'':'action'}}" wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item.name}}</text>
+      </view>
+      <view class="shouyi" style="color: var(--secondColor);">总收益：{{sumPrice}}</view>
+    </view>
+    <view class='select_box white_bg' wx:else>
+      <view class="shopname"></view>
+      <view class='select' catchtap='selectTap'>
+        <text class='select_text'></text>
+        <!-- <image class='select_img' src='/static/show_offs.png'></image>    -->
+      </view>
+      <view class='option_box white_bg' style='height:{{show?(selectData.length>3?300:selectData.length*79):0}}rpx;'>
+        <text class="option {{index?'':'action'}}" wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+      </view>
+      <view class="shouyi" style="color: var(--secondColor);">总收益：{{sumPrice}}</view>
+    </view>
+    <!-- 列表 -->
+    <view class="scrollView">
+        <view class="table_head" style="background-color: var(--themeColor);">
+            <view>商户名</view>
+            <view>订单</view>
+            <view>收益</view>
+        </view>
+        <view class="view-column" wx:for="{{contentList}}" wx:key="index">
+            <view>{{item.shopName}}</view>
+            <view>{{item.serialNum}}</view>
+            <view>{{flag == 'agent' ? item.distributionPrice : item.shopDistributionPrice}}</view>
+        </view>
+    </view>
+</view>

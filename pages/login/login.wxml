@@ -1,0 +1,19 @@
+<!--pages/login/login.wxml-->
+<view class="box" style="{{theme}}">
+  <image src="{{skin.file}}/{{pictureInfo.logo}}" mode=""/>
+  <text>欢迎进入</text>
+  <text style="margin-bottom: 365rpx;">茶饮小程序</text>
+  <!-- <button type="button" class="white" bind:tap="showPhone" style="background-color: var(--themeColor);">授权手机号</button> -->
+  <button class="white" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style="background-color: var(--themeColor);">授权手机号</button>
+  <button type="button" class="white_bg" bind:tap="goCancel">取消</button>
+  <!-- <view class="mask" hidden="{{isShowphone}}">
+    <view class="white_bg kuang">
+      <view class="title">添加手机号</view>
+      <input type="number" placeholder="请输入手机号" bindinput='getPhone' value='{{phone}}' placeholder-class="placeholder_color" />
+      <view class='btn-group'>
+        <button class="cancel" catchtap="returnHandler" style="color: var(--themeColor);">取消</button>
+        <button class="checkStudentInfo white" catchtap='submitPhone' style="background-color: var(--themeColor);">确定</button>
+      </view>
+    </view>
+  </view> -->
+</view>

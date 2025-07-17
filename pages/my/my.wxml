@@ -1,0 +1,90 @@
+<!--pages/my/my.wxml-->
+<view class="box" style="{{theme}}">
+  <!-- 图 -->
+  <view class="parent"></view>
+  <!-- 个人信息 -->
+  <view class="personalk white_bg">
+    <view class="headerk">
+      <image bindtap="goPersonal" class="head" wx:if="{{userInfo.avatar && userInfo.avatar != ''}}" src="{{config}}/image/{{userInfo.avatar}}"></image>
+      <image bindtap="goPersonal" wx:else src="{{skin.file}}/{{pictureInfo.header}}" class="head" mode="" bindtap="goPersonal"/>
+      <view class="header_l">
+        <view class="hanga" bindtap="goPersonal"><text>{{userInfo.username ? userInfo.username : '微信用户'}}</text></view>
+        <!-- <view class="progress-box gray" bindtap="goIntegral">
+          <progress percent="20" show-info stroke-width="4" font-size="10" border-radius="20" activeColor="#F39D36" />
+        </view> -->
+        <view class="tips" style="color: var(--secondColor);">完善个人信息 送优惠券</view>
+      </view>
+    </view>
+    <!-- <view class="funlist">
+      <view class="funitem">
+        <text>0</text>
+        <text>优惠券</text>
+      </view>
+      <view class="funitem">
+        <text>0</text>
+        <text>礼品卡</text>
+      </view>
+      <view class="funitem" style="border: 0;" bindtap="goIntegral">
+        <text>107</text>
+        <text>我的积分</text>
+      </view>
+    </view> -->
+  </view>
+  <!-- 我的服务 -->
+  <view class="groupa white_bg">
+    <view class="subtitle">我的服务</view>
+    <view class="liebiao">
+      <view bindtap="goTurnover" wx:if="{{isShow}}">
+        <image src="/static/ico9.png" mode=""/>
+        <text>流水</text>
+      </view>
+      <view bindtap="goCoupon">
+        <image src="/static/ico3.png" mode=""/>
+        <text>领券中心</text>
+      </view>
+      <!-- <view>
+        <image src="/static/ico4.png" mode=""/>
+        <text>积分商城</text>
+      </view> -->
+      <view catchtap='freeTell'>
+        <image src="/static/ico5.png" mode=""/>
+        <text>联系客服</text>
+      </view>
+      <!-- <view>
+        <image src="/static/ico6.png" mode=""/>
+        <text>更多服务</text>
+      </view> -->
+      <view bindtap="goPersonal">
+        <image src="/static/ico12.png" mode=""/>
+        <text>完善信息</text>
+        <view class="white tip" style="background-color: var(--secondColor);">送优惠</view>
+      </view>
+      <view bindtap="goAddress">
+        <image src="/static/ico11.png" mode=""/>
+        <text>地址管理</text>
+      </view>
+    </view>
+  </view>
+  <!-- 合伙人服务 -->
+  <!-- <view class="groupa white_bg">
+    <view class="subtitle">合伙人服务</view>
+    <view class="liebiao">
+      <view bindtap="goPartner">
+        <image src="/static/ico7.png" mode=""/>
+        <text>合伙人</text>
+      </view>
+      <view bindtap="goPerformance">
+        <image src="/static/ico8.png" mode=""/>
+        <text>经营状况</text>
+      </view>
+      <view bindtap="goLedger">
+        <image src="/static/ico9.png" mode=""/>
+        <text>分账表</text>
+      </view>
+      <view bindtap="goEquity">
+        <image src="/static/ico10.png" mode=""/>
+        <text>合伙人权益</text>
+      </view>
+    </view>
+  </view>  -->
+</view>

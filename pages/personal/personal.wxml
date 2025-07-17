@@ -1,0 +1,69 @@
+<!--pages/personal/personal.wxml-->
+<view class="box" style="{{theme}}">
+  <view class="white_bg kuang">
+    <!-- 头像 -->
+    <button class="headerk" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" hover-class="btn-hover">
+        <image wx:if="{{avatar != ''}}" src="{{config}}/image/{{avatar}}"></image>
+        <image wx:else src="{{skin.file}}/{{pictureInfo.header}}"></image>
+        
+      </button>
+      <button type="button" class="shengc white" style="background-color: var(--secondColor);" catch:tap="goSheng">生成卡通头像</button>
+    <view class="hang">
+      <text>昵称</text>
+      <input type="nickname" value="{{name}}" bind:change="getNickname" maxlength="20" bindinput="inputName" style="margin-left: auto;" placeholder="请填写" placeholder-style="placeholder_color" />
+    </view>
+    <view class="hang">
+      <text>手机号</text>
+      <text>{{phone}}</text>
+    </view>
+    <view class="hang">
+      <text>性别</text>
+      <picker bindchange="bindPickerChange" value="{{objectIndex}}" range="{{objectArray}}" range-key="name">
+        <view class="picker" style="color: {{sex == '请选择' ? '#999999':'#000000'}}">{{sex}}</view>
+      </picker>
+    </view>
+    <view class="hang">
+      <text>生日</text>
+      <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+        <view class="picker" style="color: {{date == '请选择' ? '#999999':'#000000'}}">{{date}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="kuangs white_bg">
+    <view class="hang">
+      <text>职业</text>
+      <picker bindchange="bindPickerChangea" value="{{objectIndexa}}" range="{{objectArraya}}" range-key="name">
+        <view class="picker" style="color: {{career == '请选择' ? '#999999':'#000000'}}">{{career}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="kuangs white_bg">
+    <view class="hang" bind:tap="goHobby">
+      <text>爱好</text>
+      <text style="color: {{hobby == false?'#999999':'var(--secondColor)'}};">{{hobby == false?'请作答':'已完成'}}</text>
+    </view>
+  </view>
+  <view class="wenzi" style="color: var(--secondColor);">完善个人信息 送优惠券</view>
+  <!-- 底部按钮 -->
+  <button type="button" class="savebtn white" catch:tap="saveInfo" style="background-color: var(--themeColor);">保存</button>
+
+  <!-- 风格弹窗 -->
+  <view class="mask" hidden="{{hidestyle}}">
+    <view class="white_bg stylek">
+      <view class="style_zbt">生成漫画头像</view>
+      <view class="dark_gray style_bt">请选择风格</view>
+      <view class="stylelist">
+        <block wx:for="{{styleList}}" wx:key="index">
+          <view class="style_item {{currentTaba==index ? 'on' : ''}}" data-currenta="{{index}}" data-type="{{item.type}}" catch:tap="selectImg">
+            <image src="{{config}}/image/cartoon/{{item.url}}" mode=""/>
+            <view class="white">{{item.name}}</view>
+          </view>
+        </block>
+      </view>
+      <view class="anzu">
+        <button type="button" class="dark_gray white_bg" bind:tap="goCancel">取消</button>
+        <button type="button" class="white" bind:tap="generateAvatar" style="background-color: var(--themeColor);">确定</button>
+      </view>
+    </view>    
+  </view>
+</view>

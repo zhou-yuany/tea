@@ -1,0 +1,112 @@
+/* pages/turnover/turnover.wxss */
+.box{
+    background-color: #ffffff;
+}
+/* 筛选 */
+.select_box{ 
+    width: 100%;
+    height: 80rpx;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.shopname{
+    padding-left: 35rpx;
+    font-size: 28rpx;
+}
+.select{
+    box-sizing: border-box;
+    width: 45%;
+    height: 80rpx; 
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+.select_text{
+    font-size: 28rpx;
+}
+.select_img{
+    width: 18rpx;
+    height: 10rpx;
+    display: block;
+    margin-left: 13rpx;
+}
+.option_box{
+    position: absolute;
+    top: 80rpx;
+    width: 100%;
+    box-sizing: border-box;
+    height: 0;
+    overflow-y: auto;
+    border-top: 0;
+    transition: height 0.3s;
+    z-index: 10;
+}
+.option{
+    display: block;
+    height: 79rpx;
+    line-height: 79rpx;
+    font-size: 28rpx;
+    padding-left: 40rpx;
+}
+.action{
+    color: var(--secondColor);
+}
+.shouyi{
+    padding-right: 35rpx;
+    font-size: 28rpx;
+}
+/* 列表 */
+.scrollView{
+    padding: 0 24rpx;
+    margin-top: 166rpx;
+}
+.table_head{
+    height: 86rpx;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 80rpx;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    padding: 0 24rpx;
+}
+.table_head view{
+    width: 30%;
+    text-align: center;
+}
+.table_head view:first-child{
+    width: 50%;
+}
+.table_head view:last-child{
+    width: 20%;
+}
+.view-column{
+    width:100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #F6F6F6;
+}
+.view-column view{
+    width: 30%;
+    padding-top: 32rpx;
+    padding-bottom: 29rpx;
+    text-align: center;
+    font-size: 28rpx;
+}
+.view-column view:first-child{
+    width: 50%;
+}
+.view-column view:last-child{
+    width: 20%;
+}

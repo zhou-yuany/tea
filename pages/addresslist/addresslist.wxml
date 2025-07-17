@@ -1,0 +1,38 @@
+<!--pages/addresslist/addresslist.wxml-->
+<view class="box" style="{{theme}}">
+  <!-- 从选择门店跳转 start -->
+  <view class="white_bg dizhik" wx:if="{{from == 'takeaway'}}">
+    <view class="dark_gray title">当前定位</view>
+    <view class="dizi">
+      <image src="/static/dizhimap.png" mode=""/>
+      <view wx:if="{{!addressInfo.address}}">请选择收货地址</view>
+      <view wx:if="{{addressInfo.address}}">{{addressInfo.address}}</view>
+      <!-- 重新定位 -->
+      <view class="hongse locatek" bindtap="clearData"><image src="/static/locate.png" mode=""/>重新定位</view>
+    </view>
+  </view>
+  <view class="dizhihomek" wx:if="{{from == 'takeaway'}}"><image src="/static/dizhihome.png" mode=""/>我的收货地址</view>
+  <!-- 从选择门店跳转 end -->
+  <scroll-view style="padding-top: 20rpx;padding-bottom: 150rpx;" scroll-y="true" style="height:{{scrollHeight}}px">
+    <block wx:for="{{addressList}}" wx:for-item="item" wx:key="index">
+      <view class="white_bg item" >
+        <view class="leftpart" data-info="{{item}}" bindtap="goSelect">
+          <view class="firsth" style="text-indent: {{item.label == ''? '0rpx': '86rpx'}};">
+            <view class="white default" style="background-color: var(--themeColor);">{{item.label}}</view>
+            {{item.address}} {{item.roomNumber}}
+          </view>
+          <view class="addressxq gray">
+            <text>{{item.username}}</text><text>{{item.phone}}</text>
+          </view>
+        </view>
+        <view class="edit" bindtap="goEdit" data-id="{{item.id}}"><image src="{{skin.file}}/{{pictureInfo.edit}}" class="editk" mode=""/></view>
+      </view>
+    </block>
+    <!-- 空白页 -->
+    <view class="kong" wx:if="{{addressList.length == 0}}">
+      <image src="/static/kong5.png" style="width: 329rpx;height: 294rpx;"></image>
+      <text class="gray">请添加收货地址</text>
+    </view>
+    <button type="button" class="white addbtn" style="background-color: var(--themeColor);" bindtap="goAdd">新增收货地址</button>
+  </scroll-view>
+</view>

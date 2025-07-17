@@ -1,0 +1,190 @@
+<!--pages/food/food.wxml-->
+<view class="box" style="{{theme}}">
+  <!-- 头部 -->
+  <view class="header white_bg">
+    <!-- 到店 start-->
+    <view class="header_l" bindtap="goStore" hidden="{{hiddenstore}}">
+      <view class="shopName">{{shopName}}</view>
+      <view class="distance gray" wx:if="{{selectMap}}">
+        <image src="/static/location.png" mode="" class="location_ico" />
+        {{distance != '' ?  '距离您   ' + distance : ' 不详'}}
+      </view>
+    </view>
+    <!-- 到店 end-->
+    <!-- 外卖  start -->
+    <view class="header_l" bindtap="goStore" hidden="{{!hiddenstore}}">
+      <view class="hanga">
+        <view class="white bqs" style="background-color: var(--themeColor);" wx:if="{{addressInfo.label}}">{{addressInfo.label}}</view>
+        <view class="namek" wx:if="{{addressInfo.address}}" style="text-indent: {{addressInfo.label?'68rpx':'0rpx'}};">{{addressInfo.address}}{{addressInfo.roomNumber}}</view>
+        <view class="namek" wx:else style="text-indent: {{addressInfo.label?'68rpx':'0rpx'}};">请选择收货地址</view>
+        <image src="/static/arrow_hui.png" mode=""/>
+      </view>
+      <view class="distance" style="font-size: 24rpx;">
+        <view class="dark_gray">配送门店：{{shopName}}</view>
+        <view style="margin-left: 32rpx;color: var(--themeColor);">更换门店</view>
+      </view>
+    </view>
+    <!-- 外卖  end -->
+    <view class="header_r">
+      <view class="daodian">
+        <!-- 到店 start-->
+        <image src="{{skin.file}}/{{pictureInfo.switch2}}" wx:if="{{hiddenstore == false}}" bind:tap="goChange" mode="" />
+        <!-- 到店 end-->
+        <!-- 外卖  start -->
+        <image src="{{skin.file}}/{{pictureInfo.switch1}}" wx:if="{{hiddenstore == true}}" bind:tap="goChange" mode="" />
+        <!-- 外卖  end -->
+      </view>
+      <text style="color: var(--secondColor);" wx:if="{{isBusiness == 1}}">营业中：{{startTime}} - {{endTime}}</text>
+      <text class="gray" wx:else>休息中</text>
+    </view>
+  </view>
+  <!-- 优惠券 -->
+  <!-- <view class="couponk">
+    <block wx:for="{{couponList}}" wx:key="index">
+      <view class="coupon_item" wx:if="{{item.isGet == 1}}" bindtap="gocouponList">
+        <view class="price_view"><text>￥</text>{{item.parValue}}</view>
+        <view class="conditionh">满{{item.limits}}减</view>
+        <view class="couponbtn">已领</view>
+      </view>
+      <view class="coupon_items white" wx:else bindtap="gocouponList">
+        <view class="price_view"><text>￥</text>{{item.parValue}}</view>
+        <view class="conditionh">满{{item.condition}}减</view>
+        <view class="couponbtns">领</view>
+      </view>
+    </block>
+  </view> -->
+  <!-- 优惠券弹窗 -->
+  <!-- <view class="mask" hidden="{{couponShow}}" bindtap="goClose">
+    <view class="white_bg coupontc">
+      <view class="coupontc_bt white_bg">优惠券</view>
+      <scroll-view scroll-y="true" class="coupontc_scroll">
+        <view wx:for="{{couponList}}" wx:for-item="item" class='record-item' wx:key="index">
+          <view class="top">
+            <view class="leftpart">
+              <view class="dark_red"><text>￥</text>{{item.parValue}}</view>
+              <text class="dark_gray">满{{item.limits}}可用</text>
+            </view>
+            <view class="rightps">
+              <text>满{{item.limits}}减{{item.parValue}}元</text>
+              <text class="dark_gray" style="font-size: 24rpx;margin-top: 21rpx;line-height: 36rpx;">{{item.name}}</text>
+            </view>
+            <button wx:if="{{item.isGet == 2}}" type="button" class="white" data-id="{{item.id}}" catchtap="lingqu" style="background-color: var(--themeColor);">领取</button>
+            <button wx:else type="button" class="white" style="opacity: 0.5;background-color: var(--themeColor);" >已领取</button>
+          </view>
+          <view class="bottom">
+            <text class="huise">有效期至 {{item.endTime}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view> -->
+  <!-- 活动图 -->
+  <view class="tab_title" bindtap='formSubmit'><image src="{{skin.file}}/{{pictureInfo.activity}}" mode=""></image></view>
+  <!-- 内容 -->
+  <view class="container white_bg" style="height:{{paramList.length !== 0 ? scrollHeights : scrollHeight}}px;">
+      <view class="scroll-wrapper white_bg">
+        <view class="navigate-item" id="item{{index}}" wx:for="{{tabList}}" wx:key="index" data-index="{{index}}" bindtap="tabNav">
+          <view class="shu {{currentTab === index ? 'action' : ''}}"></view>
+          <view class="names {{currentTab === index ? 'active' : ''}}">{{item.name}}</view>
+        </view>
+      </view>
+    <swiper indicator-dots="{{false}}" bindchange="handleSwiper" current="{{currentTab}}" style="height:{{paramList.length !== 0 ? scrollHeights : scrollHeight}}px;float: left;" vertical="true">
+      <block wx:for="{{tabList}}" wx:key="index">
+        <swiper-item class='swiper'>
+          <view class="sub_title">{{item.name}}</view>
+            <view class="swiper-item white_bg" wx:for="{{goodsList}}" wx:key="index" bindtap="goXq" data-id="{{item.id}}">
+              <image wx:if="{{item.url}}" src="{{config}}/image/{{item.url}}" mode="" class="goods_pic" />
+              <view class="rightp">
+                <view class="title">{{item.name}}</view>
+                <view class="content gray">{{item.introduce}}</view>
+                <view class="bq hongse" wx:if="{{item.isCoupon == 1}}">用券专享</view>
+                <!-- 合伙人 start -->
+                <!-- <view class="bq hongse">合伙人专享</view> -->
+                <!-- 合伙人 end -->
+                <view class="pricek">
+                  <!-- 原 start -->
+                  <view class="price"><text>￥</text>{{item.price}}<text class="qi">起</text></view>
+                  <!-- 原 end -->
+                  <!-- 合伙人 start -->
+                  <!-- <view class="price hongse"><text>￥</text>{{item.price}}<text class="yuanjia gray">￥{{item.price}}</text></view> -->
+                  <!-- 合伙人 end -->
+                  <button type="button" class="specificationsbtn white" disabled="{{isBusiness != 1}}" style="background-color: var(--themeColor);">选规格 </button>
+                  <!-- <view class="item-center">
+                    <view class="btnkuang" catchtap="minusNum"><button class="buy-num-btn btn-minus" disabled="{{minusStatus}}" plain="true" data-index="{{index}}">-</button></view>
+                    <input class="buy-num-txt" type="number" data-index="{{index}}" data-index="{{index}}" bindinput="inputGoodsCount" bindblur="confirmGoodsCount" value="1" />
+                    <view class="btnkuang" catchtap="addNum"><button class="buy-num-btn btn-add" plain="true" data-index="{{index}}">+</button></view>
+                  </view> -->
+                </view>
+              </view>
+            </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 已选商品 -->
+    <view class="mask" hidden="{{shopkhiddden}}"></view>
+    <view class="shopk white_bg" hidden="{{shopkhiddden}}">
+      <view class="allcheck">
+        <checkbox class="all" bindtap="allChecked" value="" checked="{{isAllChecked}}">已选购商品（{{selectCount}}）</checkbox>
+        <view style="display: flex;justify-content: flex-end;align-items: center;" catchtap="goTrash"><image src="/static/trash_h.png" mode="" class="trashk" /><text class="dark_gray">清空商品</text></view>
+      </view>
+      
+        <view wx:for="{{paramList}}" class="item"  wx:key="index">
+          <checkbox-group bindchange="checkboxChange" data-index="{{index}}">
+          <checkbox value="{{item.checked}}" checked="{{item.checked}}" class="check"/>
+        </checkbox-group>
+          <view class="goodsitem">
+            <image wx:if="{{item.url}}" src="{{config}}/image/{{item.url}}" class="pic"></image>
+            <view class="goodsr">
+              <view class="goodsname">{{item.name}}</view>
+              <view class="nr gray">{{item.curSelect}}</view>
+              <view class="dihang">
+                <!-- 原 start -->
+                <view class="jiage"><text>￥</text>{{filters.toFix(item.price * item.goodsCount)}}</view>
+                <!-- 原 end -->
+                <!-- 合伙人 start -->
+                <!-- <view class="flex">
+                  <view class="bq hongse" style="margin-right: 10rpx;">合伙人专享</view>
+                  <view class="jiage hongse"><text>￥</text>{{item.price * item.goodsCount}}</view>
+                  <text class="gray yuanjia">¥{{item.price * item.goodsCount}}</text>
+                </view> -->
+                <!-- 合伙人 end -->
+                <view class="item-center">
+                  <view class="btnkuang" catchtap="minusNum" data-index="{{index}}"><button class="buy-num-btn btn-minus" disabled="{{minusStatus}}" plain="true" >-</button></view>
+                  <input disabled class="buy-num-txt" type="number" data-index="{{index}}" data-index="{{index}}" bindinput="inputGoodsCount" bindblur="confirmGoodsCount" value="{{item.goodsCount}}" />
+                  <view class="btnkuang" catchtap="addNum" data-index="{{index}}"><button class="buy-num-btn btn-add" plain="true" >+</button></view>
+                </view>
+              </view>
+            </view>
+          </view>
+        
+        </view>
+     
+    </view>
+    <!-- 购物车 -->
+    <view class="shopcark white_bg"  hidden="{{paramList.length == 0}}">
+      <view class="shopcar_l" catchtap="showShop">
+        <image src="{{skin.file}}/{{pictureInfo.cart}}"  mode=""/>
+        <view class="numberk red_bg white">{{selectCount}}</view>
+      </view>
+      <view class="prices red" style="margin-right: auto;">
+        <text>￥</text>{{totalPrice}}
+      </view>
+      <view class="jiesuank">
+        <button type="button" class="white" bindtap="goSettlement" style="background-color: var(--themeColor);">去结算</button>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 海报 -->
+  <view class='imagePathBox' hidden="{{maskHidden == false}}" bindtap="goGb">
+    <image src="{{imagePath}}" class='shengcheng'></image>
+    <button class='baocun white' catchtap='baocun' style="background-color: var(--themeColor);">保存相册，分享到朋友圈</button>
+  </view>
+  <view hidden="{{maskHidden == false}}" class="mask"></view>
+  <view class="canvas-box">
+    <canvas  style="width: 600rpx;height: 780rpx;position: fixed;left: 9999999999px;" canvas-id="mycanvas"/>
+  </view> 
+</view>
+
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>

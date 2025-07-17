@@ -1,0 +1,19 @@
+<!--pages/ledger/ledger.wxml-->
+<view class="box">
+  <scroll-view scroll-y class="scrollView">
+    <view class="table_head white_bg">
+      <view>时间</view>
+      <view>总收入</view>
+      <view>分账数</view>
+    </view>
+    <block wx:for="{{contentList}}">
+      <view class="view-column">
+        <block wx:for="{{item}}" wx:for-index="subIndex" wx:for-item="subItem">
+          <view class="column">
+            <text>{{subItem}}</text>
+          </view>
+        </block>
+      </view>
+    </block>
+  </scroll-view>
+</view>

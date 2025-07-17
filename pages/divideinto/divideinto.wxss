@@ -1,0 +1,69 @@
+/* pages/divideinto/divideinto.wxss */
+.intok{
+    width: 634rpx;
+    height: 80rpx;
+    border-radius: 20rpx;
+    margin: auto;
+    background: var(--bgColor-second);
+    box-shadow: 0rpx -4rpx 20rpx 0rpx rgba(0, 0, 0, 0.08);
+    font-size: 28rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30rpx;
+    padding-right: 26rpx;
+}
+.intok view{
+    font-size: 40rpx;
+}
+.intok view text{
+    font-size: 24rpx;
+    margin-left: 12rpx;
+}
+/* 筛选 */
+.screenk{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28rpx;
+    padding-top: 45rpx;
+    padding-bottom: 33rpx;
+}
+.picker{
+    display: flex;
+    align-items: center;
+    margin-left: 50rpx;
+}
+.picker image{
+    width: 24rpx;
+    height: 24rpx;
+    display: block;
+    margin-left: 16rpx;
+}
+.heji{
+    margin-right: 32rpx;
+}
+.itemk{
+    width: 632rpx;
+    height: auto;
+    margin: auto;
+    border-radius: 20rpx;
+    box-shadow: 0rpx 4rpx 11rpx 0rpx rgba(0, 0, 0, 0.1);
+    margin-bottom: 35rpx;
+    padding: 13rpx 29rpx;
+}
+.hang{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 26rpx;
+    line-height: 60rpx;
+}
+.hang_l{
+    width: 130rpx;
+}
+.hang_r{
+    width: 74%;
+    text-align: right;
+}

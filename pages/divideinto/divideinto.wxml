@@ -1,0 +1,52 @@
+<!--pages/divideinto/divideinto.wxml-->
+<view class="box" style="{{theme}}">
+    <view class="intok white">
+        <text>累计分成</text>
+        <view>1024.00<text>元</text></view>
+    </view>
+    <!-- 筛选 -->
+    <view class="screenk">
+        <view class="picker">
+            <picker mode="date" header-text="全部" fields="month" value="{{date}}" bindchange="bindDatechange"><text>{{date}}</text></picker>
+            <image src="/static/down.png" mode=""/>
+        </view>
+        <view class="heji">合计：￥232.00</view>
+    </view>
+    <!-- 列表 -->
+    <scroll-view scroll-y="true" class="scrollview" style="height:{{scrollHeight}}px">
+        <view class="itemk white_bg" wx:for="{{intoList}}" wx:key="index">
+            <view class="hang dark_gray">
+                <view class="hang_l">订单编号</view>
+                <view class="hang_r">17165413580009656</view>
+            </view>
+            <view class="hang dark_gray">
+                <view class="hang_l">下单时间</view>
+                <view class="hang_r">024-09-03 14:47:22</view>
+            </view>
+            <view class="hang dark_gray" style="align-items: flex-start;">
+                <view class="hang_l">配送地址</view>
+                <view class="hang_r">甘井子区高新园区七贤里文化创意产业园</view>
+            </view>
+            <view class="hang dark_gray">
+                <view class="hang_l">制作门店</view>
+                <view class="hang_r">科技谷店</view>
+            </view>
+            <view class="hang dark_gray">
+                <view class="hang_l">订单总金额</view>
+                <view class="hang_r">￥15.00</view>
+            </view>
+            <view class="hang dark_gray">
+                <view class="hang_l">分成金额</view>
+                <view class="hang_r" style="color: var(--secondColor);">￥2.00</view>
+            </view>
+            <view class="hang dark_gray">
+                <view class="hang_l">分成状态</view>
+                <view class="hang_r" style="color: {{''? 'var(--secondColor)':'var(--themeColor)'}};">{{''?'已到账':'未到账'}}</view>
+            </view>
+            <view class="hang dark_gray">
+                <view class="hang_l">到账时间</view>
+                <view class="hang_r">2024-09-03 14:47:34</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

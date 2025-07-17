@@ -1,0 +1,27 @@
+<!--pages/vip/vip.wxml-->
+<view class="box">
+    <!-- 规则说明 -->
+    <view class="rules"><image src="/static/help-circle.png" mode=""/><text class="gray">规则说明</text></view>
+    <!-- 进度条 -->
+    <view class="steps_box">
+        <progress percent="{{Steps*percent}}"  class="progress" stroke-width="2" color="#CFEA60" backgroundColor="#EDEDED" style="width:{{progress}}%" />
+        <view class="steps_all">
+            <view class="steps_one_box" wx:for="{{StepsList}}" wx:key="index">
+            <view class='{{Steps==index?"steps":Steps<index?"steps3":"steps2"}}'>
+            </view>
+            <view class="{{Steps>=index?'steps_wenzi':'steps_wenzi2'}}" >{{StepsList[index]}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 卡片 -->
+    <view class='cardk white {{Steps==0?"bgcolor1":Steps==1?"bgcolor2":Steps==2?"bgcolor3":Steps==3?"bgcolor4":Steps==4?"bgcolor5":"bgcolor6"}}'>
+        <view class="vipname">Lv.2 V2会员</view>
+        <view class="viptime">2024-03-26</view>
+        <view class="vipintegral">还差200积分升级V3会员</view>
+        <image src="/static/cardico.png" class="cardico" mode=""/>
+    </view>
+    <!-- 入会权益 -->
+    <view>
+        <view>入会权益</view>
+    </view>
+</view>

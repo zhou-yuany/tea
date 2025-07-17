@@ -1,0 +1,125 @@
+/* pages/discount_x/discount_x.wxss */
+.box{
+  padding: 20rpx 25rpx;
+}
+.discountlist{
+  margin: auto;
+}
+.discount_item{
+  width: 620rpx;
+  border-radius: 20rpx;
+  height: 220rpx;
+  margin: auto;
+  margin-bottom: 40rpx;
+  padding: 0 35rpx;
+  position: relative;
+  filter: drop-shadow(0px 2px 10px rgba(5, 0, 0, 0.1));
+  background: radial-gradient(circle at 20rpx center, transparent 20rpx, #ffffff 20rpx) -20rpx;
+}
+.top{
+  width: 100%;
+  height: 156rpx;
+  margin: auto;
+  border-bottom: 1px dashed #D8D8D8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.leftpart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25rpx;
+  margin-right: 53rpx;
+}
+.leftpart view{
+  font-size: 56rpx;
+  font-family: PingFangSCHeavy-Heavy;
+}
+.leftpart view text{
+  font-size: 20rpx;
+}
+.leftpart text{
+  font-size: 24rpx;
+}
+.rightp{
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+.rightp text{
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 45rpx;
+}
+.bottom{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12.5rpx 0;
+}
+.bottom text{
+  font-size: 20rpx;
+  line-height: 39rpx;
+  margin-left: 6rpx;
+}
+/*checkbox 样式  */
+radio {
+  width: 25rpx;
+  height: 25rpx;
+  border-radius: 50%;
+  margin-top: 30rpx;
+  margin-right: 13rpx;
+}
+radio .wx-radio-input {
+  width: 25rpx;
+  height: 25rpx;
+  border-radius: 50%;
+}
+radio .wx-radio-input.wx-radio-input-checked {
+  background: var(--themeColor);
+  border-color: var(--themeColor);
+}
+radio .wx-radio-input.wx-radio-input-checked::before {
+  width: 25rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 16rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.footerk{
+  width: 100%;
+  height: 120rpx;
+  box-shadow: 0rpx 8rpx 20rpx 1rpx rgba(0, 0, 0, 0.08);
+  margin: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.footerk view{
+  font-size: 24rpx;
+}
+.quan_price{
+  font-size: 36rpx;
+}
+.surebtn{
+  width: 220rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+  font-size: 33rpx;
+  text-align: center;
+  line-height: 88rpx;
+  margin: 0 21rpx 0 28rpx;
+}

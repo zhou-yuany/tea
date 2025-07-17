@@ -1,0 +1,73 @@
+/* pages/hobby/hobby.wxss */
+page{
+    background-color: #ffffff;
+    padding-bottom: 104rpx;
+}
+.itemk{
+    padding: 0 50rpx 60rpx;
+}
+.title{
+    font-size: 32rpx;
+    line-height: 45rpx;
+    font-weight: bold;
+    margin-bottom: 14rpx;
+}
+.subtitle{
+    font-size: 28rpx;
+    line-height: 39rpx;
+    margin-bottom: 39rpx;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+}
+checkbox {
+    width: 25rpx;
+    height: 25rpx;
+}
+checkbox .wx-checkbox-input {
+    width: 25rpx;
+    height: 25rpx;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    background: var(--secondColor);
+    border-color: var(--secondColor);
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    width: 25rpx;
+    height: 25rpx;
+    line-height: 25rpx;
+    text-align: center;
+    font-size: 16rpx;
+    color: #fff;
+    background: transparent;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.customa-checkbox{
+    margin-bottom: 30rpx;
+    display: flex;
+    align-items: center;
+}
+.check-box{
+    width: 600rpx;
+    font-size: 28rpx; 
+    line-height: 41rpx;
+}
+.inputk{
+    width: 594rpx;
+    height: 80rpx;
+    border-radius: 16rpx;
+    border: 1px solid #D8D8D8;
+    padding-left: 20rpx;
+    margin-top: 21rpx;
+}
+.btn{
+    width: 686rpx;
+    height: 80rpx;
+    border-radius: 49rpx;
+    margin: auto;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 80rpx;
+}

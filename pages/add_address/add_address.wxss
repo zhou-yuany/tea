@@ -1,0 +1,146 @@
+/* pages/add_address/add_address.wxss */
+.box{
+    padding-top: 40rpx;
+  }
+  .top{
+    width: 100%;
+    height: 340rpx;
+    margin: auto;
+  }
+  .top image{
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .form{
+    width: 686rpx;
+    height: auto;
+    margin: auto;
+    border-radius: 32rpx;
+  }
+  .secondh{
+    width: 638rpx;
+    height: 94rpx;
+    margin: auto;
+    border-bottom: 1rpx solid #eeeeee;
+    display: flex;
+    align-items: center;
+    font-size: 27rpx;
+  }
+  .secondh view{
+    width: 117rpx;
+  }
+  .picker{
+    width: 100%!important;
+  }
+  .secondh input{
+    width: 72%;
+    padding-left: 8rpx;
+  }
+  .fourth{
+    width: 638rpx;
+    height: 94rpx;
+    margin: auto;
+    border-bottom: 1rpx solid #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 27rpx;
+  }
+  .fourth view{
+    width: 117rpx;
+  }
+  .fourth input{
+    width: 40%;
+    padding-left: 8rpx;
+    margin-right: auto;
+  }
+  .radiok{
+    width: 260rpx!important;
+    font-size: 24rpx;
+  }
+.custom-radio .wx-radio-input{
+  border-radius: 50%;
+  border: 2rpx solid #767676;
+}
+.custom-radio .wx-radio-input.wx-radio-input-checked {
+  background: var(--themeColor);
+  border: 1px solid var(--themeColor);
+}
+.custom-radio .wx-radio-input.wx-radio-input-checked::before {
+  display: none;
+}
+.custom-radio .wx-radio-input.wx-radio-input-checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26rpx;
+  height: 26rpx;
+  border: 6rpx solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+}
+  .thirdh{
+    width: 638rpx;
+    height: 94rpx;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 27rpx;
+  }
+  .thirdh view{
+    width: 161rpx;
+  }
+  .thirdh switch{
+    zoom: .7;
+  }
+  .fifth{
+    width: 638rpx;
+    height: 94rpx;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 27rpx;
+  }
+  .fifth view{
+    width: 117rpx;
+  }
+  .bqlist{
+    width: auto!important;
+    display: flex;
+    align-items: center;
+  }
+  .bqlist view{
+    width: 88rpx;
+    height: 45rpx;
+    border-radius: 8rpx;
+    border: 1px solid #D8D8D8;
+    background-color: #ffffff;
+    color: #999999;
+    text-align: center;
+    line-height: 43rpx;
+    margin-right: 16rpx;
+  }
+  .bqlist view:last-child{
+    margin-right: 0;
+  }
+  .savebtn{
+    width: 686rpx;
+    height: 80rpx;
+    margin: auto;
+    border-radius: 40rpx;
+    font-size: 33rpx;
+    margin-top: 64rpx;
+  }
+  .active {
+    border: 1px solid var(--themeColor)!important;
+    color: #ffffff!important;
+    background-color: var(--themeColor)!important;
+}
+.arrowk{
+  width: 36rpx;
+  height: 36rpx;
+  display: block;
+}

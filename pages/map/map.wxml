@@ -1,0 +1,4 @@
+<!--pages/address/address.wxml-->
+<view class="box">
+    <map id="myMap" style="height: 90%;width: 90%;" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" show-location/>
+</view>

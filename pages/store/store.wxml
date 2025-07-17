@@ -1,0 +1,64 @@
+<!--pages/store/store.wxml-->
+<view class="box" style="{{theme}}">
+  <!-- 搜索 -->
+  <!-- <view class="searchk white_bg">
+    <view class="leftp" bindtap="chooseCity"><text>{{city}}</text><image src="/static/show_off.png" mode=""/></view>
+    <view class="rightp" >
+      <image src="/static/search_icon.png" mode=""/>
+      <input type="text" placeholder="搜索门店" value="{{keyword}}" bindinput="inputKeyword" placeholder-class="placeholder_color" type="text" confirm-type="search" bindconfirm="searchMap"/>
+    </view>
+  </view> -->
+  <!-- 地图 -->
+  <!-- <view class="mapk">
+    <map markers="{{markers}}" longitude="{{longitude}}" latitude="{{latitude}}"></map>
+  </view> -->
+  <!-- <view class="diank white_bg">
+    <view style="color: var(--secondColor);"><image src="/static/mapico2.png" mode=""/>自助店</view>
+    <view style="color: var(--themeColor);"><image src="/static/mapico1.png" mode=""/>外卖店</view>
+  </view> -->
+  <!-- 外卖 start -->
+  <view class="white_bg dizhik" bind:tap="goAdd" wx:if="{{from == 'takeaway' && !addressInfo.address}}">
+    <view class="dark_gray dz_bt">收货地址</view>
+    <view class="dz_nr"><text>请选择收货地址</text><image src="/static/arrowh.png" mode=""/></view>
+  </view>
+  <view class="white_bg dizhik" bind:tap="goAddress" wx:if="{{from == 'takeaway' && addressInfo.address}}">
+    <view class="dark_gray dz_bt">收货地址</view>
+    <view class="dz_nr">
+      <view style="display: flex;flex-direction: column;width: 90%;">
+        <text>{{addressInfo.address}}{{addressInfo.roomNumber}}</text>
+        <text class="gray" style="font-size: 24rpx;">{{addressInfo.username}}（{{addressInfo.sex == 1 ? '男士' : '女士'}}） {{addressInfo.phone}}</text>
+      </view>
+      <image src="/static/arrowh.png" mode=""/>
+    </view>
+  </view>
+  <view class="gray hang" wx:if="{{from == 'takeaway'}}">收货地址附近可提供配送的门店</view>
+  <!-- 外卖  end -->
+  <!-- 列表 -->
+  <scroll-view scroll-y="true" class="scrollview" style="height:{{scrollHeight}}px">
+    <block wx:for="{{addressList}}" wx:key="index">
+      <view class="itemk white_bg" bindtap="goItem" data-id="{{item.id}}" data-info="{{item}}" >
+        <view class="hanga">
+          <view class="hanga_l">
+            <view wx:if="{{item.equipmentType == 1}}" class="white" style="background-color: var(--themeColor);">外卖店</view>
+            <view wx:else class="white" style="background-color: var(--secondColor);">自助店</view>
+            <text style="color: {{item.equipmentType == 1 && item.distance > 5 ? '#999999' : '#000000'}};">{{item.name}}</text>
+          </view>
+          <view class="hanga_r gray">{{filters.toKm(item.distance)}}</view>
+        </view>
+        <view class="tiplist white_bg">{{item.isBusiness == 1 ? '营业中' : '休息中'}}</view>
+        <view class="address gray">{{item.address}}</view>
+        <view class="hangb">
+          <view class="time gray">营业时间 {{item.onStartTime ? item.onStartTime+'-' : ''}}{{item.onEndTime ? item.onEndTime : ''}}</view>
+          <!-- 外卖 start -->
+          <view class="cc" style="color: var(--secondColor);" wx:if="{{from == 'takeaway' && item.equipmentType == 1 && item.distance > 5}}">超出配送范围</view>
+          <!-- 外卖 end -->
+        </view>
+        <view class="daohang">
+          <image src="/static/phone.png" mode="" data-phone="{{item.phone}}" catchtap="goTell" />
+          <image src="/static/navigation.png" mode="" data-lat="{{item.lat}}" data-lng="{{item.lng}}" data-name="{{item.name}}" data-address="{{item.address}}" catchtap="goNavigation" />
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>

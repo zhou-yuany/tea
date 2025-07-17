@@ -1,0 +1,46 @@
+<!--pages/add_address/add_address.wxml-->
+<view class="box" style="{{theme}}">
+  <form catchsubmit="formSubmit">
+  <view class="form white_bg">
+    <view class="fourth">
+      <view>收货人</view>
+      <input type="text" value="{{username}}" bindinput="inputName" placeholder-class="placeholder_color" placeholder="名字" name="username"/>
+      <view class="radiok">
+        <radio-group bindchange="radioChange" style="display: flex;align-items: center;">
+          <label wx:for="{{items}}" wx:key="index" style="display: flex;align-items: center;margin-left: 20rpx;">
+            <radio style="transform:scale(0.6);" class="custom-radio" value="{{item.value}}" checked="{{item.checked}}" />
+            {{item.name}}
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <view class="secondh">
+      <view>手机号</view>
+      <input type="number" value="{{phone}}" bindinput="inputPhone" placeholder-class="placeholder_color" placeholder="手机号码" name="phone"/>
+    </view>
+    <view class="secondh" bind:tap="onAddress">
+      <view>地址</view>
+      <!-- <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" style="width: 76%;">
+        <view class="picker gray">{{region[0]}}{{region[1]}}{{region[2]}}</view>
+      </picker> -->
+      <view style="width: 76%;"><input type="text" value="{{address}}" name="address" class="picker" placeholder-class="placeholder_color" placeholder="请选择所在地址" disabled /></view>
+      <image src="/static/arrow.png" class="arrowk" mode=""/>
+    </view>
+    <view class="secondh">
+      <view>门牌号</view>
+      <input type="text" value="{{roomNumber}}" bindinput="inputRoomNumber" placeholder-class="placeholder_color" name="roomNumber" placeholder="例：5号楼905室" />
+    </view>
+    <!-- <view class="thirdh">
+      <view>设为默认地址</view>
+      <switch checked="{{isChecked}}" name="is_default" bindchange="changeSwitch" vulue="{{is_default}}"></switch>
+    </view> -->
+    <view class="fifth">
+      <view>标签</view>
+      <view class="bqlist">
+        <view class="{{currentTab == idx ?'active':''}}" wx:for="{{tipList}}" wx:for-index="idx" wx:key="idx" data-current="{{idx}}" bindtap="typeChange">{{item}}</view>
+      </view>
+    </view>
+  </view>
+  <button form-type="submit"class="white savebtn" style="background-color: var(--themeColor);">保存并使用</button>
+</form>
+</view>

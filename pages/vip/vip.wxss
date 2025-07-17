@@ -1,0 +1,138 @@
+/* pages/vip/vip.wxss */
+page{
+    background-color: #ffffff!important;
+}
+/* 规则说明 */
+.rules{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 20rpx;
+}
+.rules image{
+    width: 24rpx;
+    height: 24rpx;
+    display: block;
+    margin-right: 11rpx;
+}
+.rules text{
+    font-size: 26rpx;
+    line-height: 38rpx;
+    margin-right: 22rpx;
+}
+/* 进度条 */
+.steps_box{
+    width: 94%;
+    margin: auto;
+    height: 102rpx;
+    position:relative;
+    padding-top: 50rpx;
+}
+.progress{
+    margin: auto;
+}
+.steps_all{
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 44rpx;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.steps_one_box{
+    height: 100%;
+    width: 16.667%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.steps{
+    width: 14rpx;
+    height: 14rpx;
+    border-radius: 50%;
+    background-color: #CFEA60;
+    text-align: center;
+}
+.steps2{
+    width: 14rpx;
+    height: 14rpx;
+    border-radius: 50rpx;
+    background-color: #CFEA60;
+    text-align: center;
+}
+.steps3{
+    width: 14rpx;
+    height: 14rpx;
+    border-radius: 50rpx;
+    background-color: #D8D8D8;
+    text-align: center;
+  }
+  .steps_wenzi{
+    margin-top: 14rpx;
+    font-size: 24rpx;
+    line-height: 45rpx;
+    color: #CFEA60;
+}
+.steps_wenzi2{
+    margin-top: 14rpx;
+    font-size: 24rpx;
+    line-height: 45rpx;
+    color: #D8D8D8;
+}
+/* 卡片 */
+.cardk{
+    width: 632rpx;
+    height: 200rpx;
+    border-radius: 24rpx;
+    margin: auto;
+    position: relative;
+    padding-left: 54rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 38rpx;
+}
+.cardico{
+    width: 299rpx;
+    height: 277rpx;
+    display: block;
+    position: absolute;
+    right: 25rpx;
+    top: -34rpx;
+    z-index: 1;
+}
+.vipname{
+    font-size: 44rpx;
+    line-height: 64rpx;
+    margin-bottom: 6rpx;
+}
+.viptime{
+    font-size: 26rpx;
+    line-height: 38rpx;
+    margin-bottom: 11rpx;
+}
+.vipintegral{
+    font-size: 26rpx;
+    line-height: 38rpx;
+}
+.bgcolor1{
+    background-color: #CFEA60;
+}
+.bgcolor2{
+    background-color: #CAEAB7;
+}
+.bgcolor3{
+    background-color: #A9D99D;
+}
+.bgcolor4{
+    background-color: #F2BF7E;
+}
+.bgcolor5{
+    background-color: #F2AB52;
+}
+.bgcolor6{
+    background-color: #F2AB52;
+}

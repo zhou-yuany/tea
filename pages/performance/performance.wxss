@@ -1,0 +1,58 @@
+/* pages/performance/performance.wxss */
+page{
+  background: linear-gradient(180deg, #FFFFFF 0%, #F6F6F6 100%);
+}
+.box{
+  padding-bottom: 50rpx;
+}
+.scrollView{
+  width: 650rpx;
+  margin: auto;
+  white-space: nowrap;
+}
+.table_head{
+  width: 650rpx;
+  height: 86rpx;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table_head view{
+  width: 33.3%;
+  text-align: center;
+}
+.view-column{
+  width:33.3%;
+  display:inline-block;
+}
+.column{
+  width: 100%;
+  padding-top: 32rpx;
+  padding-bottom: 29rpx;
+  border-bottom: 1px solid #F6F6F6;
+  text-align: center;
+  font-size: 28rpx;
+}
+/* 柱状图 */
+.tuk{
+  width: 593rpx;
+  height: 370rpx;
+  border-radius: 12rpx;
+  margin: auto;
+  margin-top: 49rpx;
+  padding: 10rpx;
+  /* background-color: #ddd; */
+}
+#mychart-dom-bar{
+  width: 100%;
+  height: 100%;
+}
+#mychart-dom-line{
+  width: 100%;
+  height: 100%;
+}
+#mychart-dom-pie{
+  width: 100%;
+  height: 100%;
+}

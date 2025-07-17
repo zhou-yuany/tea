@@ -1,0 +1,107 @@
+<!--pages/order_xq/order_xq.wxml-->
+<view class="box {{isIphoneX?'isIPX':''}}" style="{{theme}}">
+  <view class="group white_bg">
+    <view class="biaoti">取餐码</view>
+    <view class="hao">{{info.pickupCode}}</view>
+    <!-- 状态为制作中  start -->
+    <view class="hanga" wx:if="{{info.orderStatus <= 1}}">
+      <view class="tip blue">制作中</view>
+      <text class="gray">预计10-15分钟</text>
+    </view>
+    <!-- 状态为制作中  end -->
+    <!-- 状态为已完成  start -->
+    <view class="hanga" wx:if="{{info.orderStatus == 2}}">
+      <button type="button" class="white_bg againbtn" catchtap="anotherOrder">再来一单</button>
+    </view>
+    <!-- 状态为已完成  end -->
+  </view>
+  <view class="hangb white_bg">
+    <view class="dizhi">
+      <text>{{info.shopName}}</text>
+      <text class="gray">{{info.shopAddress}}</text>
+    </view>
+    <image src="/static/phone.png" class="ico" mode="" bindtap="goTell" />
+    <image src="/static/navigation.png" class="ico" mode="" bindtap="goDaohang" />
+  </view>
+  <view class="groupb white_bg">
+    <view class="titles">订单详情</view>
+    <block wx:for="{{info.params}}" wx:key="index">
+      <view class="itemk">
+        <view class="spk">
+          <image wx:if="{{item.url}}" src="{{config}}/image/{{item.url}}" mode="" class="pic" />
+          <view class="rightp">
+            <view class="title">{{item.name}}</view>
+            <view class="tips gray">{{item.specifications}}</view>
+          </view>
+          <!-- 原 start -->
+          <view class="order_r">
+            <view class="pricek">￥{{filters.toFix(item.price * item.number)}}</view>
+            <view class="num gray">x{{item.number}}</view>
+          </view>
+          <!-- 原 end -->
+          <!-- 合伙人 start -->
+          <!-- <view class="order_r">
+            <view style="display: flex;"><view class="bq hongse">合伙人专享</view><view class="pricek">￥10</view></view>
+            <view class="gray yuanjia">￥{{item.price * item.number}}</view>
+            <view class="num">x{{item.number}}</view>
+          </view> -->
+          <!-- 合伙人 end -->
+        </view>
+        <view class="makebtn" wx:if="{{info.equipmentType == 2 && info.isUseDevice == 1}}">
+          <button type="button" wx:if="{{item.makeStatus == 0}}" class="white" catch:tap="makeOrders" data-id="{{item.id}}" data-equipmentno="{{item.equipmentNo}}" style="background-color: var(--themeColor);">制作</button>
+          <button type="button" class="white" style="background-color: var(--secondColor);" wx:if="{{item.makeStatus == 2}}">已完成</button>
+        </view>
+      </view>
+    </block>
+    <view class="hangc">
+      <text>优惠券</text>
+      <text class="gray">{{info.couponId && info.couponId > 0 ? '￥'+info.parValue : '无'}}</text>
+    </view>
+    <view class="hangc">
+      <text>订单备注</text>
+      <text class="gray">{{(info.notes == '' || info.notes == null) ? '无' : info.notes}}</text>
+    </view>
+    <view class="hangc">
+      <text>支付方式</text>
+      <text>微信支付</text>
+    </view>
+    <view class="hangd">
+      <text>实付</text><text>￥</text>{{info.totalPrice}}
+    </view>
+  </view>
+  <!-- 外卖 start -->
+  <view class="groupd white_bg" wx:if="{{info.orderType == 1 && info.deliveryDate}}">
+    <view class="biaotis">配送信息</view>
+    <view class="hangf gray">预计送达：{{info.deliveryDate}}</view>
+    <view class="hangf gray" style="margin-bottom: 0;">配送地址：{{info.consignee}} {{info.receiverPhone}}</view>
+    <view class="hangg gray">{{info.address}}{{info.roomNumber}}</view>
+  </view>
+  <!-- 外卖  end -->
+  <view class="groupc white_bg">
+    <view class="hange">
+      <text class='url-txt' selectable='true'>订单号码：{{info.orderNum}}</text>
+      <text class="blue" bindtap='onClick'>复制</text>
+    </view>
+    <view class="hange">下单时间：{{info.createTime}}</view>
+    <view class="hange" style="margin-bottom: 0;">门店：{{info.shopName}}</view>
+  </view>
+</view>
+<!-- 弹窗 -->
+<view class="mask" wx:if="{{showBei}}">
+  <view class="tca white_bg">
+    <view class="tca_bt">提示</view>
+    <view class="tca_nr" style="margin-bottom: 0;">请先确认好您所使用的设备并放好饮品杯子</view>
+    <view class="xinxi red">设备：{{equipmentNo}}</view>
+    <!-- <view class="tca_nr">点击开始制作等待机器制作</view> -->
+    <button type="button" class="white" style="background-color: var(--secondColor);" wx:if="{{showStart}}" bind:tap="startMake">开始制作</button>
+    <button type="button" class="white" style="background-color: var(--secondColor);" wx:else>制作中</button>
+  </view>
+</view>
+<!-- <view class="mask" wx:if="{{showMake}}">
+  <view class="tca white_bg">
+    <view class="tca_bt">提示</view>
+    <view class="tca_nr">点击开始制作等待机器制作</view>
+    <button type="button" class="white" bind:tap="onMake" style="background-color: var(--themeColor);">制作</button>
+  </view>
+</view> -->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>

@@ -1,0 +1,4 @@
+<!--pages/address/address.wxml-->
+<view class="box">
+    腾讯地图 
+</view>

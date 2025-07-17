@@ -1,0 +1,61 @@
+<!--pages/productxq/productxq.wxml-->
+<view class="box" style="{{theme}}">
+  <!-- 图片 -->
+  <view class="pick">
+    <view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+      <image src="/static/back.png" class="back" bindtap="goBack"></image>
+    </view>
+    <view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>
+    <image src="{{config}}/image/{{info.url}}" mode=""/>
+  </view>
+  <!-- 内容 -->
+  <view class="title">{{info.name}}</view>
+  <view class="content">{{info.introduce}}</view>
+  <view class="tipk hui">
+    <text>【饮茶小贴士】</text>
+    <text>{{info.tips}}</text>
+  </view>
+  <!-- 规格 -->
+  <view class="choosegg" wx:for="{{info.paramCateList}}" wx:key="index">
+    <view class="guigename">{{item.name}}</view>
+    <view class="guigek" >
+      <block wx:for="{{item.paramList}}" wx:for-item="param" wx:for-index="index2" wx:key="index2">
+        <view class="{{currentTabb[index].index == index2 ? 'onchoose' : ''}}" data-currenta="{{index}}" data-currentb="{{index2}}"  data-paramid="{{param.id}}" data-cate="{{item.name}}" data-param="{{param.name}}" catchtap="clickOn">{{param.name}} </view>
+      </block>
+    </view>
+  </view>
+  <!-- 详情图 -->
+  <view class="message_pick">
+    <block wx:for="{{info.pic}}" wx:key="index" wx:for-item="item">
+      <image src="{{config}}/image/{{item.path}}" mode="widthFix"></image>
+    </block>
+  </view>
+  <!-- 底部 -->
+  <view class="foot white_bg">
+    <view class="foothang">
+      <!-- 合伙人 start -->
+      <!-- <view class="zuoce">
+        <view class="bq hongse">合伙人专享</view>
+        <view class="youhuijia hongse"><text>￥</text>10</view>
+        <view class="yuanjia gray">￥{{addPrice ? (info.price + 2) * goodsCount : info.price * goodsCount}}</view>
+        <view class="yuanjia gray">￥{{(info.price + addPrice) * goodsCount }}</view>
+      </view> -->
+      <!-- 合伙人 end -->
+      <!-- 原 start -->
+      <block>
+        ￥
+        <!-- <text>{{addPrice ? (info.price + 2) * goodsCount : info.price * goodsCount}}</text> -->
+        <text>{{filters.toFix((totalPrice) * goodsCount) }}</text>
+      </block>
+      <!-- 原 end -->
+      <view class="item-center">
+        <button class="buy-num-btn btn-minus" disabled="{{minusStatus}}" plain="true" catchtap="minusNum">-</button>
+        <input class="buy-num-txt" type="number" disabled bindinput="inputGoodsCount" value="{{goodsCount}}" bindblur="confirmGoodsCount" />
+        <button class="buy-num-btn btn-add" plain="true" catchtap="addNum">+</button>
+      </view>
+    </view>
+    <view class="foothanga dark_gray">{{curSelect}}</view>
+    <button type="button" class="addbtn white" bindtap="addShop" style="background-color: var(--themeColor);">加入购物车</button>
+  </view>
+</view>
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>

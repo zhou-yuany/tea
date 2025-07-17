@@ -1,0 +1,57 @@
+/* pages/address/address.wxss */
+/* 搜索 */
+.searchk{
+    width: 686rpx;
+    height: 70rpx;
+    margin: auto;
+    margin-top: 30rpx;
+    display: flex;
+    align-items: center;
+  }
+  .leftp{
+    width: 154rpx;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ddd;
+  }
+  .leftp text{
+    font-size: 24rpx;
+  }
+  .leftp image{
+    width: 15rpx;
+    height: 15rpx;
+    display: block;
+    margin-left: 8rpx;
+  }
+  .rightp{
+    width: 530rpx;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .rightp image{
+    width: 35rpx;
+    height: 35rpx;
+    display: block;
+    margin: 0 15rpx;
+  }
+  .rightp input{
+    width: 450rpx;
+    height: 100%;
+    font-size: 24rpx;
+    line-height: 70rpx;
+  }
+  /* 地图 */
+  .mapk{
+    width: 100%;
+    height: 410rpx;
+    margin: auto;
+    margin-top: 30rpx;
+  }
+  .mapk map{
+    width: 100%;
+    height: 100%;
+    display: block;
+  }

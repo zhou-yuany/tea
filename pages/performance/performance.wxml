@@ -1,0 +1,30 @@
+<!--pages/performance/performance.wxml-->
+<view class="box">
+  <!-- 表格 -->
+  <view class="scrollView">
+    <view class="table_head white_bg">
+      <view></view>
+      <view>2023A增长率</view>
+      <view>2022A增长率</view>
+    </view>
+    <block wx:for="{{contentList}}">
+      <view class="view-column">
+        <block wx:for="{{item}}" wx:for-index="subIndex" wx:for-item="subItem">
+          <view class="column">
+            <text>{{subItem}}</text>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+  <!-- 柱状图 -->
+  <view class="tuk white_bg">
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ecBar }}" force-use-old-canvas="true"></ec-canvas>
+  </view>
+  <view class="tuk white_bg">
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecLine }}" force-use-old-canvas="true"></ec-canvas>
+  </view>
+  <view class="tuk white_bg">
+    <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ecPie }}" force-use-old-canvas="true"></ec-canvas>
+  </view>
+</view>

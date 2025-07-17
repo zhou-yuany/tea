@@ -1,0 +1,121 @@
+<!--pages/order_info/order_info.wxml-->
+<view class="box" style="padding-bottom: {{currentTab == 0?'180rpx':'260rpx'}}; {{theme}}">
+  <!-- 地址 -->
+  <view class="swiper-tab gray_bg">
+    <view class="swiper-tab-list" data-current="0" bindtap="swichNav"><image src="{{skin.file}}/{{pictureInfo.selfPickup}}" class="ziti" mode="" wx:if="{{currentTab==0}}" />自提</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav"><image src="{{skin.file}}/{{pictureInfo.takeaway}}" class="waimai" mode="" wx:if="{{currentTab==1}}" />外卖</view>
+  </view>
+  <view class="addressk white_bg" wx:if="{{currentTab == 0}}">
+    <view class="addressh" bindtap="goAddress">
+      <view class="juli">
+        <text class="name">{{shopName}}</text>
+        <image wx:if="{{selectMap}}" src="/static/location.png" mode=""/>
+        <text wx:if="{{selectMap}}" class="dark_gray">{{distance != '' ?  '距离您' + distance : '不详'}}</text>
+      </view>
+      <view class="dizhi gray">{{shopAddress}}</view>
+    </view>
+    <!-- <view class="tellh">
+      <text>预留电话</text>
+      <input type="text" placeholder="点击填写预留电话" bindinput="inputPhone"  value="{{phone}}" placeholder-class="placeholder_color" />
+    </view> -->
+  </view>
+  <view class="white_bg kuang" wx:if="{{currentTab == 1}}">
+    <view class="kuang_top" bind:tap="goAddresslist">
+      <view class="kuang_top_l">
+        <view>{{addressInfo.address}}{{addressInfo.roomNumber}}</view>
+        <view class="gray" style="margin-top: 10rpx;"><text>{{addressInfo.username}}（{{addressInfo.sex == 1 ? '男士' : '女士'}}） </text><text>{{addressInfo.phone}}</text></view>
+      </view>
+      <image src="/static/arrowh.png" mode=""/>
+    </view>
+    <view class="kuang_bottom"><text>送达时间</text><text style="color: var(--secondColor);">大约{{deliveryTime}}送达</text></view>
+  </view>
+  <!-- 赠予信息 外卖 start-->
+  <view class="white_bg giftk" wx:if="{{currentTab == 1}}">
+    <view class="hangone gray" bind:tap="goGift" hidden="{{hiddengift}}"><image src="/static/cir.png" class="cir" mode=""/><text style="margin-right: auto;">赠予信息</text><image src="/static/down.png" class="fx" mode=""/></view>
+    <view class="hangone" bind:tap="goGift" hidden="{{!hiddengift}}"><image src="{{skin.file}}/{{pictureInfo.checked}}" class="cir" mode=""/><text style="margin-right: auto;">赠予信息</text><image src="/static/up.png" class="fx" mode=""/></view>
+    <view class="formk" hidden="{{!hiddengift}}">
+      <view class="hangd">
+        <input type="text" value="{{isChecked ? '匿名用户' : giver}}" bindinput="inputGiver" placeholder="姓名" placeholder-class="placeholder_color" />
+        <view class="niming"><checkbox checked="{{isChecked}}" bind:tap="checkboxChange" class="custom-checkbox" style="zoom: .6;"></checkbox>匿名</view>
+      </view>
+      <input type="text" maxlength="20" value="{{giverNotes}}" bindinput="inputGiverNotes" placeholder="留言（限制20个字）" placeholder-class="placeholder_color" class="liuyan" />
+    </view>
+  </view>
+  <!-- 赠予信息 外卖 end-->
+  <!-- 商品 -->
+  <view class="shopk white_bg">
+    <view class="shopk_bt">订单详情</view>
+    <block wx:for="{{goodsList}}" wx:key="index">
+      <view class="spk">
+        <image wx:if="{{item.url}}" src="{{config}}/image/{{item.url}}" mode="" class="pic" />
+        <view class="rightp">
+          <view class="title">{{item.name}}</view>
+          <view class="tips gray">{{item.curSelect}}</view>
+        </view>
+        <!-- 原 start -->
+        <view class="order_r">
+          <view class="pricek">￥{{filters.toFix(item.price * item.goodsCount)}}</view>
+          <view class="num">x{{item.goodsCount}}</view>
+        </view>
+        <!-- 原 end    -->
+        <!-- 合伙人 start -->
+        <!-- <view class="order_r">
+          <view style="display: flex;"><view class="bq hongse">合伙人专享</view><view class="pricek">￥10</view></view>
+          <view class="gray yuanjia">￥{{item.price * item.goodsCount}}</view>
+          <view class="num">x{{item.goodsCount}}</view>
+        </view> -->
+        <!-- 合伙人 end -->
+      </view>
+    </block>
+    <view class="hanga">
+      <text>优惠券</text>
+      <view class="diank" bindtap="goDiscount">
+        <text wx:if="{{couponId == null}}" class="gray">{{couponHave ? '请选择' : '暂无可用'}}</text>
+        <!-- <text wx:if="{{couponId != null}}" class="red">减￥{{couponValue + isCoupon}}</text> -->
+        <text wx:if="{{couponId != null}}" class="red">减￥{{couponValue}}</text>
+       <!-- <image wx:if="{{couponHave && isCoupon == 0}}" src="/static/arrow.png" class="arrowpic" mode=""/> -->
+       <image wx:if="{{couponHave}}" src="/static/arrow.png" class="arrowpic" mode=""/>
+      </view>
+    </view>
+    <view class="hanga">
+      <text>订单备注</text>
+      <view class="diank">
+        <input type="text" placeholder="点击填写备注" bindinput="inputRemark" value="{{remark}}" placeholder-class="placeholder_color" />
+        <image src="/static/arrow.png" class="arrowpic" mode=""/>
+      </view>
+    </view>
+    <view class="hanga">
+      <text>支付方式</text>
+      <view class="diank">
+        <text>微信支付</text>
+        <!-- <image src="/static/arrow.png" class="arrowpic" mode=""/> -->
+      </view>
+    </view>
+    <view class="hangb">
+      <text>共计{{selectCount}}件商品，合计</text><text class="yuan">￥</text>{{totalPrice - couponValue}}
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class="footer white_bg {{isIphoneX?'isIPX':''}}">
+    <view class="jgk">
+      <text>待支付</text><text style="margin-right: 0;">￥</text>{{totalPrice - couponValue}}
+    </view>
+    <button type="button" class="paybtn white" bindtap="goPay" style="background-color: var(--themeColor);">支付</button>
+  </view>
+  <!-- 弹窗 -->
+  <view class="mask" hidden="{{isHidden}}" bindtap="goClosed">
+    <view class="whitek white_bg">
+      <view class="hangc">
+        <image src="/static/pos.png" mode=""/>
+        <text>{{distance != '' ?  '距离您' + distance : '不详'}}</text>
+      </view>
+      <view class="dizhih">是去【{{shopAddress}}】自提吗？</view>
+      <view class="tip gray">订单确认后将无法更改！</view>
+      <view class="btnzu">
+        <button type="button" class="white_bg cancel" catchtap="goCancel">取消</button>
+        <button type="button" class="white" catchtap="goSure" style="background-color: var(--themeColor);">确认</button>
+      </view>
+    </view>
+  </view>
+</view>
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>

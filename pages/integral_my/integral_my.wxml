@@ -1,0 +1,16 @@
+<!--pages/integral_my/integral_my.wxml-->
+<view class="box" style="{{theme}}">
+  <view class="hanga white"><text>当前积分</text><text>153</text></view>
+  <view class="title">积分明细</view>
+  <scroll-view scroll-y class="scrollview" style="height:{{scrollHeight}}px">
+    <block wx:for="{{integralList}}" wx:key="index">
+      <view class="itemk">
+        <view class="leftp">
+          <text class="name">{{item.name}}</text>
+          <text class="gray time">{{item.time}}</text>
+        </view>
+        <view class="rightp" style="color: var(--secondColor);">+{{item.fen}}</view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

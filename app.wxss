@@ -1,0 +1,122 @@
+/**app.wxss**/
+page{
+  font-family: PingFangSCMedium-Medium;
+  background-color: #f8f8f8;
+  color: #333333;
+  font-size: 30rpx;
+  font-weight: 400;
+}
+.gray{
+  color: #999999;
+}
+.dark_gray{
+  color: #6A6767;
+}
+.hui{
+  color: #9FA399;
+}
+.dark_hui{
+  color: #7E7E7E;
+}
+.shen_gray{
+  color: #666666;
+}
+.huise{
+  color: #AAAAAA;
+}
+.huisea{
+  color: #D8D8D8;
+}
+.white{
+  color: #ffffff;
+}
+.blue{
+  color: #0256FF;
+}
+.red{
+  color: #E03D3C;
+}
+.dark_red{
+  color: #EA0000;
+}
+.hongse{
+  color: #FC2221;
+}
+.orange{
+  color: #F39D36;
+}
+.green{
+  color: #A9D99D;
+}
+.white_bg{
+  background-color: #ffffff;
+}
+.blue_bg{
+  background-color: #1D8294;
+}
+.green_bg{
+  background: #DBF2C4;
+}
+.btn_bg{
+  background: #A9D99D;
+}
+.red_bg{
+  background: #E03D3C;
+}
+.gray_bg{
+  background: #D8D8D8;
+}
+.orange_bg{
+  background-color: #F39D36;
+}
+/* 输入框字颜色 */
+.placeholder_color{
+  color: #999999;
+}
+/* 按钮 */
+button::after{
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+/* 滚动条 */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+/* ipx适配 */
+.isIPX {
+  padding-bottom: 35rpx !important;
+}
+/* 遮罩层 */
+.mask{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: rgba(0, 0, 0, .5);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9;
+}
+/* 空图 */
+.kong{ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 330rpx;
+}
+.kong image{
+  width: 234rpx;
+  height: 244rpx;
+  display: block;
+}
+.kong text{
+  font-size: 28rpx;
+  line-height: 45rpx;
+  margin-top: 25rpx;
+}

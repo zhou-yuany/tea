@@ -1,0 +1,29 @@
+ <!--pages/discount_x/discount_x.wxml-->
+<view class="box" style="{{theme}}">
+  <scroll-view scroll-y="true" class="discountlist" style="height:{{scrollHeight}}px">
+    <block wx:for="{{couponList}}" wx:key="index">
+      <view class="discount_item white_bg">
+        <view class="top">
+          <view class="leftpart">
+            <view class="dark_red"><text>￥</text>{{item.parValue}}</view>
+            <text class="dark_gray">满{{item.limits}}可用</text>
+          </view>
+          <view class="rightp">
+            <text>满减优惠券</text>
+            <text class="dark_gray" style="font-size: 24rpx;margin-top: 21rpx;line-height: 36rpx;">适用于当前店铺下商品</text>
+          </view>
+          <radio-group bindchange="selectData" data-id="{{item.id}}">
+            <radio value="1" checked="{{item.checked}}"></radio>
+          </radio-group>
+        </view>
+        <view class="bottom">
+          <text class="huise">有效期至 {{item.endTime}}</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="footerk white_bg">
+    <view hidden="{{selectValue == 0}}">已选1张，可减<text class="red">￥</text><text class="red quan_price">{{selectValue}}</text></view>
+    <button type="button" class="surebtn white" style="background-color: var(--themeColor);" bindtap="goSure">确定</button>
+  </view>
+</view>

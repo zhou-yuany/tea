@@ -1,0 +1,19 @@
+<!--pages/partner/partner.wxml-->
+<view class="box" style="{{theme}}">
+  <scroll-view scroll-y class="scrollView">
+    <view class="table_head white_bg">
+      <view>姓名</view>
+      <view>合伙人级别</view>
+      <view>加入时间</view>
+    </view>
+    <block wx:for="{{contentList}}">
+      <view class="view-column">
+        <block wx:for="{{item}}" wx:for-index="subIndex" wx:for-item="subItem">
+          <view class="column">
+            <text>{{subItem}}</text>
+          </view>
+        </block>
+      </view>
+    </block>
+  </scroll-view>
+</view>

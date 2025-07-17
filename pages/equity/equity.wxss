@@ -1,0 +1,5 @@
+/* pages/equity/equity.wxss */
+.bg{
+  width: 100%;
+  display: block;
+}

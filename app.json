@@ -1,0 +1,79 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/food/food",
+    "pages/store/store",
+    "pages/city/city",
+    "pages/my/my",
+    "pages/productxq/productxq",
+    "pages/orderlist/orderlist",
+    "pages/order_info/order_info",
+    "pages/discount_x/discount_x",
+    "pages/payresult/payresult",
+    "pages/order_xq/order_xq",
+    "pages/integral_my/integral_my",
+    "pages/personal/personal",
+    "pages/coupon/coupon",
+    "pages/partner/partner",
+    "pages/performance/performance",
+    "pages/ledger/ledger",
+    "pages/equity/equity",
+    "pages/vip/vip",
+    "pages/login/login",
+    "pages/turnover/turnover",
+    "pages/addresslist/addresslist",
+    "pages/add_address/add_address",
+    "pages/edit_address/edit_address",
+    "pages/hobby/hobby",
+    "pages/hobbyresult/hobbyresult",
+    "pages/divideinto/divideinto",
+    "pages/map/map",
+    "pages/logs/logs"
+  ],
+  "requiredPrivateInfos": ["getLocation","chooseLocation" ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取用户位置信息用于填写收货地址" 
+    }
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "茶饮点餐",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "color": "#86909C",
+    "selectedColor": "#000000",
+    "list": [
+      {
+	      "pagePath": "pages/index/index",
+	      "iconPath": "static/tabBar/index.png",
+	      "selectedIconPath": "static/tabBar/index_on.png",
+		    "text":"首页"
+	    },
+	    {
+	      "pagePath": "pages/food/food",
+	      "iconPath": "static/tabBar/customized.png",
+	      "selectedIconPath": "static/tabBar/customized_on.png",
+		    "text":"点餐"
+	    },
+	    {
+	      "pagePath": "pages/orderlist/orderlist",
+	      "iconPath": "static/tabBar/products.png",
+	      "selectedIconPath": "static/tabBar/products_on.png",
+		    "text":"订单"
+      },
+      {
+	      "pagePath": "pages/my/my",
+	      "iconPath": "static/tabBar/my.png",
+	      "selectedIconPath": "static/tabBar/my_on.png",
+		    "text":"我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,142 @@
+/**index.wxss**/
+.box{
+  padding-bottom: 30rpx;
+}
+/* 轮播图 */
+.detail-banner{
+  width: 100%;
+  height: 750rpx;
+  margin: auto;
+}
+.detail-banner-img{
+  width: 100%;
+  height: 100%;
+}
+.box-w{
+  width: 100%;
+  height: 750rpx;
+}
+.videocover{
+  width: 100%;
+  overflow: hidden;
+}
+.videocoverbg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.playbtn{
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  left: 50%;
+  width: 100rpx;
+  height: 100rpx;
+  transform: translate(-50%, -50%);
+}
+.videocover .cover{
+  width: 100%;
+}
+/* 内容 */
+.groupa{
+  width: 686rpx;
+  height: 350rpx;
+  margin: auto;
+  border-radius: 24rpx;
+  margin-top: -51rpx;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 31rpx;
+}
+.groupa view{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.groupa view.line{
+  width: 2rpx;
+  height: 207rpx;
+}
+.groupa view image{
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+}
+.groupa view text{
+  font-size: 32rpx;
+  font-family: PingFangSCHeavy-Heavy;
+}
+.groupa view text:last-child{
+  font-size: 26rpx;
+  font-weight: 400;
+  margin-top: 11rpx;
+}
+.groupb{
+  width: 686rpx;
+  height: 200rpx;
+  margin: auto;
+  border-radius: 24rpx;
+  /* position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 31rpx;
+  padding-top: 55rpx; */
+  margin-bottom: 24rpx;
+}
+.groupb image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* .groupb text{
+  font-size: 28rpx;
+  line-height: 45rpx;
+  margin-left: 77rpx;
+} */
+.takeawayk{
+  width: 686rpx;
+  height: 100rpx;
+  border-radius: 16rpx;
+  margin: auto;
+  margin-bottom: 35rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.takeawayk_l{
+  font-size: 28rpx;
+  margin-left: 27rpx;
+}
+.takeawayk_r{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 24rpx;
+  margin-right: 35rpx;
+}
+.takeawayk_r image{
+  width: 30rpx;
+  height: 30rpx;
+  display: block;
+  margin-left: 12rpx;
+}
+/* 优惠券广告 */
+.adk{
+  width: 628rpx;
+  height: 639rpx;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}

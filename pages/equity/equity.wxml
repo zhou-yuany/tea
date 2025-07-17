@@ -1,0 +1,4 @@
+<!--pages/equity/equity.wxml-->
+<view class="box">
+  <image src="{{config}}/image/img/equity_bg.png" mode="widthFix" class="bg" />
+</view>

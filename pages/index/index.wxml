@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<view class="box" style="{{theme}}">
+  <!-- 轮播图 -->
+  <swiper class="detail-banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <swiper-item wx:for="{{bannerList}}" wx:key="index">
+      <view class="videocover" data-id="{{index}}" bindtap="playbtn" wx:if="{{item.type == 1}}">
+        <view class="videocoverbg"></view>
+        <image src="/static/icon-map.png" mode="" class="playbtn" bindtap="videoPlay" hidden="{{controls}}"></image>
+      </view>
+      <view wx:if="{{item.type == 1}}">
+        <video class="box-w" id="video" src="{{item.video}}" show-center-play-btn="{{false}}" autoplay="{{index === currentId ? true: false}}" objectFit="cover" bindended="jieshu" controls="{{controls}}"></video>
+      </view>
+      <image class="detail-banner-img" src="{{skin.file}}/{{item.url}}" bindtap="previewImage" wx:if="{{item.type == 0}}" mode=""></image>
+    </swiper-item>
+  </swiper>
+  <!-- 内容 -->
+  <view class="groupa white_bg">
+    <view bindtap="goFood">
+      <image src="{{skin.file}}/{{pictureInfo.order1}}" mode=""/>
+      <text>到店自取</text>
+      <text class="gray">立即点餐，到店自取</text>
+    </view>
+    <view class="line gray_bg"></view>
+    <view bindtap="goStore">
+      <image src="{{skin.file}}/{{pictureInfo.order2}}" mode=""/>
+      <text>外卖点单</text>
+      <text class="gray">美味送到家</text>
+    </view>
+  </view>
+  <!-- 外卖员 -->
+  <view class="white_bg takeawayk" bind:tap="goMake">
+    <view class="takeawayk_l">帮制作分成<text style="color: var(--themeColor);">（外卖员专属）</text></view>
+    <view class="takeawayk_r gray">详情<image src="/static/arrow.png" mode=""/></view>
+  </view>
+  <!-- 广告 -->
+  <view class="groupb"><image src="{{skin.file}}/{{pictureInfo.ad}}" mode=""/></view>
+  <view class="groupb"><image src="{{skin.file}}/{{pictureInfo.ad2}}" mode=""/></view>
+
+
+  <!-- 优惠券广告 -->
+  <view class="mask" hidden="{{isAd}}" bindtap="onClosed">
+    <image src="{{skin.file}}/{{pictureInfo.adBg}}" class="adk" catchtap="goYh" mode=""/>
+  </view>
+</view>
+
+

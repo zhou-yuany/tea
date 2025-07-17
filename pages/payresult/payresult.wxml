@@ -1,0 +1,23 @@
+<!--pages/payresult/payresult.wxml-->
+<view class="box" style="{{theme}}">
+  <view class="resultk">
+    <!-- 成功 -->
+    <view class="topart" wx:if="{{orderNo == ''}}">
+      <image src="{{skin.file}}/{{pictureInfo.success}}" mode=""/>
+      <view class="flex">
+        <text>支付成功！</text>
+        <text class="dark_hui">感谢您的购买</text>
+      </view>
+    </view>
+    <!-- 失败 -->
+    <view class="topart" wx:if="{{orderNo != ''}}">
+      <image src="{{skin.file}}/{{pictureInfo.warning}}" mode=""/>
+      <view class="flex">
+        <text>支付失败！</text>
+        <text class="dark_hui">请您重新支付</text>
+      </view>
+    </view>
+    <button type="button" class="backbtn white" bindtap="goIndex" style="background-color: var(--themeColor);">返回点餐</button>
+    <button type="button" class="white_bg lookbtn" style="color: var(--themeColor);" bindtap="goXq">{{orderNo == '' ? '查看订单' : '重新支付'}}</button>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<!--pages/hobbyresult/hobbyresult.wxml-->
+<view class="box" style="{{theme}}">
+    <view class="kuang">
+        <image src="{{skin.file}}/{{pictureInfo.success}}" mode=""/>
+        <view class="tip">
+            <view class="title">保存成功！</view>
+            <view class="dark_hui name">感谢您的配合</view>
+            <view class="dark_hui name">优惠券已发放</view>
+        </view>
+    </view>
+    <button type="button" class="white btna" bind:tap="goAgain" style="background-color: var(--themeColor);">去喝一杯</button>
+    <button type="button" class="white_bg btnb" style="color: var(--themeColor);" bind:tap="goLook">查看优惠券</button>
+</view>

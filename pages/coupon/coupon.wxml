@@ -1,0 +1,84 @@
+<!--pages/coupon/coupon.wxml-->
+<view class="box" style="{{theme}}">
+  <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class='title white_bg'>
+      <view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
+        <text>优惠券</text>
+        <view class="{{0 == currentIndex ? 'onxian' : ''}}"></view>
+      </view>
+      <view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
+        <text>历史优惠券</text>
+        <view class="{{1 == currentIndex ? 'onxian' : ''}}"></view>
+      </view>
+    </view>
+    <!--内容布局-->
+    <swiper bindchange='pagechange' current='{{currentIndex}}' style="height:{{scrollHeight}}px;padding-top: 42rpx;background: linear-gradient(180deg, #FFFFFF 0%, #F6F6F6 100%);">
+      <!-- 优惠券 -->
+      <swiper-item class='swiper'>
+        <view class='record-item' wx:for="{{couponList}}" wx:for-item="item" wx:key="index">
+          <view class="top">
+            <view class="leftpart">
+              <view class="dark_red"><text>￥</text>{{item.parValue}}</view>
+              <!-- 满减券 s -->
+              <text hidden="{{item.type == 1}}" class="dark_gray">满{{item.limits}}可用</text>
+              <!-- 满减券 e -->
+            </view>
+            <view class="rightp">
+              <!-- 满减券 s -->
+              <text hidden="{{item.type == 1}}">满{{item.limits}}减{{item.parValue}}元</text>
+              <!-- 满减券 e -->
+              <text>{{item.name}}</text>
+              <!-- 通用券 s -->
+              <!-- <text hidden="{{item.type == 2}}" class="dark_gray" style="font-size: 24rpx;margin-top: 21rpx;line-height: 36rpx;">领取后{{item.days + item.months * 30}}日内有效</text> -->
+              <!-- 通用券 e -->
+              <!-- 指定商品 s -->
+              <text hidden="{{item.type != 1}}" class="dark_gray" style="font-size: 24rpx;margin-top: 21rpx;line-height: 36rpx;">仅{{item.goodsName}}可使用</text>
+              <!-- 指定商品 e -->
+            </view>
+            <button type="button" class="white" style="background-color: var(--themeColor);" data-id="{{item.id}}" bindtap="lingqu">去使用</button>
+          </view>
+          <view class="bottom">
+            <text class="huise">有效期至 {{item.overdueTime}}</text>
+          </view>
+        </view>
+        <view class="kong" wx:if="{{couponList.length == 0}}">
+          <image src="/static/kong4.png"></image>
+          <text class="gray">暂无优惠券</text>
+        </view>
+      </swiper-item>
+      <!-- 历史优惠券 -->
+      <swiper-item class='swiper' class='swiper'>
+        <view wx:for="{{couponList}}" wx:for-item="item" class='record-item' wx:key="index">
+          <view class="top">
+            <view class="leftpart">
+              <view class="huisea"><text>￥</text>{{item.parValue}}</view>
+              <!-- 满减券 s -->
+              <text hidden="{{item.type == 1}}" class="dark_gray">满{{item.limits}}可用</text>
+              <!-- 满减券 e -->
+            </view>
+            <view class="rightp">
+              <!-- 满减券 s -->
+              <text hidden="{{item.type == 1}}">满{{item.limits}}减{{item.parValue}}元</text>
+              <!-- 满减券 e -->
+              <text>{{item.name}}</text>
+              <!-- 通用券 s -->
+              <!-- <text hidden="{{item.type == 2}}" class="dark_gray" style="font-size: 24rpx;margin-top: 21rpx;line-height: 36rpx;">领取后30日内有效</text> -->
+              <!-- 通用券 e -->
+              <!-- 指定商品 s -->
+              <text hidden="{{item.type != 1}}" class="dark_gray" style="font-size: 24rpx;margin-top: 21rpx;line-height: 36rpx;">仅{{item.goodsName}}可使用</text>
+              <!-- 指定商品 e -->
+            </view>
+            <button type="button" class="white gray_bg" bindtap="goIndex">{{item.expireType == 1 ? '已过期' : '已使用'}}</button>
+          </view>
+          <view class="bottom">
+            <text class="huise">有效期至{{item.overdueTime}}</text>
+          </view>
+        </view>
+        <view class="kong" wx:if="{{couponList.length == 0}}">
+          <image src="/static/kong4.png"></image>
+          <text class="gray">暂无优惠券</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </scroll-view>
+</view>

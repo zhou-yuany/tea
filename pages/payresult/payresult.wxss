@@ -1,0 +1,47 @@
+/* pages/payresult/payresult.wxss */
+.resultk{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 260rpx;
+}
+.topart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topart image{
+  width: 106rpx;
+  height: 106rpx;
+  display: block;
+}
+.flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30rpx;
+}
+.flex text{
+  font-size: 36rpx;
+  line-height: 50rpx;
+}
+.flex text:last-child{
+  font-size: 28rpx;
+}
+.resultk button{
+  width: 360rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.backbtn{
+  margin-top: 154rpx;
+  margin-bottom: 40rpx;
+}
+.lookbtn{
+  border: 2rpx solid var(--themeColor);
+  line-height: 76rpx;
+}

@@ -1,0 +1,18 @@
+<!--pages/hobby/hobby.wxml-->
+<view class="box" style="{{theme}}">
+    <block wx:for="{{hobbyList}}" wx:key="index">
+        <view class="itemk">
+            <view class="title">{{index+1}}.{{item.title}}：</view>
+            <view class="subtitle dark_gray">{{item.subtitle}}</view>
+            <checkbox-group bindchange="change" data-index="{{index}}" class="list">
+                <block wx:for='{{item.Data}}' wx:for-item="content" wx:for-index="index2">
+                    <checkbox value='{{content.name}}' checked='{{content.isCheck}}' class='customa-checkbox'>
+                        <view class='check-box'>{{content.name}}</view>
+                    </checkbox>
+                </block>
+            </checkbox-group>
+            <input type="text" value="{{item.other}}" data-index="{{index}}" bindinput="inputOther" placeholder="其他内容请填写" placeholder-style="placeholder_color" class="inputk" />
+        </view>
+    </block>
+    <button type="button" class="white btn" bind:tap="goSubmit" style="background-color: var(--themeColor);">提交</button>
+</view>
