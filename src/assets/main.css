@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+p,
+span,
+div,
+img,
+i,
+ul,
+li,
+strong,
+input {
+    margin: 0;
+    padding: 0;
+}
+
+body,html {
+    color: #333333;
+    font-family: PingFang SC;
+    /* background-color: #F2F3F4; */
+    background-color: #f9f9f9;
+}
+::-webkit-scrollbar {
+	display: none;
+	width: 0;
+	height: 0;
+	color: transparent;
+}
+/* input[type="number"]不显示箭头 */
+/* google、safari */
+input::-webkit-outer-spin-button,  
+input::-webkit-inner-spin-button{  
+    -webkit-appearance: none !important;  
+    margin: 0;  
+}
+/* 火狐 */
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+/*不倾斜*/
+em,
+i {
+    font-style: normal;
+}
+
+/*去掉列表前面的小点*/
+li {
+    list-style: none;
+}
+
+/*去掉图片边框和图片底侧的空白缝隙*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*button hover*/
+button {
+    cursor: pointer;
+}
+
+/*取消链接的下划线*/
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: 'Microsoft YaHei', 'Heiti SC';
+    outline: none;
+    border: none;
+}
+
+input:-ms-input-placeholder{
+    color:#999999;
+}
+input::-webkit-input-placeholder{
+    color: #999999;
+}
+input.van-field__control::-webkit-input-placeholder {
+    color: #999999;
+}
+/* 字颜色 */
+.white{
+    color: #ffffff;
+}
+.gray{
+    color: #999999;
+}
+
+.dark_gray{
+    color: #666666;
+}
+.green{
+    color: #60BF8F;
+}
+.dark_greens{
+    color: #437D71;
+}
+.dark_green{
+    color: #2D643D;
+}
+.orange{
+    color: #FDA928;
+}
+.dark_orange{
+    color: #ED9F40;
+}
+.zong{
+    color: #D37350;
+}
+.rou{
+    color: #EA5E40;
+}
+.red{
+    color: #EA0000;
+}
+.light_red{
+    color: #E60012;
+}
+.brown{
+    color: #724A34;
+}
+.blue{
+    color: #0256FF;
+}
+.light_blue{
+    color: #0060FF;
+}
+.dark_blue{
+    color: #316DBA;
+}
+.blue_a{
+    color: #2F89FD;
+}
+.placeholder_color{
+    color: #999999;
+}
+/* 背景色 */
+.blue_bg{
+    background-color: #3B90FB;
+}
+ 
+.green_bg{
+    background-color: #58BF8A;
+}
+.light_green_bg{
+    background-color: #60BF8F;
+}
+.white_bg{
+    background-color: #ffffff;
+}
+.orange_bg{
+    background-color: #FDA928;
+}
+.gray_bg{
+    background-color: #f0f0f0;
+}
+.red_bg{
+    background-color: #EA0000;
+}
+/* 空图 */
+.kong{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.kong img{
+    width: 275px;
+    height: 255px;
+    display: block;
+    margin: auto;
+    margin-bottom: 31px;
+    margin-top: 35%;
+}
+.kong span{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+}
+/* 弹窗 */
+.mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+/* 报表页 */
+.demo-form-inline .el-form-item__label{
+    font-size: 24px;
+    font-weight: bold;
+}
