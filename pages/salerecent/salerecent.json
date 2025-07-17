@@ -1,0 +1,7 @@
+{
+  "pageOrientation": "auto",
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  },
+  "navigationBarTitleText": "销售近况"
+}

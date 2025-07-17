@@ -1,0 +1,138 @@
+<!--pages/view/view.wxml-->
+<view class="box">
+  <view class="headtop white_bg" style="position: fixed;top: 0;left: 0;right: 0;z-index: 9;"><image src="../../images/switch.png" bindtap="goData"></image></view>
+  <!-- 内容 -->
+  <!-- 筛选商圈 -->
+  <view class="tradingarea">
+    <view class='arealist' bindtap='bindShowAll'>
+      <text>{{tradingArea}}</text>
+      <image src='../../images/time.png'></image>
+    </view>
+    <view class="selectbox white" wx:if="{{allselect}}">
+      <view class="select_one" bindtap="allSelect" data-name="华南广场商圈">华南广场商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="香炉礁商圈">香炉礁商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="天津街商圈">天津街商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="青泥洼商圈">青泥洼商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="三八二七商圈">三八二七商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="八一路商圈">八一路商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="站北广场商圈">站北广场商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="西安路商圈">西安路商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="马栏商圈">马栏商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="长春路商圈">长春路商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="奥林匹克商圈">奥林匹克商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="和平广场商圈">和平广场商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="高新园区商圈">高新园区商圈</view>
+    </view>
+  </view>
+  <!-- 销售排名 -->
+  <view class="headtop type_bg" style="justify-content: flex-start;"><text class="gray">销售排名</text></view>
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th orange">TOP</view>
+      <view class="th orange">商品名称</view>
+      <view class="th orange">销售额</view>
+      <view class="th orange">订单数</view>
+    </view>
+    <block wx:for="{{listData}}" wx:key="{[code]}">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td">{{item.code}}</view>
+        <view class="td">{{item.text}}</view>
+        <view class="td">{{item.price}}</view>
+        <view class="td">{{item.num}}</view>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td">{{item.code}}</view>
+        <view class="td">{{item.text}}</view>
+        <view class="td">{{item.price}}</view>
+        <view class="td">{{item.num}}</view>
+      </view>
+    </block>
+  </view>
+  <!-- 服务用户 -->
+  <view class="headtop type_bg" style="justify-content: flex-start;"><text class="gray">服务用户</text></view>
+  <view class="white_bg userk">
+    <view>
+      <text class="orange">今日新增用户</text>
+      <text>50</text>
+    </view>
+    <view>
+      <text class="orange">累计用户</text>
+      <text>1,000</text>
+    </view>
+  </view>
+  <!-- 支付渠道 -->
+  <view class="headtop type_bg" style="justify-content: flex-start;"><text class="gray">支付渠道</text></view>
+  <view class="channel white_bg">
+    <view class="wechat gradient2 white" style="width: 589rpx;"><text>150单</text><text>微信支付 94%</text></view>
+    <view class="wechat gradient3 white" style="width: 145rpx;"><text>10单</text><text>支付宝 6%</text></view>
+  </view>
+  <!-- 在售库存 -->
+  <view class="headtop type_bg" style="justify-content: flex-start;"><text class="gray">在售库存</text></view>
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th orange">序号</view>
+      <view class="th orange">商品名称</view>
+      <view class="th orange">库存数量</view>
+    </view>
+    <block wx:for="{{stockData}}" wx:key="{[code]}">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td">{{item.code}}</view>
+        <view class="td">{{item.text}}</view>
+        <view class="td">{{item.num}}</view>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td">{{item.code}}</view>
+        <view class="td">{{item.text}}</view>
+        <view class="td">{{item.num}}</view>
+      </view>
+    </block>
+  </view>
+  <!-- 数据漏斗 -->
+  <view class="headtop type_bg" style="justify-content: flex-start;"><text class="gray">数据漏斗</text></view>
+  <view class="funnel white_bg">
+    <view class="funnel_l">
+      <view class="oricl">
+        <view class="oriclitem white"><image src="../../images/icon2.png"></image><text>进入</text></view>
+      </view>
+      <view class="oricl_a">
+        <view class="oriclitema white"><image src="../../images/icon3.png"></image><text>浏览</text></view>
+      </view>
+      <view class="oricl_b">
+        <view class="oriclitemb white"><image src="../../images/icon4.png"></image><text>支付</text></view>
+      </view>
+    </view>
+    <view class="funnel_r">
+      <view><text>进入小程序</text><text>240人</text></view>
+      <view><text>浏览店面</text><text>200人</text></view>
+      <view><text>支付订单</text><text>198单</text></view>
+    </view>
+  </view>
+  <!-- 销售近况 -->
+  <view class="headtop type_bg" style="justify-content: flex-start;"><text class="gray">销售近况</text></view>
+  <view class="salek white_bg">
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <!-- 日销数据 -->
+  <view class="headtop type_bg" style="justify-content: flex-start;"><text class="gray">日销数据</text></view>
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th orange" style="width: 33.33%;">日期</view>
+      <view class="th orange" style="width: 33.33%;">总销售额</view>
+      <view class="th orange" style="width: 33.33%;">订单数量</view>
+    </view>
+    <block wx:for="{{saleData}}" wx:key="{[time]}">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td" style="width: 33.33%;">{{item.time}}</view>
+        <view class="td" style="width: 33.33%;">{{item.allsale}}</view>
+        <view class="td" style="width: 33.33%;">{{item.num}}</view>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td" style="width: 33.33%;">{{item.time}}</view>
+        <view class="td" style="width: 33.33%;">{{item.allsale}}</view>
+        <view class="td" style="width: 33.33%;">{{item.num}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="white_bg" style="width: 100%;height: 30rpx;margin: auto;"></view>
+  <view class="topscroll" bindtap="goTop"><image src="/images/top.png"></image></view>
+</view>

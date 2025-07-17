@@ -1,0 +1,22 @@
+<!--pages/datafunnel/datafunnel.wxml-->
+<view class="box">
+  <view class="modek" bindtap="goHorizontal"><image src="/images/mode.png"></image></view>
+  <view class="funnel white_bg">
+    <view class="funnel_l">
+      <view class="oricl">
+        <view class="oriclitem white"><image src="../../images/icon2.png"></image><text>进入</text></view>
+      </view>
+      <view class="oricl_a">
+        <view class="oriclitema white"><image src="../../images/icon3.png"></image><text>浏览</text></view>
+      </view>
+      <view class="oricl_b">
+        <view class="oriclitemb white"><image src="../../images/icon4.png"></image><text>支付</text></view>
+      </view>
+    </view>
+    <view class="funnel_r">
+      <view><text>进入小程序</text><text>240人</text></view>
+      <view><text>浏览店面</text><text>200人</text></view>
+      <view><text>支付订单</text><text>198单</text></view>
+    </view>
+  </view>
+</view>

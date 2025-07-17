@@ -1,0 +1,41 @@
+/**app.wxss**/
+page{
+  font-family: 'SourceHanSansCN-Normal';
+  color: #333333;
+  font-weight: 400;
+  background-color: #ffffff;
+}
+button::after{border: none;}
+.placeholder{
+  color: #ffffff;
+}
+.placeholders{
+  color: #999999;
+}
+.white{color: #ffffff;}
+.gray{color: #999999;}
+.black_gray{color: #666666;}
+.orange{color: #F2930D;}
+.red{color: #FF0000;}
+
+.gray_bg{background-color: #F7F7F7;}
+.orange_bg{background-color: #F2930D;}
+.white_bg{background-color: #ffffff;}
+.input_bg{background-color: rgba(198, 198, 198, .3);}
+.type_bg{background-color: #F1F1F1;}
+.yellow_bg{background-color: #FFFBDE;}
+
+.gradient1{
+  background: linear-gradient(90deg, #F2930D, #FB781D);
+}
+.gradient2{
+  background: linear-gradient(90deg, #6BDF81, #3ED196);
+}
+.gradient3{
+  background: linear-gradient(90deg, #5DBCEE, #4EA2EF);
+}
+
+.ec-canvas {
+  width: 100%;
+  height: 550rpx;
+}

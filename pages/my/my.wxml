@@ -1,0 +1,21 @@
+<!--pages/my/my.wxml-->
+<view class="box">
+  <view class="userk" bindtap="goPersonal">
+    <image src="../../images/userhead.png" class="userpic"></image>
+    <text>张三四</text>
+  </view>
+  <view class="hang" bindtap="goPingjia">
+    <view class="leftpart">
+      <image src="../../images/icon0.png" class="icoa"></image>
+      <text>我的评价</text>
+    </view>
+    <image src="../../images/right.png" class="arrow"></image>
+  </view>
+  <view class="hang" bindtap="goService">
+    <view class="leftpart">
+      <image src="../../images/icon1.png" class="icob"></image>
+      <text>电话客服</text>
+    </view>
+    <image src="../../images/right.png" class="arrow"></image>
+  </view>
+</view>

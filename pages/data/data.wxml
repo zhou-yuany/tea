@@ -1,0 +1,17 @@
+<!--pages/data/data.wxml-->
+<view class="box">
+  <view class="headtop white_bg">
+    <image src="../../images/switch_on.png" bindtap="goView"></image>
+  </view>
+  <scroll-view scroll-y="true" class="dataList" style="height:{{scrollHeight}}px">
+    <block wx:for="{{dataList}}">
+      <view class="listitem" data-item="{{index}}" bindtap="itemClick">
+        <view class="item_left">
+          <image src="{{item.pic}}"></image>
+          <text>{{item.name}}</text>
+        </view>
+        <image src="../../images/right.png" class="arrow"></image>
+      </view>
+    </block>
+  </scroll-view>
+</view>

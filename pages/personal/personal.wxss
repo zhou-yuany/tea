@@ -1,0 +1,47 @@
+/* pages/personal/personal.wxss */
+.head{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head image{
+  width: 167rpx;
+  height: 167rpx;
+  border-radius: 50%;
+  display: block;
+}
+.hang{
+  width: 665rpx;
+  height: 115rpx;
+  margin: auto;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hang text{
+  font-size: 30rpx;
+}
+.hang image{
+  width: 11rpx;
+  height: 22rpx;
+  display: block;
+  margin-left: 32rpx;
+}
+.gout{
+  width: 100%;
+  height: 120rpx;
+  margin: auto;
+  box-shadow: 0rpx 8rpx 20rpx 1rpx rgba(0, 0, 0, 0.08), 0rpx 1rpx 0rpx 0rpx #B9B9B9;
+  border-top: 1px solid #f7f7ff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-size: 40rpx;
+  line-height: 120rpx;
+  text-align: center;
+}

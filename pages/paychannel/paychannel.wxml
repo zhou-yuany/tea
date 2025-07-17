@@ -1,0 +1,7 @@
+<!--pages/paychannel/paychannel.wxml-->
+<view class="box">
+  <view class="channel white_bg">
+    <view class="wechat gradient2 white" style="width: 589rpx;"><text>150单</text><text>微信支付 94%</text></view>
+    <view class="wechat gradient3 white" style="width: 145rpx;"><text>10单</text><text>支付宝 6%</text></view>
+  </view>
+</view>

@@ -1,0 +1,62 @@
+<!--pages/myappraise/myappraise.wxml-->
+<view class="box">
+  <view class='HZL_appraise'>
+    <view class="scorek white_bg" wx:if="{{commont.length > 0}}">
+      <view class="score_top">
+        <text class="orange">4.6</text>
+        <view class="startk">
+          <image src="../../images/score_on.png"></image>
+          <image src="../../images/score_on.png"></image>
+          <image src="../../images/score_on.png"></image>
+          <image src="../../images/score_on.png"></image>
+          <image src="../../images/score.png"></image>
+        </view>
+      </view>
+      <view class="tabList">
+        <block wx:for="{{tabList}}">
+          <text class="{{currentTab==index ? 'active' : ''}}" data-current="{{index}}" catchtap="clickAll">{{item.tabitem}}  {{item.num}}</text>
+        </block>
+      </view>
+    </view>
+    <!-- 评论列表 -->
+    <scroll-view class='' scroll-with-animation="true" scroll-y="true" style="height:{{scrollHeight}}px" wx:if="{{commont.length > 0}}">
+      <view class="commont white_bg">
+        <view class="comList" wx:for="{{commont}}" wx:key="index">
+          <view class="listLeft">
+            <image src="{{item.virtual_avatar}}"  mode='aspectFill' class="myimage"></image>
+            <view class="listRTop">
+              <view class="user"><text>{{item.virtual_user}}</text><text class="gray" style="font-size: 18rpx;">{{item.addtime}}</text></view>
+              <view class="time">
+                <image src="../../images/score_on.png"></image>
+                <image src="../../images/score_on.png"></image>
+                <image src="../../images/score_on.png"></image>
+                <image src="../../images/score_on.png"></image>
+                <image src="../../images/score.png"></image>
+              </view>
+            </view>
+          </view>
+          <view class="listRight">
+            <view class="listDesc">{{item.content}}</view>
+            <view class="pinglunImg">
+              <image bindtap="preview" data-urls="{{item.pic_list}}" data-current="{{litem}}" wx:for-item="litem" wx:key="index" wx:for="{{item.pic_list}}" wx:if="{{item}}" src="{{litem}}"  mode='aspectFill' class="shanImg"></image>
+            </view>
+            <view class="hang">
+              <text class="gray">订单编号：{{item.ordernum}}</text>
+              <button type="button" class="white_bg" wx:if="{{item.huifu == false}}" bindtap="goAsk">商家回复</button>
+            </view>
+            <view class="huifu" wx:if="{{item.huifu == true}}">
+              <text style="line-height: 42rpx;">商家回复</text>
+              <text class="gray">{{item.reply_content}}</text>
+            </view>
+          </view>
+        </view>
+        <view style="color:#999999;font-size:24rpx;width:100%;text-align:center;">这是我的底线了！</view>
+      </view>
+    </scroll-view>
+    <!-- 空白评价 -->
+    <view class="kong" wx:else>
+      <image src="../../images/kong0.png"></image>
+      <text class="gray">暂无评价信息</text>
+    </view>
+  </view>
+</view>

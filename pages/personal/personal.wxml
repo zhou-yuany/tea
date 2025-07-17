@@ -1,0 +1,24 @@
+<!--pages/personal/personal.wxml-->
+<view class="box">
+  <view class="head">
+    <image src="../../images/userhead.png"></image>
+  </view>
+  <view class="hang">
+    <text>用户名</text>
+    <text>王乐乐</text>
+  </view>
+  <view class="hang">
+    <text>性别</text>
+    <text>男</text>
+  </view>
+  <view class="hang">
+    <text>绑定手机号</text>
+    <text>15522334455</text>
+  </view>
+  <view class="hang">
+    <text>绑定微信</text>
+    <text style="margin-left: auto;">已绑定</text>
+    <image src="../../images/right.png"></image>
+  </view>
+  <!-- <navigator class="gout" target="miniProgram" open-type="exit" hover-class="none">退出登录</navigator> -->
+</view>

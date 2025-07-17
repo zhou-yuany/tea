@@ -1,0 +1,36 @@
+<!--pages/appraise/appraise.wxml-->
+<view class="box">
+  <!-- 订单 -->
+  <view class="comList">
+    <view class="listLeft">
+      <image src="../../images/header.png"  mode='aspectFill' class="myimage"></image>
+      <view class="listRTop">
+        <view class="user"><text>匿名用户</text><text class="gray" style="font-size: 18rpx;">2021-08-08</text></view>
+        <view class="time">
+          <image src="../../images/score_on.png"></image>
+          <image src="../../images/score_on.png"></image>
+          <image src="../../images/score_on.png"></image>
+          <image src="../../images/score_on.png"></image>
+          <image src="../../images/score.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="listRight">
+      <view class="listDesc">服务很好很准时服务很好很准时服务很好很准时服务很好很准时服务很好很准时服务很好很准时服务很好很准时服务很好很准时服务很好很准时</view>
+      <view class="pinglunImg">
+        <image src="../../images/food.jpg"  mode='aspectFill' class="shanImg"></image>
+        <image src="../../images/food.jpg"  mode='aspectFill' class="shanImg"></image>
+        <image src="../../images/food.jpg"  mode='aspectFill' class="shanImg"></image>
+        <image src="../../images/food.jpg"  mode='aspectFill' class="shanImg"></image>
+      </view>
+      <view class="hang">
+        <text class="gray">订单编号：12345670011</text>
+      </view>
+    </view>
+  </view>
+  <!-- 回复框 -->
+  <view class="comment">
+    <textarea placeholder="请输入您的评价" placeholder-class="placeholders"></textarea>
+  </view>
+  <view class="btn"><button type="button" class="orange_bg white">回复</button></view>
+</view>

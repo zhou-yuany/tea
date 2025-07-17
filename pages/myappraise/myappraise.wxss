@@ -1,0 +1,163 @@
+/* pages/myappraise/myappraise.wxss */
+.HZL_appraise{
+  width: 100%;
+  height: 100%;
+  background-color: #F6F7F7;
+}
+.scorek{
+  width: 100%;
+  height: 179rpx;
+  margin: auto;
+  padding-top: 25rpx;
+}
+.score_top{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.score_top text{
+  font-size: 48rpx;
+  margin-left: 26rpx;
+  margin-right: 16rpx;
+}
+.startk{
+  display: flex;
+}
+.startk image{
+  width: 26rpx;
+  height: 25rpx;
+  display: block;
+  margin: 0 8rpx;
+}
+.tabList{
+  margin-top: 39rpx;
+  margin-left: 18rpx;
+}
+.tabList text{
+  font-size: 20rpx;
+  padding: 14rpx 23rpx;
+  border: 1px solid #C6C6C6;
+  margin: 0 10rpx;
+}
+.active{
+  background-color: #F2930D;
+  color: #ffffff;
+  border: 1px solid #F2930D!important;
+}
+.comList{
+  padding: 23rpx 25rpx 25rpx 22rpx;
+  border-bottom: 1px solid #F1F1F1;
+}
+.listLeft{
+  width: 100%;
+  height: 70rpx;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.myimage{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 4rpx;
+  display: block;
+  margin-right: 17rpx;
+}
+.listRight{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20rpx;
+  width: 100%;
+}
+.listRTop{
+  width: 88%;
+  height: 70rpx;
+  margin: auto;
+}
+.user{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:26rpx;
+  font-weight:bold;
+  margin-bottom: 11rpx;
+}
+.time{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.time image{
+  width: 22rpx;
+  height: 22rpx;
+  display: block;
+  margin: 0 7rpx;
+}
+.listDesc{
+  font-size:24rpx;
+}
+.pinglunImg{
+  margin-top: 29rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 16rpx;
+}
+.shanImg{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  margin: 0rpx 12rpx 10rpx 12rpx;
+}
+.hang{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26rpx 0;
+}
+.hang text{
+  font-size: 18rpx;
+}
+.hang button{
+  width: 251rpx;
+  height: 83rpx;
+  border-radius: 42rpx;
+  margin: 0;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 83rpx;
+  border: 1px solid #F1F1F1;
+}
+.huifu{
+  width: 664rpx;
+  margin: auto;
+  padding: 18rpx;
+  font-size:24rpx;
+  line-height: 1.3;
+  background-color: #F8F8F8;
+  border-radius: 10rpx;
+  color:rgba(27,27,27,1);
+  display: flex;
+  flex-direction: column;
+}
+.kong{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.kong image{
+  width: 374rpx;
+  height: 346rpx;
+  display: block;
+  margin-bottom: 29rpx;
+  margin-top: 170rpx;
+}
+.kong text{
+  font-size: 26rpx;
+  opacity: 0.5;
+}

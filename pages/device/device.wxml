@@ -1,0 +1,55 @@
+<!--pages/device/device.wxml-->
+<view class="box">
+  <!-- 筛选商圈 -->
+  <view class="tradingarea white_bg">
+    <view class='arealist' bindtap='bindShowAll'>
+      <text>{{tradingArea}}</text>
+      <image src='../../images/time.png'></image>
+    </view>
+    <view class="selectbox white" wx:if="{{allselect}}">
+      <view class="select_one" bindtap="allSelect" data-name="华南广场商圈">华南广场商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="香炉礁商圈">香炉礁商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="天津街商圈">天津街商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="青泥洼商圈">青泥洼商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="三八二七商圈">三八二七商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="八一路商圈">八一路商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="站北广场商圈">站北广场商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="西安路商圈">西安路商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="马栏商圈">马栏商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="长春路商圈">长春路商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="奥林匹克商圈">奥林匹克商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="和平广场商圈">和平广场商圈</view>
+      <view class="select_one" bindtap="allSelect" data-name="高新园区商圈">高新园区商圈</view>
+    </view>
+  </view>
+  <!-- 设备 -->
+  <view style="width: 100%;height: 85rpx;margin: auto;"></view>
+  <view class="deviceList" wx:for="{{deviceList}}">
+    <view class="device_item" style="background-color:{{item.background}};">
+      <view class="item_top">
+        <view class="leftp">设备编号：{{item.device_num}}<text class="gray">（{{item.residue}}/{{item.all}}）</text></view>
+        <view class="black_gray state" wx:if="{{item.state == 0}}">运行中</view>
+        <view class="red state" wx:if="{{item.state == 1}}">
+          <image src="../../images/danger.png"></image>
+          库存不足
+        </view>
+        <view class="black_gray state" wx:if="{{item.state == 2}}">未开机</view>
+      </view>
+      <view class="content">
+        <view>{{item.device_name}}</view>
+        <view>库存剩余<text>{{item.residue}}</text></view>
+        <view>配料剩余<text>{{item.surplus}}%</text></view>
+        <view>今日运行时长<text>{{item.time}}</text></view>
+      </view>
+      <view class="progressk">
+        <view class="progressk_top">
+          <text>订单进度（{{item.percent}}/100）</text>
+          <view class="progress-box">
+            <progress percent="{{item.percent}}" color="#F2930D" active stroke-width="14" border-radius="7" backgroundColor="#F1F1F1"></progress>
+          </view>
+        </view>
+        <button type="button" class="orange_bg white" wx:if="{{item.state == 1}}">确认补货</button>
+      </view>
+    </view>
+  </view>
+</view>

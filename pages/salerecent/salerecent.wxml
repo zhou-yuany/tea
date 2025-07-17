@@ -1,0 +1,7 @@
+<!--pages/salerecent/salerecent.wxml-->
+<view class="box">
+  <view class="modek" bindtap="goHorizontal"><image src="/images/mode.png"></image></view>
+  <view class="salek white_bg">
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>

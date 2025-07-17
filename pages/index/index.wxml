@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view class="box">
+  <view class="headtop type_bg" hidden="{{!hiddendata}}"><text class="gray">数据概览</text><image src="../../images/switch.png" bindtap="goList"></image></view>
+  <scroll-view scroll-y="true" class="dataList" style="height:{{scrollHeight}}px" hidden="{{!hiddendata}}">
+    <!-- 交易额 -->
+    <view class="listitem white gradient1">
+      <view class="item_top">
+        <text>交易额</text>
+        <!-- 下拉框 -->
+        <view class='list-msg' bindtap='bindShowMsg'>
+          <text>{{tihuoWay}}</text>
+          <image style='height:10rpx;width:11rpx;margin-left: 8rpx;' src='../../images/show.png'></image>
+        </view>
+      </view>
+      <!-- 下拉内容 -->
+      <view class="select_box" wx:if="{{select}}">
+        <view class="select_one" bindtap="mySelect" data-name="当日数据">当日数据</view>
+        <view class="select_one" bindtap="mySelect" data-name="本周数据">本周数据</view>
+        <view class="select_one" bindtap="mySelect" data-name="本月数据">本月数据</view>
+        <view class="select_one" bindtap="mySelect" data-name="全年数据">全年数据</view>
+      </view>
+      <view class="money"><text>800</text></view>
+      <view class="unit"><text>元</text></view>
+    </view>
+    <!-- 使用人次 -->
+    <view class="listitem white gradient2">
+      <view class="item_top">
+        <text>使用人次</text>
+        <!-- 下拉框 -->
+        <view class='list-msg' bindtap='bindShowMsga'>
+          <text>{{tihuoWaya}}</text>
+          <image style='height:10rpx;width:11rpx;margin-left: 8rpx;' src='../../images/show.png'></image>
+        </view>
+      </view>
+      <!-- 下拉内容 -->
+      <view class="select_box" wx:if="{{selecta}}">
+        <view class="select_one" bindtap="mySelecta" data-name="当日数据">当日数据</view>
+        <view class="select_one" bindtap="mySelecta" data-name="本周数据">本周数据</view>
+        <view class="select_one" bindtap="mySelecta" data-name="本月数据">本月数据</view>
+        <view class="select_one" bindtap="mySelecta" data-name="全年数据">全年数据</view>
+      </view>
+      <view class="money"><text>80</text></view>
+      <view class="unit"><text>人</text></view>
+    </view>
+    <!-- 订单量 -->
+    <view class="listitem white gradient3">
+      <view class="item_top">
+        <text>订单量</text>
+        <!-- 下拉框 -->
+        <view class='list-msg' bindtap='bindShowMsgb'>
+          <text>{{tihuoWayb}}</text>
+          <image style='height:10rpx;width:11rpx;margin-left: 8rpx;' src='../../images/show.png'></image>
+        </view>
+      </view>
+      <!-- 下拉内容 -->
+      <view class="select_box" wx:if="{{selectb}}">
+        <view class="select_one" bindtap="mySelectb" data-name="当日数据">当日数据</view>
+        <view class="select_one" bindtap="mySelectb" data-name="本周数据">本周数据</view>
+        <view class="select_one" bindtap="mySelectb" data-name="本月数据">本月数据</view>
+        <view class="select_one" bindtap="mySelectb" data-name="全年数据">全年数据</view>
+      </view>
+      <view class="money"><text>80</text></view>
+      <view class="unit"><text>成交订单笔数</text></view>
+    </view>
+  </scroll-view>
+  <!-- 空白 -->
+  <view class="kong" hidden="{{hiddendata}}">
+    <image src="/images/kong1.png"></image>
+    <text class="black_gray">暂无数据信息</text>
+  </view>
+</view>

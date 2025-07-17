@@ -1,0 +1,53 @@
+/* pages/my/my.wxss */
+.userk{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 66rpx;
+}
+.userpic{
+  width: 167rpx;
+  height: 167rpx;
+  border-radius: 50%;
+  display: block;
+  margin-left: 26rpx;
+  margin-right: 34rpx;
+}
+.userk text{
+  font-size: 32rpx;
+}
+.hang{
+  width: 665rpx;
+  height: 115rpx;
+  border-bottom: 1px solid #EEEEEE;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.leftpart{
+  display: flex;
+  align-items: center;
+}
+.icoa{
+  width: 26rpx;
+  height: 26rpx;
+  display: block;
+  margin-right: 31rpx;
+}
+.icob{
+  width: 34rpx;
+  height: 32rpx;
+  display: block;
+  margin-right: 31rpx;
+}
+.leftpart text{
+  font-size: 30rpx;
+}
+.arrow{
+  width: 12rpx;
+  height: 22rpx;
+  display: block;
+}

@@ -1,0 +1,135 @@
+/* pages/device/device.wxss */
+/* 商圈下拉选 */
+.tradingarea{
+  width: 100%;
+  height: 70rpx;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.arealist{
+  width: 100%;
+  height: 70rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arealist text{
+  margin-left: 24rpx;
+  font-size: 28rpx;
+}
+.arealist image{
+  width: 22rpx;
+  height: 20rpx;
+  display: block;
+  margin-right: 24rpx;
+}
+.selectbox {
+  background-color: rgba(0, 0, 0, .75);
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 70rpx;
+  z-index: 1;
+  overflow: hidden;
+  animation: myfirst 0.5s;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+@keyframes myfirst {
+  from {
+    height: 0rpx;
+  }
+  to {
+    height: 210rpx;
+  }
+}
+.select_one {
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.select_one:last-child{
+  border-bottom: 0;
+}
+/* 设备 */
+.deviceList{
+  width: 100%;
+  margin: auto;
+}
+.device_item{
+  width: 656rpx;
+  height: auto;
+  box-shadow: 0rpx 0rpx 17rpx 1rpx rgba(175, 175, 175, 0.38);
+  border-radius: 12rpx;
+  margin: auto;
+  padding: 0 24rpx 0 20rpx;
+  margin-bottom: 20rpx;
+}
+.item_top{
+  width: 100%;
+  height: 80rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.leftp{
+  font-size: 30rpx;
+}
+.state{
+  font-size: 26rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.state image{
+  width: 34rpx;
+  height: 29rpx;
+  display: block;
+  margin-right: 18rpx;
+}
+.content{
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+  padding: 26rpx 0 40rpx 0;
+}
+.content view{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  line-height: 56rpx;
+}
+.progressk{
+  width: 100%;
+  margin: auto;
+  padding: 32rpx 0 26rpx 0;
+}
+.progressk_top{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25rpx;
+  font-size: 28rpx;
+}
+.progress-box{
+  width: 375rpx;
+}
+.progressk button{
+  width: 201rpx;
+  height: 65rpx;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  margin: 0;
+  line-height: 65rpx;
+  text-align: center;
+  margin-left: auto;
+}

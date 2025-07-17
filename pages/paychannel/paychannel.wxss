@@ -1,0 +1,19 @@
+/* pages/paychannel/paychannel.wxss */
+.channel{
+  padding: 33rpx 25rpx 14rpx 25rpx;
+}
+.wechat{
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin-bottom: 21rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.wechat text{
+  font-size: 32rpx;
+  margin-left: 14rpx;
+}
+.wechat text:last-child{
+  font-size: 20rpx;
+}

@@ -1,0 +1,113 @@
+/**index.wxss**/
+.headtop{
+  width: 100%;
+  height: 70rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headtop text{
+  width: 50%;
+  font-size: 24rpx;
+  margin-left: 19rpx;
+}
+.headtop image{
+  width: 28rpx;
+  height: 22rpx;
+  display: block;
+  margin-right: 31rpx;
+}
+/* 列表 */
+.dataList{
+  padding-top: 48rpx;
+}
+.listitem{
+  width: 665rpx;
+  height: 244rpx;
+  margin: auto;
+  border-radius: 12rpx;
+  padding: 28rpx 15rpx 12rpx 20rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.item_top{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item_top text{
+  font-size: 26rpx;
+}
+/* 下拉框  start */
+.list-msg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.select_box {
+  background-color: rgba(0, 0, 0, .5);
+  padding: 0 10rpx;
+  width: 180rpx;
+  position: absolute;
+  right: 0;
+  top: 80rpx;
+  z-index: 1;
+  overflow: hidden;
+  animation: myfirst 0.5s;
+  border-radius: 10rpx;
+}
+@keyframes myfirst {
+  from {
+    height: 0rpx;
+  }
+  to {
+    height: 210rpx;
+  }
+}
+.select_one {
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.select_one:last-child{
+  border-bottom: 0;
+}
+/* end */
+.money{
+  width: 100%;
+  margin: auto;
+  text-align: left;
+}
+.money text{
+  font-size: 100rpx;
+  line-height: 166rpx;
+}
+.unit{
+  width: 100%;
+  margin: auto;
+  text-align: right;
+}
+.unit text{
+  font-size: 28rpx;
+}
+/* 空白 */
+.kong{
+  width: 100%;
+  padding-top: 240rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.kong image{
+  width: 369rpx;
+  height: 345rpx;
+  display: block;
+  margin-bottom: 52rpx;
+}
+.kong text{
+  font-size: 26rpx;
+}

@@ -1,0 +1,10 @@
+<!--pages/phone/phone.wxml-->
+<view class="box">
+  <view class="login_bg">
+    <text>欢迎使用  XX查看</text>
+    <text class="gray">授权手机号</text>
+  </view>
+  <view class="linea">为提供优质服务，XX外卖需要获取你的以下信息：</view>
+  <view class="lineb gray">·你的公开信息（头像、昵称等）</view>
+  <button type="button" class="btn orange_bg white">授权手机号</button>
+</view>

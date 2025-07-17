@@ -1,0 +1,17 @@
+1、login  授权
+2、phone  手机授权
+3、index  数据
+4、data  数据总览列表
+5、view  数据总览图表
+6、device  设备
+7、my  我的
+8、personal  个人资料
+9、myappraise  我的评价
+10、appraise  评价
+
+11、ranking  销售排名
+12、paychannel  支付渠道
+13、stock  在售库存
+14、datafunnel  数据漏斗
+15、salerecent  销售近况
+16、dailysales  日销数据

@@ -1,0 +1,109 @@
+/* pages/appraise/appraise.wxss */
+.comList{
+  padding: 23rpx 25rpx 25rpx 22rpx;
+}
+.listLeft{
+  width: 100%;
+  height: 70rpx;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.myimage{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 4rpx;
+  display: block;
+  margin-right: 17rpx;
+}
+.listRight{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20rpx;
+  width: 100%;
+}
+.listRTop{
+  width: 88%;
+  height: 70rpx;
+  margin: auto;
+}
+.user{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:26rpx;
+  font-weight:bold;
+  margin-bottom: 11rpx;
+}
+.time{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.time image{
+  width: 22rpx;
+  height: 22rpx;
+  display: block;
+  margin: 0 7rpx;
+}
+.listDesc{
+  font-size:24rpx;
+}
+.pinglunImg{
+  margin-top: 29rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 16rpx;
+}
+.shanImg{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  margin: 0rpx 12rpx 10rpx 12rpx;
+}
+.hang{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26rpx 0;
+}
+.hang text{
+  font-size: 18rpx;
+}
+/* 回复 */
+.comment{
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.comment textarea{
+  width: 618rpx;
+  height: 393rpx;
+  margin: auto;
+  padding: 47rpx 26rpx 0 26rpx;
+  background-color: #FAFAFA;
+  font-size: 30rpx;
+  text-align: left;
+  border-radius: 18rpx;
+}
+.btn{
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-top: 324rpx;
+  margin-bottom: 53rpx;
+}
+.btn button{
+  width: 710rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 90rpx;
+  padding: 0;
+}

@@ -1,0 +1,53 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/data/data",
+    "pages/view/view",
+    "pages/login/login",
+    "pages/phone/phone",
+    "pages/device/device",
+    "pages/my/my",
+    "pages/personal/personal",
+    "pages/myappraise/myappraise",
+    "pages/appraise/appraise",
+    "pages/ranking/ranking",
+    "pages/paychannel/paychannel",
+    "pages/stock/stock",
+    "pages/datafunnel/datafunnel",
+    "pages/salerecent/salerecent",
+    "pages/dailysales/dailysales",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "color": "#1E1E1E",
+    "selectedColor": "#F2930D",
+    "list": [
+      {
+	      "pagePath": "pages/index/index",
+	      "iconPath": "images/data.png",
+	      "selectedIconPath": "images/data-selected.png",
+		    "text":"数据"
+	    },
+	    {
+	      "pagePath": "pages/device/device",
+	      "iconPath": "images/device.png",
+	      "selectedIconPath": "images/device-selected.png",
+		    "text":"设备"
+	    },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-selected.png",
+        "text":"我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

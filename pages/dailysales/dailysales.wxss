@@ -1,0 +1,60 @@
+/* pages/dailysales/dailysales.wxss */
+.headtop{
+  width: 100%;
+  height: 70rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.startime{
+  width: 167.3rpx;
+  border-bottom: 1px solid #D5D5D5;
+  padding: 13rpx 0;
+  margin-left: 22rpx;
+}
+picker{
+  width: 167.3rpx;
+  font-size: 23rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.xiala{
+  width: 22rpx;
+  height: 20rpx;
+  display: block;
+  position: absolute;
+  top: 6rpx;
+  right: 0;
+  z-index: 1;
+}
+.mode{
+  width: 26rpx;
+  height: 24rpx;
+  display: block;
+  margin-right: 22rpx;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  height: 110rpx;
+  align-items: center;
+  border-bottom: 1px solid #EEEEEE;
+}
+.td {
+  width:25%;
+  justify-content: flex-start;
+  text-align: left;
+  margin-left: 20rpx;
+}
+.th {
+  width: 25%;
+  justify-content: flex-start;
+  display: flex;
+  height: 110rpx;
+  align-items: center;
+  margin-left: 20rpx;
+}
