@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: tea-server
+  main:
+    allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
+  datasource:
+    url: jdbc:mysql://localhost:3306/tea?serverTimezone=GMT%2B8&characterEncoding=utf8
+#    url: jdbc:mysql://47.122.7.202:3306/tea?serverTimezone=GMT%2B8&characterEncoding=utf8
+    username: root
+#    username: xinjie
+#    password: xinjie_2024
+    password: 123456
+  servlet:
+    multipart:
+      max-request-size: 200MB
+      max-file-size: 200MB
+server:
+  port: 9220
+#  port: 443
+  servlet:
+    context-path: /tea-server
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: AUTO
+      logic-delete-field: 'status'
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    map-underscore-to-camel-case: true
+  mapperLocations:
+    - classpath*:/mapper/**/*Mapper.xml
+
+logging:
+  level:
+    com.exam: debug
+    com.baomidou.mybatisplus: debug
+  file:
+    path: ./logs
+
+wx:
+  applet:
+    appid: "wxef284ca54f026e34"
+    secret: "3a8dce4f21b83bfe2ee5c57a44396ceb"
+  pay:
+    mchId: "1619658694"
+    apiV3Key: "73ee105807ffbbd1c8bbbd89964a72b4"
+    privateKeyPath: apiclient_key.pem
+    merchantSerialNumber: "5D25860CBF0D17BE37E1F2209E173662D2DA9FD7"
+wechat:
+  upload-path: "D:/ 工作项目/工作项目/茶饮/tea-management/upload/"
+
